@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56C20E09AAD00CECD42 /* AppDelegate.m */; };
+		713DE57020E09AAD00CECD42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56F20E09AAD00CECD42 /* ViewController.m */; };
+		713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57120E09AAD00CECD42 /* Main.storyboard */; };
+		713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57420E09AAF00CECD42 /* Assets.xcassets */; };
+		713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57620E09AAF00CECD42 /* LaunchScreen.storyboard */; };
+		713DE57B20E09AAF00CECD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE57A20E09AAF00CECD42 /* main.m */; };
+		713DE58620E09F5000CECD42 /* XSuspendedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58520E09F5000CECD42 /* XSuspendedButton.m */; };
+		713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58820E09FAF00CECD42 /* XDebugContainerWindow.m */; };
+		713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */; };
+		713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */; };
+		713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		713DE56820E09AAD00CECD42 /* XDebugBoxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDebugBoxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		713DE56B20E09AAD00CECD42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		713DE56C20E09AAD00CECD42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		713DE56E20E09AAD00CECD42 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		713DE56F20E09AAD00CECD42 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		713DE57220E09AAD00CECD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		713DE57420E09AAF00CECD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		713DE57720E09AAF00CECD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		713DE57920E09AAF00CECD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		713DE57A20E09AAF00CECD42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		713DE58420E09F5000CECD42 /* XSuspendedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSuspendedButton.h; sourceTree = "<group>"; };
+		713DE58520E09F5000CECD42 /* XSuspendedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSuspendedButton.m; sourceTree = "<group>"; };
+		713DE58720E09FAF00CECD42 /* XDebugContainerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugContainerWindow.h; sourceTree = "<group>"; };
+		713DE58820E09FAF00CECD42 /* XDebugContainerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugContainerWindow.m; sourceTree = "<group>"; };
+		713DE58A20E0BF9E00CECD42 /* XDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugViewController.h; sourceTree = "<group>"; };
+		713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugViewController.m; sourceTree = "<group>"; };
+		713DE58D20E0C0A100CECD42 /* XRemoveSuspendedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemoveSuspendedView.h; sourceTree = "<group>"; };
+		713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemoveSuspendedView.m; sourceTree = "<group>"; };
+		713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugWindowManager.h; sourceTree = "<group>"; };
+		713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugWindowManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		713DE56520E09AAD00CECD42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		713DE55F20E09AAD00CECD42 = {
+			isa = PBXGroup;
+			children = (
+				713DE58120E09ABD00CECD42 /* XDebugBox */,
+				713DE56A20E09AAD00CECD42 /* XDebugBoxExample */,
+				713DE56920E09AAD00CECD42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		713DE56920E09AAD00CECD42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				713DE56820E09AAD00CECD42 /* XDebugBoxExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		713DE56A20E09AAD00CECD42 /* XDebugBoxExample */ = {
+			isa = PBXGroup;
+			children = (
+				713DE56B20E09AAD00CECD42 /* AppDelegate.h */,
+				713DE56C20E09AAD00CECD42 /* AppDelegate.m */,
+				713DE56E20E09AAD00CECD42 /* ViewController.h */,
+				713DE56F20E09AAD00CECD42 /* ViewController.m */,
+				713DE57120E09AAD00CECD42 /* Main.storyboard */,
+				713DE57420E09AAF00CECD42 /* Assets.xcassets */,
+				713DE57620E09AAF00CECD42 /* LaunchScreen.storyboard */,
+				713DE57920E09AAF00CECD42 /* Info.plist */,
+				713DE57A20E09AAF00CECD42 /* main.m */,
+			);
+			path = XDebugBoxExample;
+			sourceTree = "<group>";
+		};
+		713DE58120E09ABD00CECD42 /* XDebugBox */ = {
+			isa = PBXGroup;
+			children = (
+				713DE58220E09ABD00CECD42 /* Tools */,
+				713DE58420E09F5000CECD42 /* XSuspendedButton.h */,
+				713DE58520E09F5000CECD42 /* XSuspendedButton.m */,
+				713DE58720E09FAF00CECD42 /* XDebugContainerWindow.h */,
+				713DE58820E09FAF00CECD42 /* XDebugContainerWindow.m */,
+				713DE58A20E0BF9E00CECD42 /* XDebugViewController.h */,
+				713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */,
+				713DE58D20E0C0A100CECD42 /* XRemoveSuspendedView.h */,
+				713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */,
+				713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */,
+				713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */,
+			);
+			name = XDebugBox;
+			path = ../XDebugBox;
+			sourceTree = "<group>";
+		};
+		713DE58220E09ABD00CECD42 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		713DE56720E09AAD00CECD42 /* XDebugBoxExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 713DE57E20E09AAF00CECD42 /* Build configuration list for PBXNativeTarget "XDebugBoxExample" */;
+			buildPhases = (
+				713DE56420E09AAD00CECD42 /* Sources */,
+				713DE56520E09AAD00CECD42 /* Frameworks */,
+				713DE56620E09AAD00CECD42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XDebugBoxExample;
+			productName = XDebugBoxExample;
+			productReference = 713DE56820E09AAD00CECD42 /* XDebugBoxExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		713DE56020E09AAD00CECD42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = canoe;
+				TargetAttributes = {
+					713DE56720E09AAD00CECD42 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 713DE56320E09AAD00CECD42 /* Build configuration list for PBXProject "XDebugBoxExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 713DE55F20E09AAD00CECD42;
+			productRefGroup = 713DE56920E09AAD00CECD42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				713DE56720E09AAD00CECD42 /* XDebugBoxExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		713DE56620E09AAD00CECD42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */,
+				713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */,
+				713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		713DE56420E09AAD00CECD42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				713DE58620E09F5000CECD42 /* XSuspendedButton.m in Sources */,
+				713DE57020E09AAD00CECD42 /* ViewController.m in Sources */,
+				713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */,
+				713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */,
+				713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */,
+				713DE57B20E09AAF00CECD42 /* main.m in Sources */,
+				713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */,
+				713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		713DE57120E09AAD00CECD42 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				713DE57220E09AAD00CECD42 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		713DE57620E09AAF00CECD42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				713DE57720E09AAF00CECD42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		713DE57C20E09AAF00CECD42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		713DE57D20E09AAF00CECD42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		713DE57F20E09AAF00CECD42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62J9RVU398;
+				INFOPLIST_FILE = XDebugBoxExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = canoe.XDebugBoxExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		713DE58020E09AAF00CECD42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62J9RVU398;
+				INFOPLIST_FILE = XDebugBoxExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = canoe.XDebugBoxExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		713DE56320E09AAD00CECD42 /* Build configuration list for PBXProject "XDebugBoxExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				713DE57C20E09AAF00CECD42 /* Debug */,
+				713DE57D20E09AAF00CECD42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		713DE57E20E09AAF00CECD42 /* Build configuration list for PBXNativeTarget "XDebugBoxExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				713DE57F20E09AAF00CECD42 /* Debug */,
+				713DE58020E09AAF00CECD42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 713DE56020E09AAD00CECD42 /* Project object */;
+}

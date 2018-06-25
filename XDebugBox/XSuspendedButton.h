@@ -31,8 +31,6 @@ typedef NS_ENUM(NSUInteger, XSuspendedButtonStayType) {
 
 -(void) show;
 
--(void) hide;
-
 -(void) removeFromScreen;
 
 @end

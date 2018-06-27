@@ -39,7 +39,7 @@
 
 - (void)configLayer
 {
-    self.backgroundColor = [UIColor yellowColor];
+    self.backgroundColor = [UIColor clearColor];
     
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame)) radius:CGRectGetWidth(self.frame) - 15 startAngle:M_PI endAngle:1.5 * M_PI clockwise:YES];
     [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame))];
@@ -47,8 +47,8 @@
     self.backLayer = [CAShapeLayer layer];
     self.backLayer.frame = CGRectMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
     self.backLayer.path = path.CGPath;
-    self.backLayer.fillColor = [UIColor redColor].CGColor;
-    self.backLayer.strokeColor = [UIColor redColor].CGColor;
+    self.backLayer.fillColor = [UIColor colorWithRed:235/255.0 green:82/255.0 blue:82/255.0 alpha:1.0].CGColor;
+    self.backLayer.strokeColor = [UIColor colorWithRed:235/255.0 green:82/255.0 blue:82/255.0 alpha:1.0].CGColor;
     self.backLayer.lineWidth = 0;
 
     [self.layer addSublayer:self.backLayer];

@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"XDebugBoxExample";
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageView.image = [UIImage imageNamed:@"bg"];
+    [self.view addSubview:imageView];
+    
     UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
     [self.view addSubview:tf];
 }

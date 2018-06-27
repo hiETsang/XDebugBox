@@ -10,9 +10,10 @@
 #import "XDebugWindowManager.h"
 #import "XDebugContainerWindow.h"
 
-#define kSuspendedButtonWidth 55.0
+#define kSuspendedButtonWidth 65.0
 #define kStayProportion (8/kSuspendedButtonWidth)
-#define kVerticalMargin 15.0
+#define kVerticalMargin 20.0
+#define kButtonAlpha 0.3
 
 @implementation XSuspendedButton
 
@@ -30,12 +31,14 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.delegate = delegate;
-        self.alpha = 0.7;
+        self.alpha = kButtonAlpha;
         self.backgroundColor = [UIColor whiteColor];
-        self.layer.borderColor = [UIColor colorWithWhite:0.2 alpha:0.7].CGColor;
-        self.layer.borderWidth = 5;
+        self.layer.borderColor = [UIColor colorWithWhite:0.3 alpha:1].CGColor;
+        self.layer.borderWidth = 8;
         self.clipsToBounds = YES;
         self.layer.cornerRadius = kSuspendedButtonWidth/2.0;
+        [self setImage:[UIImage imageNamed:@"mainIcon"] forState:UIControlStateNormal];
+        self.imageEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePanGesture:)];
         pan.delaysTouchesBegan = YES;
@@ -102,7 +105,7 @@
         
         if (self.stayType == XSuspendedButtonStayTypeAnyWhere) {
             [UIView animateWithDuration:0.25 animations:^{
-                self.alpha = 0.7;
+                self.alpha = kButtonAlpha;
                 [XDebugWindowManager windowForkey:kXSuspendedButtonKey].center = point;
             }];
             return;
@@ -150,7 +153,7 @@
         }
         
         [UIView animateWithDuration:.25 animations:^{
-            self.alpha = 1;
+            self.alpha = kButtonAlpha;
             [XDebugWindowManager windowForkey:kXSuspendedButtonKey].center = newCenter;
         }];
     }

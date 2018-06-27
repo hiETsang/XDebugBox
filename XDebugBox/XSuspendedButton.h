@@ -11,9 +11,18 @@
 static NSString *const kXSuspendedButtonKey = @"kXSuspendedButtonKey";
 
 @class XSuspendedButton;
+
 @protocol XSuspendedButtonDelegate <NSObject>
 
+@optional
+
 -(void)suspendedButtonClick:(XSuspendedButton *)suspendedButton;
+
+-(void)suspendedButtonTouchBegin:(XSuspendedButton *)suspendedButton;
+
+-(void)suspendedButtonTouchMove:(XSuspendedButton *)suspendedButton;
+
+-(void)suspendedButtonTouchEnd:(XSuspendedButton *)suspendedButton;
 
 @end
 
@@ -28,6 +37,8 @@ typedef NS_ENUM(NSUInteger, XSuspendedButtonStayType) {
 @property(nonatomic, weak) id <XSuspendedButtonDelegate> delegate;
 
 @property(nonatomic, assign) NSUInteger stayType;
+
++ (instancetype) suspendedButtonWithDelegate:(id<XSuspendedButtonDelegate>)delegate;
 
 -(void) show;
 

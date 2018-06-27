@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "XSuspendedButton.h"
+#import "ViewController.h"
+#import "XRemoveSuspendedView.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <XSuspendedButtonDelegate>
+
+@property(nonatomic, strong) XRemoveSuspendedView *suspendedView;
 
 @end
 
@@ -17,7 +22,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    
+    [[XSuspendedButton suspendedButtonWithDelegate:self] show];
+    
     return YES;
+}
+
+- (void)suspendedButtonClick:(XSuspendedButton *)suspendedButton
+{
+    
+}
+
+-(void)suspendedButtonTouchBegin:(XSuspendedButton *)suspendedButton
+{
+    self.suspendedView = [XRemoveSuspendedView suspendedView];
+    [self.suspendedView showWithAnimation];
+}
+
+-(void)suspendedButtonTouchEnd:(XSuspendedButton *)suspendedButton
+{
+    [self.suspendedView hideWithAnimation];
 }
 
 

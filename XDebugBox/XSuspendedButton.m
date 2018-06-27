@@ -7,15 +7,18 @@
 //
 
 #import "XSuspendedButton.h"
+#import "XDebugWindowManager.h"
+#import "XDebugContainerWindow.h"
 
-#define kStayProportion (8/55.0)
+#define kSuspendedButtonWidth 55.0
+#define kStayProportion (8/kSuspendedButtonWidth)
 #define kVerticalMargin 15.0
 
 @implementation XSuspendedButton
 
 + (instancetype) suspendedButtonWithDelegate:(id<XSuspendedButtonDelegate>)delegate
 {
-    return [[self alloc] initWithFrame:CGRectMake(-kStayProportion * 55, 300, 55, 55) delegate:delegate];
+    return [[self alloc] initWithFrame:CGRectMake(-kStayProportion * kSuspendedButtonWidth, 300, kSuspendedButtonWidth, kSuspendedButtonWidth) delegate:delegate];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -31,6 +34,7 @@
         self.layer.borderColor = [UIColor colorWithWhite:0.2 alpha:0.7].CGColor;
         self.layer.borderWidth = 5;
         self.clipsToBounds = YES;
+        self.layer.cornerRadius = kSuspendedButtonWidth/2.0;
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePanGesture:)];
         pan.delaysTouchesBegan = YES;
@@ -43,9 +47,120 @@
 
 #pragma mark - public
 
+- (void)removeFromScreen
+{
+    [XDebugWindowManager removeWindowForKey:kXSuspendedButtonKey];
+}
 
+- (void)show
+{
+    if ([XDebugWindowManager windowForkey:kXSuspendedButtonKey]) {
+        return;
+    }
+    
+    UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
+    
+    XDebugContainerWindow *window = [[XDebugContainerWindow alloc] initWithFrame:self.frame];
+    window.rootViewController = [[UIViewController alloc] init];
+    [window makeKeyAndVisible];
+    [currentWindow makeKeyWindow];
+    
+    self.frame = CGRectMake(0, 0, kSuspendedButtonWidth, kSuspendedButtonWidth);
+    [window addSubview:self];
+    
+    [XDebugWindowManager saveWindow:window ForKey:kXSuspendedButtonKey];
+}
 
 #pragma mark - event
+
+- (void)handlePanGesture:(UIPanGestureRecognizer *)pan
+{
+    UIWindow *appWindow = [UIApplication sharedApplication].delegate.window;
+    CGPoint point = [pan locationInView:appWindow];
+    
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        if ([self.delegate respondsToSelector:@selector(suspendedButtonTouchBegin:)]) {
+            [self.delegate suspendedButtonTouchBegin:self];
+        }
+        
+        [UIView animateWithDuration:0.25 animations:^{
+            self.alpha = 1;
+        }];
+    }else if(pan.state == UIGestureRecognizerStateChanged)
+    {
+        if ([self.delegate respondsToSelector:@selector(suspendedButtonTouchMove:)]) {
+            [self.delegate suspendedButtonTouchMove:self];
+        }
+        
+        [XDebugWindowManager windowForkey:kXSuspendedButtonKey].center = point;
+    }else if(pan.state == UIGestureRecognizerStateEnded)
+    {
+        if ([self.delegate respondsToSelector:@selector(suspendedButtonTouchEnd:)]) {
+            [self.delegate suspendedButtonTouchEnd:self];
+        }
+        
+        if (self.stayType == XSuspendedButtonStayTypeAnyWhere) {
+            [UIView animateWithDuration:0.25 animations:^{
+                self.alpha = 1;
+                [XDebugWindowManager windowForkey:kXSuspendedButtonKey].center = point;
+            }];
+            return;
+        }
+        
+        CGFloat ballWidth = self.frame.size.width;
+        CGFloat ballHeight = self.frame.size.height;
+        CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+        CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+        
+        CGFloat left = fabs(point.x);
+        CGFloat right = fabs(screenWidth - left);
+        CGFloat top = fabs(point.y);
+        CGFloat bottom = fabs(screenHeight - top);
+        
+        CGFloat minSpace = 0;
+        if (self.stayType == XSuspendedButtonStayTypeHorizontal) {
+            minSpace = MIN(left, right);
+        }else{
+            minSpace = MIN(MIN(MIN(top, left), bottom), right);
+        }
+        CGPoint newCenter = CGPointZero;
+        CGFloat targetY = 0;
+        
+        //Correcting Y
+        if (point.y < kVerticalMargin + ballHeight / 2.0) {
+            targetY = kVerticalMargin + ballHeight / 2.0;
+        }else if (point.y > (screenHeight - ballHeight / 2.0 - kVerticalMargin)) {
+            targetY = screenHeight - ballHeight / 2.0 - kVerticalMargin;
+        }else{
+            targetY = point.y;
+        }
+        
+        CGFloat centerXSpace = (0.5 - kStayProportion) * ballWidth;
+        CGFloat centerYSpace = (0.5 - kStayProportion) * ballHeight;
+        
+        if (minSpace == left) {
+            newCenter = CGPointMake(centerXSpace, targetY);
+        }else if (minSpace == right) {
+            newCenter = CGPointMake(screenWidth - centerXSpace, targetY);
+        }else if (minSpace == top) {
+            newCenter = CGPointMake(point.x, centerYSpace);
+        }else {
+            newCenter = CGPointMake(point.x, screenHeight - centerYSpace);
+        }
+        
+        [UIView animateWithDuration:.25 animations:^{
+            self.alpha = 1;
+            [XDebugWindowManager windowForkey:kXSuspendedButtonKey].center = newCenter;
+        }];
+    }
+}
+
+- (void)click
+{
+    if ([self.delegate respondsToSelector:@selector(suspendedButtonClick:)]) {
+        [self.delegate suspendedButtonClick:self];
+    }
+}
 
 
 @end

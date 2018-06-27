@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kXRemoveSuspendedViewKey = @"XRemoveSuspendedViewKey";
+
 @interface XRemoveSuspendedView : UIView
+
++ (instancetype)suspendedView;
+
+- (void)showWithAnimation;
+
+- (void)hideWithAnimation;
+
+- (void)removeFromScreen;
 
 @end

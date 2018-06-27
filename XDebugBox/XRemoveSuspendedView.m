@@ -10,6 +10,9 @@
 #import "XDebugWindowManager.h"
 #import "XDebugContainerWindow.h"
 
+#define kXAnimationKey @"XAnimationKey"
+#define kXShowAnimation @"XShowAnimation"
+#define kXHideAnimation @"XHideAnimation"
 #define kXRemoveSuspendedViewWidth 160
 
 @interface XRemoveSuspendedView ()<CAAnimationDelegate>
@@ -38,7 +41,8 @@
 {
     self.backgroundColor = [UIColor clearColor];
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame)) radius:CGRectGetWidth(self.frame) - 10 startAngle:0 endAngle:2 * M_PI clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame)) radius:CGRectGetWidth(self.frame) - 15 startAngle:M_PI endAngle:1.5 * M_PI clockwise:YES];
+    [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame))];
     
     self.backLayer = [CAShapeLayer layer];
     self.backLayer.frame = CGRectMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
@@ -58,10 +62,10 @@
     window.rootViewController = [[UIViewController alloc] init];
     [window makeKeyAndVisible];
     [currentWindow makeKeyWindow];
-    window.hidden = YES;
     
-    self.frame = CGRectMake(0, 0, kXRemoveSuspendedViewWidth, kXRemoveSuspendedViewWidth);
+    self.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetWidth(self.frame));
     [window addSubview:self];
+    window.hidden = YES;
     
     [XDebugWindowManager saveWindow:window ForKey:kXRemoveSuspendedViewKey];
     
@@ -78,12 +82,14 @@
     }
     
     window.hidden = NO;
-    self.backLayer.frame = self.bounds;
     
-//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"frame"];
-//    animation.duration = 1.5;
-//    animation.toValue = [NSValue valueWithCGRect:self.bounds];
-//    [self.backLayer addAnimation:animation forKey:nil];
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    animation.delegate = self;
+    animation.duration = .3;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.toValue = [NSValue valueWithCGPoint:self.center];
+    [animation setValue:kXShowAnimation forKey:kXAnimationKey];
+    [self.backLayer addAnimation:animation forKey:nil];
 }
 
 - (void)hideWithAnimation
@@ -93,12 +99,13 @@
         window = [self configWindow];
     }
     
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"frame"];
-    animation.duration = 1.5;
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    animation.duration = .3;
     animation.delegate = self;
-    animation.toValue = [NSValue valueWithCGRect:CGRectMake(CGRectGetMaxX(self.frame), CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), CGRectGetWidth(self.frame))];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0, CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0)];
+    [animation setValue:kXHideAnimation forKey:kXAnimationKey];
     [self.backLayer addAnimation:animation forKey:nil];
-    
 }
 
 - (void)removeFromScreen
@@ -106,10 +113,32 @@
     [XDebugWindowManager removeWindowForKey:kXRemoveSuspendedViewKey];
 }
 
+- (void)layerAmplification
+{
+    self.backLayer.lineWidth = 15;
+}
+
+- (void)layerNarrow
+{
+    self.backLayer.lineWidth = 0;
+}
+
 #pragma mark - animationDelegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    [[XDebugWindowManager windowForkey:kXRemoveSuspendedViewKey] setHidden:YES];
+    NSString *value = [anim valueForKey:kXAnimationKey];
+    if ([value isEqualToString:kXShowAnimation]) {
+        [CATransaction setDisableActions:YES];
+        self.backLayer.position = self.center;
+    }else if([value isEqualToString:kXHideAnimation])
+    {
+        self.backLayer.position = CGPointMake(CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0, CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0);
+        [[XDebugWindowManager windowForkey:kXRemoveSuspendedViewKey] setHidden:YES];
+        
+        if (self.didEndHideAnimation) {
+            self.didEndHideAnimation(self);
+        }
+    }
 }
 
 

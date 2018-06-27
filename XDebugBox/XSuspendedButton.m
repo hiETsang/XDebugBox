@@ -30,7 +30,8 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.delegate = delegate;
-        self.alpha = 0.9;
+        self.alpha = 0.7;
+        self.backgroundColor = [UIColor whiteColor];
         self.layer.borderColor = [UIColor colorWithWhite:0.2 alpha:0.7].CGColor;
         self.layer.borderWidth = 5;
         self.clipsToBounds = YES;
@@ -101,7 +102,7 @@
         
         if (self.stayType == XSuspendedButtonStayTypeAnyWhere) {
             [UIView animateWithDuration:0.25 animations:^{
-                self.alpha = 1;
+                self.alpha = 0.7;
                 [XDebugWindowManager windowForkey:kXSuspendedButtonKey].center = point;
             }];
             return;

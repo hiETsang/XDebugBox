@@ -39,7 +39,7 @@
 
 - (void)configLayer
 {
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor yellowColor];
     
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame)) radius:CGRectGetWidth(self.frame) - 15 startAngle:M_PI endAngle:1.5 * M_PI clockwise:YES];
     [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), CGRectGetWidth(self.frame))];
@@ -49,6 +49,7 @@
     self.backLayer.path = path.CGPath;
     self.backLayer.fillColor = [UIColor redColor].CGColor;
     self.backLayer.strokeColor = [UIColor redColor].CGColor;
+    self.backLayer.lineWidth = 0;
 
     [self.layer addSublayer:self.backLayer];
 }
@@ -83,10 +84,17 @@
     
     window.hidden = NO;
     
+    //动画之前就将layer的位置移动过去
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    self.backLayer.position = self.center;
+    [CATransaction commit];
+    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
     animation.delegate = self;
     animation.duration = .3;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0, CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0)];
     animation.toValue = [NSValue valueWithCGPoint:self.center];
     [animation setValue:kXShowAnimation forKey:kXAnimationKey];
     [self.backLayer addAnimation:animation forKey:nil];
@@ -99,10 +107,16 @@
         window = [self configWindow];
     }
     
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    self.backLayer.position = CGPointMake(CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0, CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0);
+    [CATransaction commit];
+    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
     animation.duration = .3;
     animation.delegate = self;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.fromValue = [NSValue valueWithCGPoint:self.center];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0, CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0)];
     [animation setValue:kXHideAnimation forKey:kXAnimationKey];
     [self.backLayer addAnimation:animation forKey:nil];
@@ -115,24 +129,24 @@
 
 - (void)layerAmplification
 {
-    self.backLayer.lineWidth = 15;
+    if (self.backLayer.lineWidth != 30) {
+        self.backLayer.lineWidth = 30;
+    }
 }
 
 - (void)layerNarrow
 {
-    self.backLayer.lineWidth = 0;
+    if (self.backLayer.lineWidth != 0) {
+        self.backLayer.lineWidth = 0;
+    }
 }
 
 #pragma mark - animationDelegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
     NSString *value = [anim valueForKey:kXAnimationKey];
-    if ([value isEqualToString:kXShowAnimation]) {
-        [CATransaction setDisableActions:YES];
-        self.backLayer.position = self.center;
-    }else if([value isEqualToString:kXHideAnimation])
+    if([value isEqualToString:kXHideAnimation])
     {
-        self.backLayer.position = CGPointMake(CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0, CGRectGetWidth(self.frame) + CGRectGetWidth(self.frame)/2.0);
         [[XDebugWindowManager windowForkey:kXRemoveSuspendedViewKey] setHidden:YES];
         
         if (self.didEndHideAnimation) {

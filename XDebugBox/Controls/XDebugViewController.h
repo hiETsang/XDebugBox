@@ -16,4 +16,7 @@
 
 - (void)removeWithAnimation;
 
+/** 点击其他区域缩小调试窗 */
+@property (nonatomic,copy) void (^tapWindow)(XDebugViewController *debugViewController);
+
 @end

@@ -14,7 +14,7 @@
 
 static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
-@interface XDebugViewController ()
+@interface XDebugViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -36,9 +36,14 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [currentWindow makeKeyWindow];
     
     window.hidden = YES;
-    window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    window.userInteractionEnabled = YES;
+    window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     
     [XDebugWindowManager saveWindow:window ForKey:kXDebugViewController];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDebugWindow:)];
+    tap.delegate = self;
+    [window addGestureRecognizer:tap];
     
     return window;
 }
@@ -67,12 +72,37 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    label.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:label];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
+    titleImageView.image = [UIImage imageNamed:@"logo"];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 3, 34, 34)];
+    [view addSubview:titleImageView];
+    self.navigationItem.titleView = view;
 }
+
+-(void)tapDebugWindow:(UITapGestureRecognizer *)tap
+{
+    if (self.tapWindow) {
+        self.tapWindow(self);
+    }
+}
+
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    CGPoint point = [gestureRecognizer locationInView:self.view];
+    return !CGRectContainsPoint(self.view.bounds, point);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

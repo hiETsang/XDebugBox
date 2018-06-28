@@ -64,6 +64,14 @@ static XDebugBoxManager * _instance;
     self.debugController = [XDebugViewController debugViewController];
     
     [self.suspendedButton show];
+    
+    [self.debugController setTapWindow:^(XDebugViewController *debugViewController) {
+        [debugViewController removeWithAnimation];
+        [XDebugWindowManager windowForkey:kXSuspendedButtonKey].hidden = NO;
+    }];
+    [self.suspendedView setDidEndHideAnimation:^(XRemoveSuspendedView *suspendedView) {
+        [suspendedView removeFromScreen];
+    }];
 }
 
 #pragma mark - suspendedButtonDelegate
@@ -94,9 +102,6 @@ static XDebugBoxManager * _instance;
     if ([self removeSuspendedViewIsContainSuspendedButton:suspendedButton]) {
         [suspendedButton removeFromScreen];
         [self.suspendedView hideWithAnimation];
-        [self.suspendedView setDidEndHideAnimation:^(XRemoveSuspendedView *suspendedView) {
-            [suspendedView removeFromScreen];
-        }];
     }else
     {
         [self.suspendedView hideWithAnimation];

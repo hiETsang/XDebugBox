@@ -104,7 +104,7 @@
 {
     UIWindow *window = [XDebugWindowManager windowForkey:kXRemoveSuspendedViewKey];
     if (!window) {
-        window = [self configWindow];
+        return;
     }
     
     [CATransaction begin];

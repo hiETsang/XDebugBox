@@ -18,7 +18,6 @@ static XDebugWindowManager * _instance;
 
 @implementation XDebugWindowManager
 
-
 + (instancetype)shared
 {
     if (!_instance) {

@@ -10,6 +10,10 @@
 
 @interface XDebugViewController : UIViewController
 
++ (instancetype)debugViewController;
 
+- (void)showWithAnimation;
+
+- (void)removeWithAnimation;
 
 @end

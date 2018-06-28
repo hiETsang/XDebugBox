@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const kXSuspendedButtonKey = @"kXSuspendedButtonKey";
+static NSString *const kXSuspendedButtonKey = @"XSuspendedButtonKey";
 
 @class XSuspendedButton;
 

@@ -19,6 +19,7 @@
 		713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */; };
 		713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */; };
 		7160C95520E3AA0200A5A9DD /* XDebugBox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7160C95420E3AA0200A5A9DD /* XDebugBox.xcassets */; };
+		7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugWindowManager.h; sourceTree = "<group>"; };
 		713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugWindowManager.m; sourceTree = "<group>"; };
 		7160C95420E3AA0200A5A9DD /* XDebugBox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XDebugBox.xcassets; sourceTree = "<group>"; };
+		7173E45E20E48A9400AFB048 /* XDebugNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugNavigationController.h; sourceTree = "<group>"; };
+		7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */,
 				713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */,
 				713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */,
+				7173E45E20E48A9400AFB048 /* XDebugNavigationController.h */,
+				7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */,
 			);
 			name = XDebugBox;
 			path = ../XDebugBox;
@@ -199,6 +204,7 @@
 				713DE57020E09AAD00CECD42 /* ViewController.m in Sources */,
 				713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */,
 				713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */,
+				7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */,
 				713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */,
 				713DE57B20E09AAF00CECD42 /* main.m in Sources */,
 				713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */,

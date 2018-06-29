@@ -11,12 +11,16 @@
 #import "XDebugWindowManager.h"
 #import "XDebugNavigationController.h"
 #import "XDebugSwitchView.h"
+#import "XDebugCollectionView.h"
 #import "XMacros.h"
 
 
 static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 @interface XDebugViewController ()<UIGestureRecognizerDelegate>
+
+@property(nonatomic, strong) XDebugSwitchView *switchView;
+@property(nonatomic, strong) XDebugCollectionView *collectionView;
 
 @end
 
@@ -57,6 +61,13 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [self configUI];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.switchView.frame = CGRectMake(0, 44, self.view.frame.size.width, kRatioHeight(57));
+    self.collectionView.frame = CGRectMake(0, CGRectGetMaxY(self.switchView.frame), self.view.frame.size.width, CGRectGetHeight(self.view.frame) - CGRectGetMaxY(self.switchView.frame));
+}
+
 - (void)configUI
 {
     UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
@@ -65,8 +76,13 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [view addSubview:titleImageView];
     self.navigationItem.titleView = view;
     
-    XDebugSwitchView *switchView = [[XDebugSwitchView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, kRatioHeight(57))];
+    XDebugSwitchView *switchView = [[XDebugSwitchView alloc] init];
     [self.view addSubview:switchView];
+    self.switchView = switchView;
+    
+    XDebugCollectionView *collectionView = [XDebugCollectionView debugCollectionViewWithFrame:CGRectZero];
+    [self.view addSubview:collectionView];
+    self.collectionView = collectionView;
 }
 
 - (UIWindow *)configWindow
@@ -80,7 +96,6 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [currentWindow makeKeyWindow];
     
     window.hidden = YES;
-    window.userInteractionEnabled = YES;
     window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     
     [XDebugWindowManager saveWindow:window ForKey:kXDebugViewController];

@@ -17,4 +17,7 @@ typedef NS_ENUM(NSUInteger, XDebugSwitchViewType) {
 
 @property(nonatomic, assign) XDebugSwitchViewType type;
 
+/** 切换显示状态 */
+@property (nonatomic,copy) void (^didSwitchType)(XDebugSwitchView *switchView,XDebugSwitchViewType type);
+
 @end

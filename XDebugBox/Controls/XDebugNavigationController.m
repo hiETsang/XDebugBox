@@ -15,14 +15,6 @@
 
 @implementation XDebugNavigationController
 
-- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
-{
-    self = [super initWithRootViewController:rootViewController];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -40,7 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {

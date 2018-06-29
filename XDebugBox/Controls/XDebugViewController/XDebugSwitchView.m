@@ -38,6 +38,7 @@
     [self.normalButton setTitleColor:RGBA(115, 149, 247, 1) forState:UIControlStateSelected];
     [self.normalButton setTitleColor:RGBA(180, 182, 189, 1) forState:UIControlStateNormal];
     self.normalButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:12];
+    [self.normalButton addTarget:self action:@selector(switchTypeWithButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *normalShadowView = [[UIView alloc] initWithFrame:self.normalButton.frame];
     [self addSubview:normalShadowView];
@@ -58,6 +59,7 @@
     [self.extensionButton setTitleColor:RGBA(115, 149, 247, 1) forState:UIControlStateSelected];
     [self.extensionButton setTitleColor:RGBA(180, 182, 189, 1) forState:UIControlStateNormal];
     self.extensionButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:12];
+    [self.extensionButton addTarget:self action:@selector(switchTypeWithButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *extensionShadowView = [[UIView alloc] initWithFrame:self.extensionButton.frame];
     [self addSubview:extensionShadowView];
@@ -69,7 +71,44 @@
     self.extensionButton.frame = extensionShadowView.bounds;
     [extensionShadowView addSubview:self.extensionButton];
     
+    self.type = XDebugSwitchViewTypeNormal;
     self.normalButton.selected = YES;
+    self.extensionButton.selected = NO;
+    self.normalButton.superview.layer.shadowOpacity = 1.0;
+    self.extensionButton.superview.layer.shadowOpacity = 0.0;
+}
+
+- (void)setType:(XDebugSwitchViewType)type
+{
+    if (_type == type) return;
+    
+    _type = type;
+    if (type == XDebugSwitchViewTypeNormal) {
+        self.normalButton.selected = YES;
+        self.extensionButton.selected = NO;
+        self.normalButton.superview.layer.shadowOpacity = 1.0;
+        self.extensionButton.superview.layer.shadowOpacity = 0.0;
+    }else
+    {
+        self.normalButton.selected = NO;
+        self.extensionButton.selected = YES;
+        self.normalButton.superview.layer.shadowOpacity = 0.0;
+        self.extensionButton.superview.layer.shadowOpacity = 1.0;
+    }
+}
+
+- (void)switchTypeWithButton:(UIButton *)button
+{
+    if ([button isEqual:self.normalButton]) {
+        self.type = XDebugSwitchViewTypeNormal;
+    }else
+    {
+        self.type = XDebugSwitchViewTypeExtension;
+    }
+    
+    if (self.didSwitchType) {
+        self.didSwitchType(self, self.type);
+    }
 }
 
 @end

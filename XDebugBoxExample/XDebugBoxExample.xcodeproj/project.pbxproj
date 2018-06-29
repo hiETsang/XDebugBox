@@ -23,6 +23,8 @@
 		7173E46620E4D57100AFB048 /* XDebugBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7173E46520E4D57100AFB048 /* XDebugBoxManager.m */; };
 		7173E46B20E4D97400AFB048 /* XDebugBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 7173E46A20E4D97400AFB048 /* XDebugBox.m */; };
 		71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */; };
+		71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344120E60602001B55FD /* XDebugCollectionView.m */; };
+		71A1344520E60A35001B55FD /* XDebugCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		71A1343C20E5DD04001B55FD /* XDebugSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugSwitchView.h; sourceTree = "<group>"; };
 		71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugSwitchView.m; sourceTree = "<group>"; };
 		71A1343F20E5DE8C001B55FD /* XMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMacros.h; sourceTree = "<group>"; };
+		71A1344020E60602001B55FD /* XDebugCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionView.h; sourceTree = "<group>"; };
+		71A1344120E60602001B55FD /* XDebugCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionView.m; sourceTree = "<group>"; };
+		71A1344320E60A35001B55FD /* XDebugCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionViewCell.h; sourceTree = "<group>"; };
+		71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 		713DE58120E09ABD00CECD42 /* XDebugBox */ = {
 			isa = PBXGroup;
 			children = (
+				7173E46920E4D97400AFB048 /* XDebugBox.h */,
+				7173E46A20E4D97400AFB048 /* XDebugBox.m */,
 				7173E46820E4D92700AFB048 /* Managers */,
 				7173E46720E4D8F700AFB048 /* Controls */,
 				7160C95320E3AA0200A5A9DD /* Sources */,
@@ -153,8 +161,6 @@
 				713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */,
 				7173E46420E4D57100AFB048 /* XDebugBoxManager.h */,
 				7173E46520E4D57100AFB048 /* XDebugBoxManager.m */,
-				7173E46920E4D97400AFB048 /* XDebugBox.h */,
-				7173E46A20E4D97400AFB048 /* XDebugBox.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -166,6 +172,10 @@
 				713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */,
 				71A1343C20E5DD04001B55FD /* XDebugSwitchView.h */,
 				71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */,
+				71A1344020E60602001B55FD /* XDebugCollectionView.h */,
+				71A1344120E60602001B55FD /* XDebugCollectionView.m */,
+				71A1344320E60A35001B55FD /* XDebugCollectionViewCell.h */,
+				71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */,
 			);
 			path = XDebugViewController;
 			sourceTree = "<group>";
@@ -245,12 +255,14 @@
 				713DE57020E09AAD00CECD42 /* ViewController.m in Sources */,
 				713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */,
 				713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */,
+				71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */,
 				7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */,
 				71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */,
 				713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */,
 				7173E46B20E4D97400AFB048 /* XDebugBox.m in Sources */,
 				7173E46620E4D57100AFB048 /* XDebugBoxManager.m in Sources */,
 				713DE57B20E09AAF00CECD42 /* main.m in Sources */,
+				71A1344520E60A35001B55FD /* XDebugCollectionViewCell.m in Sources */,
 				713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */,
 				713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */,
 			);

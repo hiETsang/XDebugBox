@@ -10,6 +10,8 @@
 #import "XDebugContainerWindow.h"
 #import "XDebugWindowManager.h"
 #import "XDebugNavigationController.h"
+#import "XDebugSwitchView.h"
+#import "XMacros.h"
 
 
 static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
@@ -20,9 +22,51 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 @implementation XDebugViewController
 
+#pragma mark - public
+
 + (instancetype)debugViewController
 {
     return [[self alloc] init];
+}
+
+- (void)showWithAnimation
+{
+    UIWindow *window = [XDebugWindowManager windowForkey:kXDebugViewController];
+    if (!window) {
+        window = [self configWindow];
+    }
+    
+    window.hidden = NO;
+}
+
+- (void)removeWithAnimation
+{
+    UIWindow *window = [XDebugWindowManager windowForkey:kXDebugViewController];
+    if (!window) {
+        return;
+    }
+    
+    window.hidden = YES;
+    [XDebugWindowManager removeWindowForKey:kXDebugViewController];
+}
+
+#pragma mark - UI
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self configUI];
+}
+
+- (void)configUI
+{
+    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
+    titleImageView.image = [UIImage imageNamed:@"logo"];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 3, 34, 34)];
+    [view addSubview:titleImageView];
+    self.navigationItem.titleView = view;
+    
+    XDebugSwitchView *switchView = [[XDebugSwitchView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, kRatioHeight(57))];
+    [self.view addSubview:switchView];
 }
 
 - (UIWindow *)configWindow
@@ -48,39 +92,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     return window;
 }
 
-
-- (void)showWithAnimation
-{
-    UIWindow *window = [XDebugWindowManager windowForkey:kXDebugViewController];
-    if (!window) {
-        window = [self configWindow];
-    }
-    
-    window.hidden = NO;
-}
-
-- (void)removeWithAnimation
-{
-    UIWindow *window = [XDebugWindowManager windowForkey:kXDebugViewController];
-    if (!window) {
-        return;
-    }
-    
-    window.hidden = YES;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    label.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:label];
-    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
-    titleImageView.image = [UIImage imageNamed:@"logo"];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 3, 34, 34)];
-    [view addSubview:titleImageView];
-    self.navigationItem.titleView = view;
-}
+#pragma mark - actions
 
 -(void)tapDebugWindow:(UITapGestureRecognizer *)tap
 {
@@ -90,6 +102,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 }
 
 
+#pragma mark - gestureDelegate
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     CGPoint point = [gestureRecognizer locationInView:self.view];

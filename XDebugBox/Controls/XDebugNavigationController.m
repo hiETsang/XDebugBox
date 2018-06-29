@@ -7,9 +7,7 @@
 //
 
 #import "XDebugNavigationController.h"
-
-#define kXRatioHeight(h) (h) * ([UIScreen mainScreen].bounds.size.height/667.0)   //适配高度
-#define kXRatioWidth(w) (w) * ([UIScreen mainScreen].bounds.size.width/375.0)     //适配宽度
+#import "XMacros.h"
 
 @interface XDebugNavigationController ()
 
@@ -33,9 +31,9 @@
 
 - (void)configUI
 {
-    self.view.frame = CGRectMake(kXRatioWidth(26),kXRatioHeight(167 * 0.5), kXRatioWidth(323), kXRatioHeight(500));
+    self.view.frame = CGRectMake(kRatioWidth(26),kRatioHeight(167 * 0.5), kRatioWidth(323), kRatioHeight(500));
     self.view.clipsToBounds = YES;
-    self.view.layer.cornerRadius = kXRatioWidth(20);
+    self.view.layer.cornerRadius = kRatioWidth(20);
     self.view.backgroundColor = [UIColor whiteColor];
 }
 

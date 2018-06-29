@@ -25,6 +25,8 @@
 		71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */; };
 		71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344120E60602001B55FD /* XDebugCollectionView.m */; };
 		71A1344520E60A35001B55FD /* XDebugCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */; };
+		71A1344820E62460001B55FD /* XDebugDataControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344720E62460001B55FD /* XDebugDataControl.m */; };
+		71A1345020E63905001B55FD /* XDebugDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344F20E63905001B55FD /* XDebugDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,10 @@
 		71A1344120E60602001B55FD /* XDebugCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionView.m; sourceTree = "<group>"; };
 		71A1344320E60A35001B55FD /* XDebugCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionViewCell.h; sourceTree = "<group>"; };
 		71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionViewCell.m; sourceTree = "<group>"; };
+		71A1344620E62460001B55FD /* XDebugDataControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugDataControl.h; sourceTree = "<group>"; };
+		71A1344720E62460001B55FD /* XDebugDataControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugDataControl.m; sourceTree = "<group>"; };
+		71A1344E20E63905001B55FD /* XDebugDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugDataModel.h; sourceTree = "<group>"; };
+		71A1344F20E63905001B55FD /* XDebugDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,8 @@
 		713DE58220E09ABD00CECD42 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				71A1344620E62460001B55FD /* XDebugDataControl.h */,
+				71A1344720E62460001B55FD /* XDebugDataControl.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -176,6 +184,8 @@
 				71A1344120E60602001B55FD /* XDebugCollectionView.m */,
 				71A1344320E60A35001B55FD /* XDebugCollectionViewCell.h */,
 				71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */,
+				71A1344E20E63905001B55FD /* XDebugDataModel.h */,
+				71A1344F20E63905001B55FD /* XDebugDataModel.m */,
 			);
 			path = XDebugViewController;
 			sourceTree = "<group>";
@@ -257,8 +267,10 @@
 				713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */,
 				71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */,
 				7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */,
+				71A1345020E63905001B55FD /* XDebugDataModel.m in Sources */,
 				71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */,
 				713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */,
+				71A1344820E62460001B55FD /* XDebugDataControl.m in Sources */,
 				7173E46B20E4D97400AFB048 /* XDebugBox.m in Sources */,
 				7173E46620E4D57100AFB048 /* XDebugBoxManager.m in Sources */,
 				713DE57B20E09AAF00CECD42 /* main.m in Sources */,

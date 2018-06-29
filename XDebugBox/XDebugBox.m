@@ -18,4 +18,11 @@
 #endif
 }
 
++ (void)configActionArray:(NSArray<XDebugDataModel *> *)array
+{
+#if DEBUG
+    [XDebugBoxManager shared].extensionArray = array;
+#endif
+}
+
 @end

@@ -9,6 +9,7 @@
 #import "XDebugViewController.h"
 #import "XDebugContainerWindow.h"
 #import "XDebugWindowManager.h"
+#import "XDebugBoxManager.h"
 #import "XDebugNavigationController.h"
 #import "XDebugSwitchView.h"
 #import "XDebugCollectionView.h"
@@ -59,6 +60,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configUI];
+    [self addObserverForData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -79,6 +81,15 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     XDebugSwitchView *switchView = [[XDebugSwitchView alloc] init];
     [self.view addSubview:switchView];
     self.switchView = switchView;
+    
+    [switchView setDidSwitchType:^(XDebugSwitchView *switchView, XDebugSwitchViewType type) {
+        if (type == XDebugSwitchViewTypeNormal) {
+            [self reloadNormalData];
+        }else
+        {
+            [self reloadExtensionData];
+        }
+    }];
     
     XDebugCollectionView *collectionView = [XDebugCollectionView debugCollectionViewWithFrame:CGRectZero];
     [self.view addSubview:collectionView];
@@ -109,11 +120,38 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 #pragma mark - actions
 
+- (void)addObserverForData {
+    [self addObserver:[XDebugBoxManager shared] forKeyPath:@"extensionArray" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:[XDebugBoxManager shared] forKeyPath:@"normalArray" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    
+}
+
 -(void)tapDebugWindow:(UITapGestureRecognizer *)tap
 {
     if (self.tapWindow) {
         self.tapWindow(self);
     }
+}
+
+- (void)reloadNormalData {
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionFade;
+    transition.subtype = kCATransitionFromRight;
+    [self.collectionView.layer addAnimation:transition forKey:nil];
+    [self.collectionView reloadData];
+}
+
+- (void)reloadExtensionData {
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionFade;
+    transition.subtype = kCATransitionFromLeft;
+    [self.collectionView.layer addAnimation:transition forKey:nil];
+    [self.collectionView reloadData];
+
 }
 
 

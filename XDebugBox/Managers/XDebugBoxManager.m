@@ -11,11 +11,11 @@
 #import "XDebugViewController.h"
 #import "XDebugWindowManager.h"
 #import "XSuspendedButton.h"
+#import "XDebugDataControl.h"
 
 static XDebugBoxManager * _instance;
 
 @interface XDebugBoxManager ()<XSuspendedButtonDelegate>
-
 
 @property(nonatomic, strong) XSuspendedButton *suspendedButton;
 @property(nonatomic, strong) XRemoveSuspendedView *suspendedView;
@@ -49,6 +49,26 @@ static XDebugBoxManager * _instance;
 {
     return _instance;
 }
+
+#pragma mark - lazyLoad
+
+-(NSArray *)extensionArray
+{
+    if (!_extensionArray) {
+        _extensionArray = [NSArray array];
+    }
+    return _extensionArray;
+}
+
+- (NSArray *)normalArray
+{
+    if (!_normalArray) {
+        _normalArray = [NSArray array];
+    }
+    return _normalArray;
+}
+
+#pragma mark - configDebugBox
 
 + (void)openDebugBox
 {

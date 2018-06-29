@@ -14,4 +14,8 @@
 
 + (void)openDebugBox;
 
+@property(nonatomic, strong) NSArray *extensionArray;
+
+@property(nonatomic, strong) NSArray *normalArray;
+
 @end

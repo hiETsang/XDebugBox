@@ -9,6 +9,7 @@
 #import "XDebugCollectionView.h"
 #import "XMacros.h"
 #import "XDebugCollectionViewCell.h"
+#import "XDebugDataModel.h"
 
 @interface XDebugCollectionView () <UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -16,10 +17,10 @@
 
 @implementation XDebugCollectionView
 
--(NSMutableArray *)dataArray
+-(NSArray *)dataArray
 {
     if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
+        _dataArray = [NSArray array];
     }
     return _dataArray;
 }
@@ -59,14 +60,26 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 16;
+    return self.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     XDebugCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XDebugCollectionViewCell" forIndexPath:indexPath];
+    XDebugDataModel *model = self.dataArray[indexPath.row];
+    cell.titleLabel.text = model.titleStr;
+    cell.descLabel.text = model.detailStr;
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    XDebugDataModel *model = self.dataArray[indexPath.row];
+    if (model.action) {
+        model.action();
+    }
 }
 
 @end

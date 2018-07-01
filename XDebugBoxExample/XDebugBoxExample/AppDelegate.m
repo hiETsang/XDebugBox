@@ -25,6 +25,9 @@
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     
     [XDebugBox open];
+    [XDebugBox configActionArray:@[[XDebugDataModel debugModelWithTitle:@"新的一个" detail:@"好吧" autoClose:YES action:^{
+        
+    }]]];
 
     return YES;
 }

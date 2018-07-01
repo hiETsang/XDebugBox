@@ -14,9 +14,12 @@
 @property(nonatomic, copy) NSString *titleStr;
 @property(nonatomic, copy) NSString *detailStr;
 @property(nonatomic, assign) BOOL autoClose;
-@property(nonatomic, copy) void (^action)(XDebugViewController *debugViewController);
+@property(nonatomic, copy) void (^action)();
 
-+ (instancetype)debugModelWithTitle:(NSString *)title detail:(NSString *)detail autoClose:(BOOL)autoClose action:(void (^)(XDebugViewController *debugViewController))action;
++ (instancetype)debugModelWithTitle:(NSString *)title
+                             detail:(NSString *)detail
+                          autoClose:(BOOL)autoClose
+                             action:(void (^)())action;
 
 
 @end

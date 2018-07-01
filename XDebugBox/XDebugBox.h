@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XDebugDataModel.h"
 
-@class XDebugDataModel;
 @interface XDebugBox : NSObject
 
 + (void)open;

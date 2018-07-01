@@ -11,9 +11,6 @@
 
 @interface XDebugCollectionViewCell ()
 
-@property(nonatomic, strong) UILabel *titleLabel;
-@property(nonatomic, strong) UILabel *descLabel;
-
 @end
 
 @implementation XDebugCollectionViewCell

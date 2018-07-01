@@ -12,6 +12,6 @@
 
 + (instancetype)debugCollectionViewWithFrame:(CGRect)frame;
 
-@property(nonatomic, strong) NSMutableArray *dataArray;
+@property(nonatomic, strong) NSArray *dataArray;
 
 @end

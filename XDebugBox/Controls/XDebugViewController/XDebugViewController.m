@@ -127,7 +127,12 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    
+    if ([keyPath isEqualToString:@"normalArray"] && self.switchView.type == XDebugSwitchViewTypeNormal) {
+        self.collectionView.dataArray = [XDebugBoxManager shared].normalArray;
+    }else if([keyPath isEqualToString:@"normalArray"] && self.switchView.type == XDebugSwitchViewTypeNormal)
+    {
+        self.collectionView.dataArray = [XDebugBoxManager shared].extensionArray;
+    }
 }
 
 -(void)tapDebugWindow:(UITapGestureRecognizer *)tap
@@ -138,6 +143,8 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 }
 
 - (void)reloadNormalData {
+    self.collectionView.dataArray = [XDebugBoxManager shared].normalArray;
+    
     CATransition *transition = [CATransition animation];
     transition.type = kCATransitionFade;
     transition.subtype = kCATransitionFromRight;
@@ -146,6 +153,8 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 }
 
 - (void)reloadExtensionData {
+    self.collectionView.dataArray = [XDebugBoxManager shared].extensionArray;
+    
     CATransition *transition = [CATransition animation];
     transition.type = kCATransitionFade;
     transition.subtype = kCATransitionFromLeft;

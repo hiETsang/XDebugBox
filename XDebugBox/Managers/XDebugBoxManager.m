@@ -7,11 +7,12 @@
 //
 
 #import "XDebugBoxManager.h"
+#import "XDebugWindowManager.h"
+#import "XDebugNormalDataManager.h"
+
 #import "XRemoveSuspendedView.h"
 #import "XDebugViewController.h"
-#import "XDebugWindowManager.h"
 #import "XSuspendedButton.h"
-#import "XDebugDataControl.h"
 
 static XDebugBoxManager * _instance;
 
@@ -62,10 +63,7 @@ static XDebugBoxManager * _instance;
 
 - (NSArray *)normalArray
 {
-    if (!_normalArray) {
-        _normalArray = [NSArray array];
-    }
-    return _normalArray;
+    return [XDebugNormalDataManager arrayFormSandBox];
 }
 
 #pragma mark - configDebugBox

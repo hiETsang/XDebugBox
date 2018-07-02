@@ -1,13 +1,13 @@
 //
-//  XDebugToosConfig.h
+//  XDebugToolsConfig.m
 //  XDebugBoxExample
 //
 //  Created by canoe on 2018/7/2.
 //  Copyright © 2018年 canoe. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "XDebugToolsConfig.h"
 
-@interface XDebugToosConfig : NSObject
+@implementation XDebugToolsConfig
 
 @end

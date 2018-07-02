@@ -14,6 +14,7 @@
 @property(nonatomic, copy) NSString *titleStr;
 @property(nonatomic, copy) NSString *detailStr;
 @property(nonatomic, assign) BOOL autoClose;
+@property(nonatomic, copy) NSString *methodName;
 @property(nonatomic, copy) void (^action)();
 
 + (instancetype)debugModelWithTitle:(NSString *)title

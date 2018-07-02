@@ -8,10 +8,17 @@
 
 #import "XDebugNormalDataManager.h"
 #import "XDebugDataModel.h"
+#import "XDebugToolsConfig.h"
 
 #define XPlistName @"XDebugNormalData.plist"
 
 static XDebugNormalDataManager * _instance;
+
+@interface XDebugNormalDataManager ()
+
+@property(nonatomic, strong) XDebugToolsConfig *config;
+
+@end
 
 @implementation XDebugNormalDataManager
 
@@ -40,7 +47,16 @@ static XDebugNormalDataManager * _instance;
     return _instance;
 }
 
-#pragma mark - method
+- (XDebugToolsConfig *)config
+{
+    if (!_config) {
+        _config = [[XDebugToolsConfig alloc] init];
+    }
+    return _config;
+}
+
+
+#pragma mark - data method
 
 + (NSArray *)arrayFormSandBox
 {
@@ -48,7 +64,7 @@ static XDebugNormalDataManager * _instance;
     NSArray *array = [NSArray array];
     
     if (![[XDebugNormalDataManager shared] isExistInSandBoxLibraryCachesWithFileName:XPlistName]) {
-        array = @[@"haha",@"heihei"];
+        array = [XDebugNormalDataManager shared].config.array;
         NSString *path = [[XDebugNormalDataManager shared] createPlistInSandBoxLibraryCachesWithContent:array name:XPlistName];
         NSLog(@"path ---------> %@",path);
     }

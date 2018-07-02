@@ -10,4 +10,8 @@
 
 @interface XDebugToolsConfig : NSObject
 
+@property(nonatomic, strong) NSArray *array;
+
+- (NSArray *)debugModelWithDictArray:(NSArray *)array;
+
 @end

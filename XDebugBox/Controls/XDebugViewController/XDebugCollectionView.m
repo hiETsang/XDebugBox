@@ -77,8 +77,8 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     XDebugDataModel *model = self.dataArray[indexPath.row];
-    if (model.action) {
-        model.action();
+    if (self.didSelectedItem) {
+        self.didSelectedItem(model);
     }
 }
 

@@ -16,7 +16,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -25,7 +24,7 @@
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     
     [XDebugBox open];
-    [XDebugBox configActionArray:@[[XDebugDataModel debugModelWithTitle:@"新的一个" detail:@"好吧" autoClose:YES action:^{
+    [XDebugBox configActionArray:@[[XDebugDataModel debugModelWithTitle:@"新的一个" detail:@"好吧" autoClose:YES action:^(XDebugViewController *debugController){
         
     }]]];
 

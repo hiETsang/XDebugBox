@@ -13,9 +13,12 @@
 #import "XDebugNavigationController.h"
 #import "XDebugSwitchView.h"
 #import "XDebugCollectionView.h"
+#import "XDebugDataModel.h"
 #import "XMacros.h"
 
 
+NSString * const kNormalActionNotification = @"normalActionNotification";
+NSString * const kNormalActionDictKey = @"normalActionDebugViewController";
 static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 @interface XDebugViewController ()<UIGestureRecognizerDelegate>
@@ -61,6 +64,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     // Do any additional setup after loading the view.
     [self configUI];
     [self addObserverForData];
+    [self reloadNormalData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -94,6 +98,18 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     XDebugCollectionView *collectionView = [XDebugCollectionView debugCollectionViewWithFrame:CGRectZero];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
+    
+    __weak __typeof(self)weakSelf = self;
+    [collectionView setDidSelectedItem:^(XDebugDataModel *model) {
+        if (weakSelf.switchView.type == XDebugSwitchViewTypeNormal) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNormalActionNotification object:model userInfo:@{kNormalActionDictKey:weakSelf}];
+        }else
+        {
+            if (model.action) {
+                model.action(weakSelf);
+            }
+        }
+    }];
 }
 
 - (UIWindow *)configWindow
@@ -128,10 +144,10 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"normalArray"] && self.switchView.type == XDebugSwitchViewTypeNormal) {
-        self.collectionView.dataArray = [XDebugBoxManager shared].normalArray;
+        [self reloadNormalData];
     }else if([keyPath isEqualToString:@"normalArray"] && self.switchView.type == XDebugSwitchViewTypeNormal)
     {
-        self.collectionView.dataArray = [XDebugBoxManager shared].extensionArray;
+        [self reloadExtensionData];
     }
 }
 
@@ -147,7 +163,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     
     CATransition *transition = [CATransition animation];
     transition.type = kCATransitionFade;
-    transition.subtype = kCATransitionFromRight;
+    transition.duration = 0.2;
     [self.collectionView.layer addAnimation:transition forKey:nil];
     [self.collectionView reloadData];
 }
@@ -157,7 +173,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     
     CATransition *transition = [CATransition animation];
     transition.type = kCATransitionFade;
-    transition.subtype = kCATransitionFromLeft;
+    transition.duration = 0.2;
     [self.collectionView.layer addAnimation:transition forKey:nil];
     [self.collectionView reloadData];
 

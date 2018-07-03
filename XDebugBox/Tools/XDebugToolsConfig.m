@@ -8,6 +8,12 @@
 
 #import "XDebugToolsConfig.h"
 #import "XDebugDataModel.h"
+#import "XDebugViewController.h"
+#import "XMacros.h"
+
+#import "XDebugNormalDataManager.h"
+#import "XDebugBoxManager.h"
+#import "XAnimationSpeedController.h"
 
 NSString *const kNormalTitle = @"titleStr";
 NSString *const kNormalDetail = @"detailStr";
@@ -16,29 +22,81 @@ NSString *const kNormalMethodName = @"methodName";
 
 @implementation XDebugToolsConfig
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:kNormalActionNotification object:nil];
+    }
+    return self;
+}
+
+- (void)receiveNotification:(NSNotification *)notification {
+    XDebugDataModel *model = (XDebugDataModel *)notification.object;
+    XDebugViewController *viewController = (XDebugViewController *)notification.userInfo[kNormalActionDictKey];
+    if ([self respondsToSelector:NSSelectorFromString(model.methodName)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:NSSelectorFromString(model.methodName) withObject:viewController];
+#pragma clang diagnostic pop
+    }
+}
+
 -(NSArray *)array
 {
-    if (!_array) {
         _array = [NSArray arrayWithObjects:
-                  @{kNormalTitle:@"测试",
-                    kNormalDetail:@"详情",
+                  @{kNormalTitle:@"调整全局动画速度",
+                    kNormalDetail:@"方便查看动画效果",
                     kNormalAutoClose:@(0),
-                    kNormalMethodName:@"test1"
+                    kNormalMethodName:@"changeAnimationSpeed:"
                     },
                   @{kNormalTitle:@"测试2",
                     kNormalDetail:@"detail",
                     kNormalAutoClose:@(0),
-                    kNormalMethodName:@"test2"
+                    kNormalMethodName:@"test2:"
+                    },
+                  @{kNormalTitle:@"刷新通用方法列表",
+                    kNormalDetail:@"清理本地的plist，重新加载通用方法数组",
+                    kNormalAutoClose:@(0),
+                    kNormalMethodName:@"reloadNormalList:"
                     },
                   nil];
-    }
     return _array;
 }
 
-- (NSArray *)debugModelWithDictArray:(NSArray *)array
+- (NSArray *)debugModelArrayWithDictArray:(NSArray *)array
 {
-    return array;
-    XDebugDataModel *model = [[XDebugDataModel alloc] init];
+    
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        XDebugDataModel *model = [[XDebugDataModel alloc] init];
+        [model setValuesForKeysWithDictionary:dict];
+        [arrayM addObject:model];
+    }
+    
+    return [NSArray arrayWithArray:arrayM];
+}
+
+#pragma mark - normalAction
+
+-(void)changeAnimationSpeed:(XDebugViewController *)viewController
+{
+    XAnimationSpeedController *vc = [[XAnimationSpeedController alloc] init];
+    vc.title = @"调整全局动画速度";
+    [viewController.navigationController pushViewController:vc animated:YES];
+    NSLog(@"test1");
+}
+
+- (void)test2:(XDebugViewController *)viewController
+{
+    NSLog(@"test2");
+}
+
+//刷新通用方法列表
+- (void)reloadNormalList:(XDebugViewController *)viewController
+{
+    [[XDebugNormalDataManager shared] deletePlistInSandBoxLibraryCaches];
+    [XDebugBoxManager shared].normalArray = [XDebugNormalDataManager arrayFormSandBox];
 }
 
 @end

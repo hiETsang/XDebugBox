@@ -12,6 +12,6 @@
 
 @property(nonatomic, strong) NSArray *array;
 
-- (NSArray *)debugModelWithDictArray:(NSArray *)array;
+- (NSArray *)debugModelArrayWithDictArray:(NSArray *)array;
 
 @end

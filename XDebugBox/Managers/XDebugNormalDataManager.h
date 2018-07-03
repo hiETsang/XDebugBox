@@ -14,4 +14,6 @@
 
 + (NSArray *)arrayFormSandBox;
 
+- (BOOL)deletePlistInSandBoxLibraryCaches;
+
 @end

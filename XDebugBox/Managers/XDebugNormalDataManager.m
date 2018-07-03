@@ -68,8 +68,8 @@ static XDebugNormalDataManager * _instance;
         NSString *path = [[XDebugNormalDataManager shared] createPlistInSandBoxLibraryCachesWithContent:array name:XPlistName];
         NSLog(@"path ---------> %@",path);
     }
-    
-    return [NSArray arrayWithContentsOfFile:[[[XDebugNormalDataManager shared] libraryCachesDirectory] stringByAppendingPathComponent:XPlistName]];
+    array = [[XDebugNormalDataManager shared].config debugModelArrayWithDictArray:[NSArray arrayWithContentsOfFile:[[[XDebugNormalDataManager shared] libraryCachesDirectory] stringByAppendingPathComponent:XPlistName]]];
+    return array;
 }
 
 - (NSString *)libraryCachesDirectory
@@ -98,9 +98,9 @@ static XDebugNormalDataManager * _instance;
     return filePath;
 }
 
-- (BOOL)deletePlistInSandBoxLibraryCachesWithFileName:(NSString *)fileName
+- (BOOL)deletePlistInSandBoxLibraryCaches
 {
-    NSString *filePath = [[self libraryCachesDirectory] stringByAppendingPathComponent:fileName];
+    NSString *filePath = [[self libraryCachesDirectory] stringByAppendingPathComponent:XPlistName];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:filePath])
     {

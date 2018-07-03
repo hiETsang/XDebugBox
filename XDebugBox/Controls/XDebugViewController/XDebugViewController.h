@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const kNormalActionNotification;
+extern NSString * const kNormalActionDictKey;
+
 @interface XDebugViewController : UIViewController
 
 + (instancetype)debugViewController;

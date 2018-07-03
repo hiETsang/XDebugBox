@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class XDebugDataModel;
 @interface XDebugCollectionView : UICollectionView
 
 + (instancetype)debugCollectionViewWithFrame:(CGRect)frame;
 
 @property(nonatomic, strong) NSArray *dataArray;
+
+/** didSelectedItem */
+@property (nonatomic,copy) void (^didSelectedItem)(XDebugDataModel *model);
 
 @end

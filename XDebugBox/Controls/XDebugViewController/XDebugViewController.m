@@ -109,6 +109,10 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
                 model.action(weakSelf);
             }
         }
+        
+        if (model.autoClose && weakSelf.tapWindow) {
+            weakSelf.tapWindow(weakSelf);
+        }
     }];
 }
 

@@ -66,7 +66,6 @@ NSString *const kNormalMethodName = @"methodName";
 
 - (NSArray *)debugModelArrayWithDictArray:(NSArray *)array
 {
-    
     NSMutableArray *arrayM = [NSMutableArray array];
     for (NSDictionary *dict in array) {
         XDebugDataModel *model = [[XDebugDataModel alloc] init];

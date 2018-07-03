@@ -98,4 +98,9 @@ NSString *const kNormalMethodName = @"methodName";
     [XDebugBoxManager shared].normalArray = [XDebugNormalDataManager arrayFormSandBox];
 }
 
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end

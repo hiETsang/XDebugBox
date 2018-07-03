@@ -55,7 +55,6 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     }
     
     window.hidden = YES;
-    [XDebugWindowManager removeWindowForKey:kXDebugViewController];
 }
 
 #pragma mark - UI
@@ -86,12 +85,13 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [self.view addSubview:switchView];
     self.switchView = switchView;
     
+    __weak __typeof(self)weakSelf = self;
     [switchView setDidSwitchType:^(XDebugSwitchView *switchView, XDebugSwitchViewType type) {
         if (type == XDebugSwitchViewTypeNormal) {
-            [self reloadNormalData];
+            [weakSelf reloadNormalData];
         }else
         {
-            [self reloadExtensionData];
+            [weakSelf reloadExtensionData];
         }
     }];
     
@@ -99,7 +99,7 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
     
-    __weak __typeof(self)weakSelf = self;
+    
     [collectionView setDidSelectedItem:^(XDebugDataModel *model) {
         if (weakSelf.switchView.type == XDebugSwitchViewTypeNormal) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNormalActionNotification object:model userInfo:@{kNormalActionDictKey:weakSelf}];
@@ -197,7 +197,10 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)dealloc
+{
+    
+}
 
 /*
 #pragma mark - Navigation

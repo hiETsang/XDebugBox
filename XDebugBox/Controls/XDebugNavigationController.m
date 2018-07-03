@@ -29,6 +29,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+-(void)dealloc
+{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

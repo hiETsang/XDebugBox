@@ -87,7 +87,20 @@ static XDebugBoxManager * _instance;
         [debugViewController removeWithAnimation];
         [XDebugWindowManager windowForkey:kXSuspendedButtonKey].hidden = NO;
     }];
-    [self.suspendedView setDidEndHideAnimation:nil];
+    [self.suspendedView setDidEndHideAnimation:^(XRemoveSuspendedView *suspendedView) {
+        [[XDebugBoxManager shared] removeDebugBox];
+    }];
+}
+
+- (void)removeDebugBox
+{
+    if (![XDebugWindowManager windowForkey:kXSuspendedButtonKey]) {
+        [XDebugWindowManager removeAllWindow];
+        self.suspendedView = nil;
+        self.suspendedButton = nil;
+        self.debugController = nil;
+        self.extensionArray = nil;
+    }
 }
 
 #pragma mark - suspendedButtonDelegate
@@ -117,11 +130,8 @@ static XDebugBoxManager * _instance;
 {
     if ([self removeSuspendedViewIsContainSuspendedButton:suspendedButton]) {
         [suspendedButton removeFromScreen];
-        [self.suspendedView hideWithAnimation];
-    }else
-    {
-        [self.suspendedView hideWithAnimation];
     }
+    [self.suspendedView hideWithAnimation];
 }
 
 - (BOOL)removeSuspendedViewIsContainSuspendedButton:(XSuspendedButton *)suspendedButton

@@ -11,8 +11,18 @@
 
 @interface XDebugBox : NSObject
 
+
+/**
+ 显示小圆点
+ */
 + (void)open;
 
+
+/**
+ 设置自定义扩展工具
+
+ @param array XDebugDataModel类型的数组
+ */
 + (void)configActionArray:(NSArray <XDebugDataModel *>*)array;
 
 @end

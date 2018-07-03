@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 修改全局动画速度
+ */
+
 @interface XAnimationSpeedController : UIViewController
+
 
 @end

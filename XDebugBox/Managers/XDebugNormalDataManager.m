@@ -56,7 +56,7 @@ static XDebugNormalDataManager * _instance;
 }
 
 
-#pragma mark - data method
+#pragma mark - normalDataMethod
 
 + (NSArray *)arrayFormSandBox
 {
@@ -77,7 +77,6 @@ static XDebugNormalDataManager * _instance;
     return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-//判断沙盒LibraryCaches路径下是否有某文件
 - (BOOL)isExistInSandBoxLibraryCachesWithFileName:(NSString *)fileName
 {
     NSString *filePath = [[self libraryCachesDirectory] stringByAppendingPathComponent:fileName];

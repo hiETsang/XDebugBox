@@ -42,27 +42,31 @@ NSString *const kNormalMethodName = @"methodName";
     }
 }
 
+#pragma mark - public
+
 -(NSArray *)array
 {
-        _array = [NSArray arrayWithObjects:
-                  @{kNormalTitle:@"调整全局动画速度",
-                    kNormalDetail:@"方便查看动画效果",
-                    kNormalAutoClose:@(0),
-                    kNormalMethodName:@"changeAnimationSpeed:"
-                    },
-                  @{kNormalTitle:@"测试2",
-                    kNormalDetail:@"detail",
-                    kNormalAutoClose:@(0),
-                    kNormalMethodName:@"test2:"
-                    },
-                  @{kNormalTitle:@"刷新通用方法列表",
-                    kNormalDetail:@"清理本地的plist，重新加载通用方法数组",
-                    kNormalAutoClose:@(0),
-                    kNormalMethodName:@"reloadNormalList:"
-                    },
-                  nil];
+    _array = [NSArray arrayWithObjects:
+              @{kNormalTitle:@"调整全局动画速度",
+                kNormalDetail:@"方便查看动画效果",
+                kNormalAutoClose:@(0),
+                kNormalMethodName:@"changeAnimationSpeed:"
+                },
+              @{kNormalTitle:@"测试2",
+                kNormalDetail:@"detail",
+                kNormalAutoClose:@(0),
+                kNormalMethodName:@"test2:"
+                },
+              @{kNormalTitle:@"刷新通用工具列表",
+                kNormalDetail:@"清理本地的plist，重新加载通用方法数组",
+                kNormalAutoClose:@(0),
+                kNormalMethodName:@"reloadNormalList:"
+                },
+              nil];
     return _array;
 }
+
+
 
 - (NSArray *)debugModelArrayWithDictArray:(NSArray *)array
 {
@@ -76,7 +80,7 @@ NSString *const kNormalMethodName = @"methodName";
     return [NSArray arrayWithArray:arrayM];
 }
 
-#pragma mark - normalAction
+#pragma mark - normalActions
 
 -(void)changeAnimationSpeed:(XDebugViewController *)viewController
 {

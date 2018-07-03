@@ -178,10 +178,10 @@
 		7173E46820E4D92700AFB048 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */,
-				713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */,
 				7173E46420E4D57100AFB048 /* XDebugBoxManager.h */,
 				7173E46520E4D57100AFB048 /* XDebugBoxManager.m */,
+				713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */,
+				713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */,
 				711DB18F20EA2E7F0034E6A3 /* XDebugNormalDataManager.h */,
 				711DB19020EA2E7F0034E6A3 /* XDebugNormalDataManager.m */,
 			);

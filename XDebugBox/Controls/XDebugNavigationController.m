@@ -15,9 +15,8 @@
 
 @implementation XDebugNavigationController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     [self configUI];
 }
 
@@ -29,10 +28,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
--(void)dealloc
-{
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

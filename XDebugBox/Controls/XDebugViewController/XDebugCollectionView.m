@@ -55,6 +55,8 @@
     [self registerClass:[XDebugCollectionViewCell class] forCellWithReuseIdentifier:@"XDebugCollectionViewCell"];
 }
 
+#pragma mark - delegate & datasource
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }

@@ -14,8 +14,15 @@
 
 + (void)openDebugBox;
 
+
+/**
+ 扩展工具数组
+ */
 @property(nonatomic, strong) NSArray *extensionArray;
 
+/**
+ 通用工具数组
+ */
 @property(nonatomic, strong) NSArray *normalArray;
 
 @end

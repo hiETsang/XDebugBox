@@ -180,7 +180,6 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     transition.duration = 0.2;
     [self.collectionView.layer addAnimation:transition forKey:nil];
     [self.collectionView reloadData];
-
 }
 
 
@@ -197,10 +196,6 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     // Dispose of any resources that can be recreated.
 }
 
--(void)dealloc
-{
-    
-}
 
 /*
 #pragma mark - Navigation

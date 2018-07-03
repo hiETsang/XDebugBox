@@ -51,7 +51,7 @@ static XDebugWindowManager * _instance;
     return _windowsDict;
 }
 
-#pragma mark - method
+#pragma mark - public method
 
 + (UIWindow *)windowForkey:(NSString *)key
 {

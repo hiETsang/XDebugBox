@@ -137,15 +137,15 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 #pragma mark - actions
 
 - (void)addObserverForData {
-    [self addObserver:[XDebugBoxManager shared] forKeyPath:@"extensionArray" options:NSKeyValueObservingOptionNew context:nil];
-    [self addObserver:[XDebugBoxManager shared] forKeyPath:@"normalArray" options:NSKeyValueObservingOptionNew context:nil];
+    [[XDebugBoxManager shared] addObserver:self forKeyPath:@"extensionArray" options:NSKeyValueObservingOptionNew context:nil];
+    [[XDebugBoxManager shared] addObserver:self forKeyPath:@"normalArray" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"normalArray"] && self.switchView.type == XDebugSwitchViewTypeNormal) {
         [self reloadNormalData];
-    }else if([keyPath isEqualToString:@"normalArray"] && self.switchView.type == XDebugSwitchViewTypeNormal)
+    }else if([keyPath isEqualToString:@"extensionArray"] && self.switchView.type == XDebugSwitchViewTypeExtension)
     {
         [self reloadExtensionData];
     }

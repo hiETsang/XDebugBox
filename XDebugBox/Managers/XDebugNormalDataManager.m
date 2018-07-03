@@ -66,7 +66,7 @@ static XDebugNormalDataManager * _instance;
     if (![[XDebugNormalDataManager shared] isExistInSandBoxLibraryCachesWithFileName:XPlistName]) {
         array = [XDebugNormalDataManager shared].config.array;
         NSString *path = [[XDebugNormalDataManager shared] createPlistInSandBoxLibraryCachesWithContent:array name:XPlistName];
-        NSLog(@"path ---------> %@",path);
+        NSLog(@"通用工具存储caches路径 ---------> %@",path);
     }
     array = [[XDebugNormalDataManager shared].config debugModelArrayWithDictArray:[NSArray arrayWithContentsOfFile:[[[XDebugNormalDataManager shared] libraryCachesDirectory] stringByAppendingPathComponent:XPlistName]]];
     return array;

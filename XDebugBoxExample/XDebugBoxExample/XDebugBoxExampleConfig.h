@@ -10,4 +10,6 @@
 
 @interface XDebugBoxExampleConfig : NSObject
 
+- (void)configDebugBox;
+
 @end

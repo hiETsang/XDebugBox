@@ -18,6 +18,7 @@
 @interface XRemoveSuspendedView ()<CAAnimationDelegate>
 
 @property(nonatomic, strong) CAShapeLayer *backLayer;
+@property(nonatomic, strong) CALayer *trashLayer;
 
 @end
 
@@ -52,6 +53,13 @@
     self.backLayer.lineWidth = 0;
 
     [self.layer addSublayer:self.backLayer];
+    
+    CALayer *trashLayer = [CALayer layer];
+    trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"delete_close"].CGImage);
+    trashLayer.contentsGravity = kCAGravityResizeAspect;
+    trashLayer.frame = CGRectMake(kXRemoveSuspendedViewWidth - 70, kXRemoveSuspendedViewWidth - 80, 30, 42);
+    [self.backLayer addSublayer:trashLayer];
+    self.trashLayer = trashLayer;
 }
 
 - (UIWindow *)configWindow
@@ -88,6 +96,7 @@
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     self.backLayer.position = self.center;
+    
     [CATransaction commit];
     
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
@@ -131,6 +140,7 @@
 {
     if (self.backLayer.lineWidth != 30) {
         self.backLayer.lineWidth = 30;
+        self.trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"delete"].CGImage);
     }
 }
 
@@ -138,6 +148,7 @@
 {
     if (self.backLayer.lineWidth != 0) {
         self.backLayer.lineWidth = 0;
+        self.trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"delete_close"].CGImage);
     }
 }
 

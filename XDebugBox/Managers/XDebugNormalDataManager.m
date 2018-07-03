@@ -77,7 +77,7 @@ static XDebugNormalDataManager * _instance;
     return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-//判断沙盒Doucument路径下是否有某文件
+//判断沙盒LibraryCaches路径下是否有某文件
 - (BOOL)isExistInSandBoxLibraryCachesWithFileName:(NSString *)fileName
 {
     NSString *filePath = [[self libraryCachesDirectory] stringByAppendingPathComponent:fileName];
@@ -94,7 +94,6 @@ static XDebugNormalDataManager * _instance;
 {
     NSString *filePath = [[self libraryCachesDirectory] stringByAppendingPathComponent:name];
     [content writeToFile:filePath atomically:YES];
-    
     return filePath;
 }
 

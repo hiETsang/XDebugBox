@@ -43,13 +43,11 @@
     [mainView addSubview:self.titleLabel];
     self.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:14];
     self.titleLabel.textColor = RGBA(74, 74, 74, 1);
-    self.titleLabel.text = @"慢速播放动画";
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
     
-    self.descLabel = [[UILabel alloc] initWithFrame:CGRectMake(kRatioWidth(12), 20 + kRatioHeight(13), kRatioWidth(106), kRatioHeight(64) - 20 - kRatioHeight(21))];
+    self.descLabel = [[UILabel alloc] initWithFrame:CGRectMake(kRatioWidth(12), 20 + kRatioHeight(13), kRatioWidth(106), 28)];
     [mainView addSubview:self.descLabel];
     self.descLabel.numberOfLines = 2;
-    self.descLabel.text = @"设置全局动画速度为0.1";
     self.descLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:10];
     self.descLabel.textColor = RGBA(155, 155, 155, 1);
 }

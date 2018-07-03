@@ -28,7 +28,7 @@
 + (instancetype)debugCollectionViewWithFrame:(CGRect)frame
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(kRatioWidth(130), kRatioHeight(64));
+    layout.itemSize = CGSizeMake(kRatioWidth(130), 48 + kRatioHeight(21));
     layout.minimumLineSpacing = kRatioHeight(16);
     layout.minimumInteritemSpacing = kRatioWidth(20);
     layout.sectionInset = UIEdgeInsetsMake(kRatioHeight(8), kRatioWidth(20), kRatioHeight(16), kRatioWidth(20));
@@ -69,7 +69,6 @@
     XDebugDataModel *model = self.dataArray[indexPath.row];
     cell.titleLabel.text = model.titleStr;
     cell.descLabel.text = model.detailStr;
-    
     return cell;
 }
 

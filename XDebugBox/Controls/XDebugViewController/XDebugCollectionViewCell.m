@@ -25,19 +25,17 @@
 }
 
 - (void)configUI {
-    UIView *backShadowView = [[UIView alloc] initWithFrame:self.contentView.bounds];
-    [self.contentView addSubview:backShadowView];
-    backShadowView.backgroundColor = [UIColor clearColor];
-    backShadowView.layer.shadowColor = RGBA(0, 0, 0, 0.1).CGColor;
-    backShadowView.layer.shadowOffset = CGSizeMake(0, 3);
-    backShadowView.layer.shadowRadius = 8;
-    backShadowView.layer.shadowOpacity = 1.0;
     
-    UIView *mainView = [[UIView alloc] initWithFrame:backShadowView.bounds];
-    [backShadowView addSubview:mainView];
+    UIView *mainView = [[UIView alloc] initWithFrame:self.contentView.bounds];
+    [self.contentView addSubview:mainView];
     mainView.backgroundColor = [UIColor whiteColor];
-    mainView.clipsToBounds = YES;
     mainView.layer.cornerRadius = 14;
+    mainView.layer.shadowColor = RGBA(0, 0, 0, 0.1).CGColor;
+    mainView.layer.shadowOffset = CGSizeMake(0, 3);
+    mainView.layer.shadowRadius = 8;
+    mainView.layer.shadowOpacity = 1.0;
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:mainView.bounds];
+    mainView.layer.shadowPath = path.CGPath;
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kRatioWidth(12), kRatioHeight(8), kRatioWidth(106), 20)];
     [mainView addSubview:self.titleLabel];

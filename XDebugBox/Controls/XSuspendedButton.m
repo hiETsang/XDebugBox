@@ -31,11 +31,11 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.delegate = delegate;
+        self.layer.allowsGroupOpacity = NO;
         self.alpha = kButtonAlpha;
         self.backgroundColor = [UIColor whiteColor];
         self.layer.borderColor = [UIColor colorWithWhite:0.3 alpha:1].CGColor;
         self.layer.borderWidth = 8;
-        self.clipsToBounds = YES;
         self.layer.cornerRadius = kSuspendedButtonWidth/2.0;
         [self setImage:[UIImage imageNamed:@"mainIcon"] forState:UIControlStateNormal];
         self.imageEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);

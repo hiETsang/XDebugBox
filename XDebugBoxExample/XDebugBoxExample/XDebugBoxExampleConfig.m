@@ -21,7 +21,7 @@
        [XDebugDataModel debugModelWithTitle:@"个人信息" detail:@"跳到个人信息设置页面" autoClose:NO action:^(XDebugViewController *debugController){
         NSLog(@"跳转个人信息 ---------> ");
     }],
-       [XDebugDataModel debugModelWithTitle:@"打印当前ViewController" detail:nil autoClose:NO action:^(XDebugViewController *debugController){
+       [XDebugDataModel debugModelWithTitle:@"当前ViewController" detail:nil autoClose:NO action:^(XDebugViewController *debugController){
         NSLog(@"myViewController ---------> ");
     }]
        ]];

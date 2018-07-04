@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		711DB19120EA2E7F0034E6A3 /* XDebugNormalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DB19020EA2E7F0034E6A3 /* XDebugNormalDataManager.m */; };
 		711DB19420EA312C0034E6A3 /* XDebugToolsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */; };
+		712841DE20EBA61D00E8CBEA /* XAnimationSpeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */; };
 		712FDBD720EB4B6100E37B10 /* XAnimationSpeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */; };
 		713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56C20E09AAD00CECD42 /* AppDelegate.m */; };
 		713DE57020E09AAD00CECD42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56F20E09AAD00CECD42 /* ViewController.m */; };
@@ -37,6 +38,7 @@
 		711DB19020EA2E7F0034E6A3 /* XDebugNormalDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugNormalDataManager.m; sourceTree = "<group>"; };
 		711DB19220EA312C0034E6A3 /* XDebugToolsConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugToolsConfig.h; sourceTree = "<group>"; };
 		711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugToolsConfig.m; sourceTree = "<group>"; };
+		712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XAnimationSpeedController.xib; sourceTree = "<group>"; };
 		712FDBD520EB4B6100E37B10 /* XAnimationSpeedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAnimationSpeedController.h; sourceTree = "<group>"; };
 		712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAnimationSpeedController.m; sourceTree = "<group>"; };
 		713DE56820E09AAD00CECD42 /* XDebugBoxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDebugBoxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */,
 				712FDBD520EB4B6100E37B10 /* XAnimationSpeedController.h */,
 				712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */,
+				712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */,
 				713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */,
 				7160C95520E3AA0200A5A9DD /* XDebugBox.xcassets in Resources */,
+				712841DE20EBA61D00E8CBEA /* XAnimationSpeedController.xib in Resources */,
 				713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

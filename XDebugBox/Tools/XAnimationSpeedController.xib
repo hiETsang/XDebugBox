@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XAnimationSpeedController">
+            <connections>
+                <outlet property="resetButton" destination="hB5-te-OIo" id="tP2-HH-8v2"/>
+                <outlet property="slider" destination="H7O-R8-PHY" id="HQG-MF-0NY"/>
+                <outlet property="valueLabel" destination="1Nu-Tg-2j4" id="GQw-sI-pPb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="gCo-Ct-ixU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="278" height="342"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.01" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="H7O-R8-PHY">
+                    <rect key="frame" x="14" y="156" width="250" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nu-Tg-2j4">
+                    <rect key="frame" x="120.5" y="85" width="38" height="36"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hB5-te-OIo">
+                    <rect key="frame" x="122" y="222" width="35" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="重置"/>
+                    <connections>
+                        <action selector="resetButtonClick:" destination="-1" eventType="touchUpInside" id="dWA-Lp-6PJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1Nu-Tg-2j4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hhy-XE-XVb"/>
+                <constraint firstAttribute="trailing" secondItem="H7O-R8-PHY" secondAttribute="trailing" constant="16" id="Ize-gf-ZA5"/>
+                <constraint firstItem="H7O-R8-PHY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LiL-ys-UEt"/>
+                <constraint firstItem="H7O-R8-PHY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Lyg-Zk-aw8"/>
+                <constraint firstItem="H7O-R8-PHY" firstAttribute="top" secondItem="1Nu-Tg-2j4" secondAttribute="bottom" constant="35" id="fju-aK-Mdv"/>
+                <constraint firstItem="hB5-te-OIo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="swt-ez-jhY"/>
+                <constraint firstItem="hB5-te-OIo" firstAttribute="top" secondItem="H7O-R8-PHY" secondAttribute="bottom" constant="36" id="vk4-Pw-WOi"/>
+                <constraint firstItem="H7O-R8-PHY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="wsa-5S-iNk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-24" y="-111"/>
+        </view>
+    </objects>
+</document>

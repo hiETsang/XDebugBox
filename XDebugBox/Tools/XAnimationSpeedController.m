@@ -9,8 +9,9 @@
 #import "XAnimationSpeedController.h"
 
 @interface XAnimationSpeedController ()
-
-@property(nonatomic, strong) UISlider *slider;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 @end
 
@@ -20,15 +21,30 @@
     [super viewDidLayoutSubviews];
     self.slider.frame = CGRectMake(0, 0, 200, 100);
     self.slider.center = self.view.center;
+    self.valueLabel.bounds = CGRectMake(0, 0, 100, 100);
+    self.valueLabel.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:slider];
-    self.slider = slider;
+    self.slider.value = [UIApplication sharedApplication].keyWindow.layer.speed;
+    
+    [self.slider addTarget:self action:@selector(sliderValueChangged:) forControlEvents:UIControlEventValueChanged];
+    
+    self.valueLabel.text = [NSString stringWithFormat:@"%0.2f",self.slider.value];
+}
+
+- (void)sliderValueChangged:(UISlider *)slider {
+    [UIApplication sharedApplication].keyWindow.layer.speed = slider.value;
+    self.valueLabel.text = [NSString stringWithFormat:@"%.2f",self.slider.value];
+}
+
+- (IBAction)resetButtonClick:(UIButton *)sender {
+    [UIApplication sharedApplication].keyWindow.layer.speed = 1.0;
+    self.slider.value = [UIApplication sharedApplication].keyWindow.layer.speed;
+    self.valueLabel.text = [NSString stringWithFormat:@"%.2f",self.slider.value];
 }
 
 - (void)didReceiveMemoryWarning {

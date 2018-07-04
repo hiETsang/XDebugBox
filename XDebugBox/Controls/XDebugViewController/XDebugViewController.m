@@ -21,7 +21,7 @@ NSString * const kNormalActionNotification = @"normalActionNotification";
 NSString * const kNormalActionDictKey = @"normalActionDebugViewController";
 static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
-@interface XDebugViewController ()<UIGestureRecognizerDelegate>
+@interface XDebugViewController ()
 
 @property(nonatomic, strong) XDebugSwitchView *switchView;
 @property(nonatomic, strong) XDebugCollectionView *collectionView;
@@ -127,13 +127,17 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [currentWindow makeKeyWindow];
     
     window.hidden = YES;
-    window.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+    window.backgroundColor = [UIColor clearColor];
     
     [XDebugWindowManager saveWindow:window ForKey:kXDebugViewController];
     
+    UIView *backView = [[UIView alloc] initWithFrame:window.bounds];
+    backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+    [window addSubview:backView];
+    [window sendSubviewToBack:backView];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDebugWindow:)];
-    tap.delegate = self;
-    [window addGestureRecognizer:tap];
+    [backView addGestureRecognizer:tap];
     
     return window;
 }
@@ -181,15 +185,6 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     [self.collectionView.layer addAnimation:transition forKey:nil];
     [self.collectionView reloadData];
 }
-
-
-#pragma mark - gestureDelegate
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    CGPoint point = [gestureRecognizer locationInView:self.view];
-    return !CGRectContainsPoint(self.view.bounds, point);
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

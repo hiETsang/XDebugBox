@@ -15,8 +15,8 @@
 
 @implementation XDebugNavigationController
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self configUI];
 }
 
@@ -26,6 +26,7 @@
     self.view.clipsToBounds = YES;
     self.view.layer.cornerRadius = kRatioWidth(20);
     self.view.backgroundColor = [UIColor whiteColor];
+    
 }
 
 

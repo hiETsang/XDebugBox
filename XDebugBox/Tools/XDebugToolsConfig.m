@@ -52,8 +52,13 @@ NSString *const kNormalMethodName = @"methodName";
                 kNormalAutoClose:@(0),
                 kNormalMethodName:@"changeAnimationSpeed:"
                 },
-              @{kNormalTitle:@"测试2",
-                kNormalDetail:@"detail",
+              @{kNormalTitle:@"网络请求显示",
+                kNormalDetail:@"显示上一次网络请求的信息",
+                kNormalAutoClose:@(0),
+                kNormalMethodName:@"test2:"
+                },
+              @{kNormalTitle:@"缓存清理",
+                kNormalDetail:@"清理沙盒路径中的缓存文件",
                 kNormalAutoClose:@(0),
                 kNormalMethodName:@"test2:"
                 },
@@ -66,8 +71,6 @@ NSString *const kNormalMethodName = @"methodName";
     return _array;
 }
 
-
-
 - (NSArray *)debugModelArrayWithDictArray:(NSArray *)array
 {
     NSMutableArray *arrayM = [NSMutableArray array];
@@ -76,7 +79,6 @@ NSString *const kNormalMethodName = @"methodName";
         [model setValuesForKeysWithDictionary:dict];
         [arrayM addObject:model];
     }
-    
     return [NSArray arrayWithArray:arrayM];
 }
 

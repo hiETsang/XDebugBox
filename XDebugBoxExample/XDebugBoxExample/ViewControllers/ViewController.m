@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AnimationTestController.h"
+#import "JumpTestController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -65,12 +66,16 @@
             viewController = [[AnimationTestController alloc]init];
         }
             break;
+        case 1:
+        {
+            viewController = [[JumpTestController alloc]init];
+        }
+            break;
             
         default:
             break;
     }
     if (!viewController) return;
-    viewController.title = self.dataArray[indexPath.row];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

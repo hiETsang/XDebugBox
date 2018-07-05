@@ -14,6 +14,8 @@
 		7132456C20EDCBD000120AEF /* XDebugBoxTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */; };
 		7132456F20EE023F00120AEF /* XClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132456E20EE023F00120AEF /* XClearCache.m */; };
 		7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457220EE0C1000120AEF /* AnimationTestController.m */; };
+		7132457720EE13FE00120AEF /* JumpTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457520EE13FE00120AEF /* JumpTestController.m */; };
+		7132457820EE13FE00120AEF /* JumpTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132457620EE13FE00120AEF /* JumpTestController.xib */; };
 		713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56C20E09AAD00CECD42 /* AppDelegate.m */; };
 		713DE57020E09AAD00CECD42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56F20E09AAD00CECD42 /* ViewController.m */; };
 		713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57120E09AAD00CECD42 /* Main.storyboard */; };
@@ -50,6 +52,9 @@
 		7132456E20EE023F00120AEF /* XClearCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XClearCache.m; sourceTree = "<group>"; };
 		7132457120EE0C1000120AEF /* AnimationTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationTestController.h; sourceTree = "<group>"; };
 		7132457220EE0C1000120AEF /* AnimationTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationTestController.m; sourceTree = "<group>"; };
+		7132457420EE13FE00120AEF /* JumpTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpTestController.h; sourceTree = "<group>"; };
+		7132457520EE13FE00120AEF /* JumpTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpTestController.m; sourceTree = "<group>"; };
+		7132457620EE13FE00120AEF /* JumpTestController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JumpTestController.xib; sourceTree = "<group>"; };
 		713DE56820E09AAD00CECD42 /* XDebugBoxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDebugBoxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		713DE56B20E09AAD00CECD42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		713DE56C20E09AAD00CECD42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +113,9 @@
 				713DE56F20E09AAD00CECD42 /* ViewController.m */,
 				7132457120EE0C1000120AEF /* AnimationTestController.h */,
 				7132457220EE0C1000120AEF /* AnimationTestController.m */,
+				7132457420EE13FE00120AEF /* JumpTestController.h */,
+				7132457520EE13FE00120AEF /* JumpTestController.m */,
+				7132457620EE13FE00120AEF /* JumpTestController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */,
+				7132457820EE13FE00120AEF /* JumpTestController.xib in Resources */,
 				713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */,
 				7160C95520E3AA0200A5A9DD /* XDebugBox.xcassets in Resources */,
 				712841DE20EBA61D00E8CBEA /* XAnimationSpeedController.xib in Resources */,
@@ -306,6 +315,7 @@
 				713DE58620E09F5000CECD42 /* XSuspendedButton.m in Sources */,
 				713DE57020E09AAD00CECD42 /* ViewController.m in Sources */,
 				713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */,
+				7132457720EE13FE00120AEF /* JumpTestController.m in Sources */,
 				711DB19420EA312C0034E6A3 /* XDebugToolsConfig.m in Sources */,
 				713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */,
 				71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */,

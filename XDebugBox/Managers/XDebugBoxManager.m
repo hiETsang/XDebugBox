@@ -99,6 +99,7 @@ static XDebugBoxManager * _instance;
         self.suspendedView = nil;
         self.suspendedButton = nil;
         self.debugController = nil;
+        self.normalArray = nil;
         self.extensionArray = nil;
     }
 }

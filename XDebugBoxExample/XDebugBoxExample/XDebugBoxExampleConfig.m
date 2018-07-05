@@ -9,6 +9,8 @@
 #import "XDebugBoxExampleConfig.h"
 #import "XDebugBox.h"
 
+#import "JumpTestController.h"
+
 @implementation XDebugBoxExampleConfig
 
 - (void)configDebugBox
@@ -21,13 +23,47 @@
      @[[XDebugDataModel debugModelWithTitle:@"自动登陆" detail:@"登陆账号176********" autoClose:YES action:^(UIViewController *debugController){
         NSLog(@"自动登录 ---------> ");
     }],
-       [XDebugDataModel debugModelWithTitle:@"个人信息" detail:@"跳到个人信息设置页面" autoClose:NO action:^(UIViewController *debugController){
-        [XDebugBox showTip:@"跳转成功"];
+       [XDebugDataModel debugModelWithTitle:@"跳转页面" detail:@"跳到JumpTestViewController" autoClose:YES action:^(UIViewController *debugController){
+        [self jumpToViewController:[[JumpTestController alloc] init]];
     }],
-       [XDebugDataModel debugModelWithTitle:@"当前ViewController" detail:nil autoClose:NO action:^(UIViewController *debugController){
-        
+       [XDebugDataModel debugModelWithTitle:@"当前页面" detail:@"显示当前的ViewController" autoClose:NO action:^(UIViewController *debugController){
+        [XDebugBox showTip:NSStringFromClass([self currentViewController].class)];
     }]
        ]];
+}
+
+
+
+#pragma mark - actions
+
+- (void)jumpToViewController:(UIViewController *)viewController {
+    if ([self currentViewController].navigationController) {
+        [[self currentViewController].navigationController pushViewController:viewController animated:YES];
+    }else
+    {
+        [[self currentViewController] presentViewController:viewController animated:YES completion:nil];
+    }
+}
+
+- (UIViewController*) topMostController
+{
+    UIViewController *topController = [[UIApplication sharedApplication].keyWindow rootViewController];
+    
+    //  Getting topMost ViewController
+    while ([topController presentedViewController])    topController = [topController presentedViewController];
+    
+    //  Returning topMost ViewController
+    return topController;
+}
+
+- (UIViewController*)currentViewController;
+{
+    UIViewController *currentViewController = [self topMostController];
+    
+    while ([currentViewController isKindOfClass:[UINavigationController class]] && [(UINavigationController*)currentViewController topViewController])
+        currentViewController = [(UINavigationController*)currentViewController topViewController];
+    
+    return currentViewController;
 }
 
 @end

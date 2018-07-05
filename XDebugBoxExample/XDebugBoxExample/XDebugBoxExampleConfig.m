@@ -13,16 +13,19 @@
 
 - (void)configDebugBox
 {
+    //创建调试工具
     [XDebugBox open];
+    
+    //配置自定义的工具
     [XDebugBox configActionArray:
-     @[[XDebugDataModel debugModelWithTitle:@"自动登陆" detail:@"登陆账号176********" autoClose:YES action:^(XDebugViewController *debugController){
+     @[[XDebugDataModel debugModelWithTitle:@"自动登陆" detail:@"登陆账号176********" autoClose:YES action:^(UIViewController *debugController){
         NSLog(@"自动登录 ---------> ");
     }],
-       [XDebugDataModel debugModelWithTitle:@"个人信息" detail:@"跳到个人信息设置页面" autoClose:NO action:^(XDebugViewController *debugController){
-        NSLog(@"跳转个人信息 ---------> ");
+       [XDebugDataModel debugModelWithTitle:@"个人信息" detail:@"跳到个人信息设置页面" autoClose:NO action:^(UIViewController *debugController){
+        [XDebugBox showTip:@"跳转成功"];
     }],
-       [XDebugDataModel debugModelWithTitle:@"当前ViewController" detail:nil autoClose:NO action:^(XDebugViewController *debugController){
-        NSLog(@"myViewController ---------> ");
+       [XDebugDataModel debugModelWithTitle:@"当前ViewController" detail:nil autoClose:NO action:^(UIViewController *debugController){
+        
     }]
        ]];
 }

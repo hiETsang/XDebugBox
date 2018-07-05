@@ -8,6 +8,7 @@
 
 #import "XDebugBox.h"
 #import "XDebugBoxManager.h"
+#import "XDebugBoxTipView.h"
 
 @implementation XDebugBox
 
@@ -22,6 +23,13 @@
 {
 #if DEBUG
     [XDebugBoxManager shared].extensionArray = array;
+#endif
+}
+
++ (void)showTip:(NSString *)tip
+{
+#if DEBUG
+    [XDebugBoxTipView showTip:tip];
 #endif
 }
 

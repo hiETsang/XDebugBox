@@ -10,6 +10,7 @@
 
 extern NSString * const kNormalActionNotification;
 extern NSString * const kNormalActionDictKey;
+extern NSString * const kXDebugViewController;
 
 @interface XDebugViewController : UIViewController
 

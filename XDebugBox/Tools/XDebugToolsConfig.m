@@ -14,6 +14,8 @@
 #import "XDebugNormalDataManager.h"
 #import "XDebugBoxManager.h"
 #import "XAnimationSpeedController.h"
+#import "XDebugBoxTipView.h"
+#import "XClearCache.h"
 
 NSString *const kNormalTitle = @"titleStr";
 NSString *const kNormalDetail = @"detailStr";
@@ -52,15 +54,10 @@ NSString *const kNormalMethodName = @"methodName";
                 kNormalAutoClose:@(0),
                 kNormalMethodName:@"changeAnimationSpeed:"
                 },
-              @{kNormalTitle:@"网络请求显示",
-                kNormalDetail:@"显示上一次网络请求的信息",
-                kNormalAutoClose:@(0),
-                kNormalMethodName:@"test2:"
-                },
               @{kNormalTitle:@"缓存清理",
                 kNormalDetail:@"清理沙盒路径中的缓存文件",
                 kNormalAutoClose:@(0),
-                kNormalMethodName:@"test2:"
+                kNormalMethodName:@"ClearCache:"
                 },
               @{kNormalTitle:@"刷新通用工具列表",
                 kNormalDetail:@"清理本地的plist，重新加载通用方法数组",
@@ -89,12 +86,17 @@ NSString *const kNormalMethodName = @"methodName";
     XAnimationSpeedController *vc = [[XAnimationSpeedController alloc] init];
     vc.title = @"调整全局动画速度";
     [viewController.navigationController pushViewController:vc animated:YES];
-    NSLog(@"test1");
 }
 
-- (void)test2:(XDebugViewController *)viewController
+- (void)ClearCache:(XDebugViewController *)viewController
 {
-    NSLog(@"test2");
+    NSString *size = [XClearCache getCacheSize];
+    if ([XClearCache cleanAppCache]) {
+        [XDebugBoxTipView showTip:[NSString stringWithFormat:@"%@缓存清理成功",size]];
+    }else
+    {
+        [XDebugBoxTipView showTip:@"缓存清理失败"];
+    }
 }
 
 //刷新通用方法列表
@@ -102,7 +104,10 @@ NSString *const kNormalMethodName = @"methodName";
 {
     [[XDebugNormalDataManager shared] deletePlistInSandBoxLibraryCaches];
     [XDebugBoxManager shared].normalArray = [XDebugNormalDataManager arrayFormSandBox];
+    [XDebugBoxTipView showTip:@"已刷新"];
 }
+
+#pragma mark - dealloc
 
 -(void)dealloc
 {

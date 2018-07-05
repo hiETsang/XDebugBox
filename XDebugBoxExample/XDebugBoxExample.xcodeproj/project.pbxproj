@@ -11,6 +11,9 @@
 		711DB19420EA312C0034E6A3 /* XDebugToolsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */; };
 		712841DE20EBA61D00E8CBEA /* XAnimationSpeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */; };
 		712FDBD720EB4B6100E37B10 /* XAnimationSpeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */; };
+		7132456C20EDCBD000120AEF /* XDebugBoxTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */; };
+		7132456F20EE023F00120AEF /* XClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132456E20EE023F00120AEF /* XClearCache.m */; };
+		7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457220EE0C1000120AEF /* AnimationTestController.m */; };
 		713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56C20E09AAD00CECD42 /* AppDelegate.m */; };
 		713DE57020E09AAD00CECD42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE56F20E09AAD00CECD42 /* ViewController.m */; };
 		713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57120E09AAD00CECD42 /* Main.storyboard */; };
@@ -41,6 +44,12 @@
 		712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XAnimationSpeedController.xib; sourceTree = "<group>"; };
 		712FDBD520EB4B6100E37B10 /* XAnimationSpeedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAnimationSpeedController.h; sourceTree = "<group>"; };
 		712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAnimationSpeedController.m; sourceTree = "<group>"; };
+		7132456A20EDCBD000120AEF /* XDebugBoxTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugBoxTipView.h; sourceTree = "<group>"; };
+		7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxTipView.m; sourceTree = "<group>"; };
+		7132456D20EE023F00120AEF /* XClearCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XClearCache.h; sourceTree = "<group>"; };
+		7132456E20EE023F00120AEF /* XClearCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XClearCache.m; sourceTree = "<group>"; };
+		7132457120EE0C1000120AEF /* AnimationTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationTestController.h; sourceTree = "<group>"; };
+		7132457220EE0C1000120AEF /* AnimationTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationTestController.m; sourceTree = "<group>"; };
 		713DE56820E09AAD00CECD42 /* XDebugBoxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDebugBoxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		713DE56B20E09AAD00CECD42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		713DE56C20E09AAD00CECD42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +101,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7132457020EE08B000120AEF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				713DE56E20E09AAD00CECD42 /* ViewController.h */,
+				713DE56F20E09AAD00CECD42 /* ViewController.m */,
+				7132457120EE0C1000120AEF /* AnimationTestController.h */,
+				7132457220EE0C1000120AEF /* AnimationTestController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		713DE55F20E09AAD00CECD42 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +132,9 @@
 		713DE56A20E09AAD00CECD42 /* XDebugBoxExample */ = {
 			isa = PBXGroup;
 			children = (
+				7132457020EE08B000120AEF /* ViewControllers */,
 				713DE56B20E09AAD00CECD42 /* AppDelegate.h */,
 				713DE56C20E09AAD00CECD42 /* AppDelegate.m */,
-				713DE56E20E09AAD00CECD42 /* ViewController.h */,
-				713DE56F20E09AAD00CECD42 /* ViewController.m */,
 				714C59B220E919B900A74CEB /* XDebugBoxExampleConfig.h */,
 				714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */,
 				713DE57120E09AAD00CECD42 /* Main.storyboard */,
@@ -149,6 +168,8 @@
 				712FDBD520EB4B6100E37B10 /* XAnimationSpeedController.h */,
 				712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */,
 				712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */,
+				7132456D20EE023F00120AEF /* XClearCache.h */,
+				7132456E20EE023F00120AEF /* XClearCache.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -174,6 +195,8 @@
 				713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */,
 				7173E45E20E48A9400AFB048 /* XDebugNavigationController.h */,
 				7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */,
+				7132456A20EDCBD000120AEF /* XDebugBoxTipView.h */,
+				7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -288,7 +311,9 @@
 				71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */,
 				7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */,
 				71A1345020E63905001B55FD /* XDebugDataModel.m in Sources */,
+				7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */,
 				71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */,
+				7132456F20EE023F00120AEF /* XClearCache.m in Sources */,
 				714C59B420E919B900A74CEB /* XDebugBoxExampleConfig.m in Sources */,
 				713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */,
 				7173E46B20E4D97400AFB048 /* XDebugBox.m in Sources */,
@@ -297,6 +322,7 @@
 				712FDBD720EB4B6100E37B10 /* XAnimationSpeedController.m in Sources */,
 				71A1344520E60A35001B55FD /* XDebugCollectionViewCell.m in Sources */,
 				711DB19120EA2E7F0034E6A3 /* XDebugNormalDataManager.m in Sources */,
+				7132456C20EDCBD000120AEF /* XDebugBoxTipView.m in Sources */,
 				713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */,
 				713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */,
 			);

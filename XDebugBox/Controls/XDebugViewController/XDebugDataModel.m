@@ -7,10 +7,11 @@
 //
 
 #import "XDebugDataModel.h"
+#import "XDebugViewController.h"
 
 @implementation XDebugDataModel
 
-+(instancetype)debugModelWithTitle:(NSString *)title detail:(NSString *)detail autoClose:(BOOL)autoClose action:(void (^)(XDebugViewController *debugController))action
++(instancetype)debugModelWithTitle:(NSString *)title detail:(NSString *)detail autoClose:(BOOL)autoClose action:(void (^)(UIViewController *debugController))action
 {
     XDebugDataModel *model = [[XDebugDataModel alloc] init];
     model.titleStr = title;

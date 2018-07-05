@@ -19,7 +19,7 @@
 
 NSString * const kNormalActionNotification = @"normalActionNotification";
 NSString * const kNormalActionDictKey = @"normalActionDebugViewController";
-static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
+NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 @interface XDebugViewController ()
 
@@ -184,6 +184,12 @@ static NSString *const kXDebugViewController = @"XDebugViewControllerKey";
     transition.duration = 0.2;
     [self.collectionView.layer addAnimation:transition forKey:nil];
     [self.collectionView reloadData];
+}
+
+- (void)dealloc
+{
+    [[XDebugBoxManager shared] removeObserver:self forKeyPath:@"extensionArray"];
+    [[XDebugBoxManager shared] removeObserver:self forKeyPath:@"normalArray"];
 }
 
 - (void)didReceiveMemoryWarning {

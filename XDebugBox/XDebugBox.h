@@ -11,7 +11,6 @@
 
 @interface XDebugBox : NSObject
 
-
 /**
  显示小圆点
  */
@@ -24,5 +23,11 @@
  @param array XDebugDataModel类型的数组
  */
 + (void)configActionArray:(NSArray <XDebugDataModel *>*)array;
+
+
+/**
+ 显示提示
+ */
++ (void)showTip:(NSString *)tip;
 
 @end

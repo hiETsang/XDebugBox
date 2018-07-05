@@ -26,13 +26,16 @@
     self.view.clipsToBounds = YES;
     self.view.layer.cornerRadius = kRatioWidth(20);
     self.view.backgroundColor = [UIColor whiteColor];
-    
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationBar.barTintColor = nil;
+    [self.navigationBar setShadowImage:nil];
+    [self.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    self.navigationBar.translucent = YES;
 }
 
 - (void)didReceiveMemoryWarning {

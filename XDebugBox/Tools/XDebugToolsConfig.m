@@ -50,12 +50,12 @@ NSString *const kNormalMethodName = @"methodName";
 {
     _array = [NSArray arrayWithObjects:
               @{kNormalTitle:@"调整全局动画速度",
-                kNormalDetail:@"方便查看动画效果",
+                kNormalDetail:@"方便查看和调试动画效果",
                 kNormalAutoClose:@(0),
                 kNormalMethodName:@"changeAnimationSpeed:"
                 },
               @{kNormalTitle:@"缓存清理",
-                kNormalDetail:@"清理沙盒路径中的缓存文件",
+                kNormalDetail:@"清理沙盒路径Cache文件夹中的缓存文件",
                 kNormalAutoClose:@(0),
                 kNormalMethodName:@"ClearCache:"
                 },
@@ -80,7 +80,7 @@ NSString *const kNormalMethodName = @"methodName";
 }
 
 #pragma mark - normalActions
-
+//改变全局动画速度
 -(void)changeAnimationSpeed:(XDebugViewController *)viewController
 {
     XAnimationSpeedController *vc = [[XAnimationSpeedController alloc] init];
@@ -88,6 +88,7 @@ NSString *const kNormalMethodName = @"methodName";
     [viewController.navigationController pushViewController:vc animated:YES];
 }
 
+//清理缓存
 - (void)ClearCache:(XDebugViewController *)viewController
 {
     NSString *size = [XClearCache getCacheSize];
@@ -95,7 +96,7 @@ NSString *const kNormalMethodName = @"methodName";
         [XDebugBoxTipView showTip:[NSString stringWithFormat:@"%@缓存清理成功",size]];
     }else
     {
-        [XDebugBoxTipView showTip:@"缓存清理失败"];
+        [XDebugBoxTipView showTip:@"缓存清理失败\n请查看控制台输出的路径"];
     }
 }
 

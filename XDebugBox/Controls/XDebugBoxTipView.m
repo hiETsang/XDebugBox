@@ -35,8 +35,9 @@
     tipLabel.textColor = [UIColor whiteColor];
     tipLabel.font = [UIFont boldSystemFontOfSize:13];
     tipLabel.text = tip;
-    [tipLabel sizeToFit];
     tipLabel.numberOfLines = 0;
+    [tipLabel sizeToFit];
+
     
     tipView.frame = CGRectMake(0, 0, tipLabel.frame.size.width + kRatioWidth(40), tipLabel.frame.size.height + kRatioHeight(10));
     tipView.center = CGPointMake(KScreenWidth/2, KScreenHeight - kRatioHeight(167 * 0.5 + 40));
@@ -44,7 +45,7 @@
     tipView.layer.cornerRadius = tipView.frame.size.height/2.0;
     tipView.layer.shadowColor = RGBA(0, 0, 0, 0.2).CGColor;
     tipView.layer.shadowOffset = CGSizeMake(0, 2);
-    tipView.layer.shadowRadius = 6;
+    tipView.layer.shadowRadius = 8;
     tipView.layer.shadowOpacity = 1.0;
     UIBezierPath *extensionPath = [UIBezierPath bezierPathWithRect:tipView.bounds];
     tipView.layer.shadowPath = extensionPath.CGPath;

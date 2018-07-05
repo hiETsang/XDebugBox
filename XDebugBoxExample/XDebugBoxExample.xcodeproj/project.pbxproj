@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,8 +109,6 @@
 		7132457020EE08B000120AEF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				713DE56E20E09AAD00CECD42 /* ViewController.h */,
-				713DE56F20E09AAD00CECD42 /* ViewController.m */,
 				7132457120EE0C1000120AEF /* AnimationTestController.h */,
 				7132457220EE0C1000120AEF /* AnimationTestController.m */,
 				7132457420EE13FE00120AEF /* JumpTestController.h */,
@@ -145,6 +143,8 @@
 				713DE56C20E09AAD00CECD42 /* AppDelegate.m */,
 				714C59B220E919B900A74CEB /* XDebugBoxExampleConfig.h */,
 				714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */,
+				713DE56E20E09AAD00CECD42 /* ViewController.h */,
+				713DE56F20E09AAD00CECD42 /* ViewController.m */,
 				713DE57120E09AAD00CECD42 /* Main.storyboard */,
 				713DE57420E09AAF00CECD42 /* Assets.xcassets */,
 				713DE57620E09AAF00CECD42 /* LaunchScreen.storyboard */,
@@ -270,11 +270,13 @@
 				TargetAttributes = {
 					713DE56720E09AAD00CECD42 = {
 						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 62J9RVU398;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 713DE56320E09AAD00CECD42 /* Build configuration list for PBXProject "XDebugBoxExample" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -478,10 +480,7 @@
 				DEVELOPMENT_TEAM = 62J9RVU398;
 				INFOPLIST_FILE = XDebugBoxExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = canoe.XDebugBoxExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,10 +495,7 @@
 				DEVELOPMENT_TEAM = 62J9RVU398;
 				INFOPLIST_FILE = XDebugBoxExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = canoe.XDebugBoxExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

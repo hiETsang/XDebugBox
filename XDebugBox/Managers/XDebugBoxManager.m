@@ -63,7 +63,10 @@ static XDebugBoxManager * _instance;
 
 - (NSArray *)normalArray
 {
-    return [XDebugNormalDataManager arrayFormSandBox];
+    if (!_normalArray) {
+        _normalArray = [XDebugNormalDataManager arrayFormSandBox];
+    }
+    return _normalArray;
 }
 
 #pragma mark - configDebugBox

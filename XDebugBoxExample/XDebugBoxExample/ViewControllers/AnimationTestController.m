@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"AnimationTestController";
+    self.view.backgroundColor = [UIColor whiteColor];
     self.testView = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0 - 50, 100, 100, 100)];
     self.testView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.testView];

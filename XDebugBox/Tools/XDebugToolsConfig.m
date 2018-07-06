@@ -16,6 +16,7 @@
 #import "XAnimationSpeedController.h"
 #import "XDebugBoxTipView.h"
 #import "XClearCache.h"
+#import "XHttpRecordController.h"
 
 NSString *const kNormalTitle = @"titleStr";
 NSString *const kNormalDetail = @"detailStr";
@@ -54,6 +55,11 @@ NSString *const kNormalMethodName = @"methodName";
                 kNormalAutoClose:@(0),
                 kNormalMethodName:@"changeAnimationSpeed:"
                 },
+              @{kNormalTitle:@"网络请求记录",
+                kNormalDetail:@"查看app的网络请求历史记录",
+                kNormalAutoClose:@(0),
+                kNormalMethodName:@"httpRecord:"
+                },
               @{kNormalTitle:@"缓存清理",
                 kNormalDetail:@"清理沙盒路径Cache文件夹中的缓存文件",
                 kNormalAutoClose:@(0),
@@ -85,6 +91,12 @@ NSString *const kNormalMethodName = @"methodName";
 {
     XAnimationSpeedController *vc = [[XAnimationSpeedController alloc] init];
     vc.title = @"调整全局动画速度";
+    [viewController.navigationController pushViewController:vc animated:YES];
+}
+
+//网络请求记录
+- (void)httpRecord:(XDebugViewController *)viewController {
+    XHttpRecordController *vc = [[XHttpRecordController alloc] init];
     [viewController.navigationController pushViewController:vc animated:YES];
 }
 

@@ -31,11 +31,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationBar.barTintColor = nil;
+    
     [self.navigationBar setShadowImage:nil];
     [self.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.translucent = YES;
+    self.navigationBar.tintColor = RGB(55, 55, 55);
+    self.navigationBar.barTintColor = nil;
+    
+    NSMutableDictionary * titleAttr = [NSMutableDictionary dictionary];
+    titleAttr[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
+    titleAttr[NSForegroundColorAttributeName] = RGB(50, 50, 50);
+    self.navigationBar.titleTextAttributes = titleAttr;
+    
+    NSMutableDictionary * atts = [NSMutableDictionary dictionary];
+    atts[NSFontAttributeName] = [UIFont boldSystemFontOfSize:14];
+    atts[NSForegroundColorAttributeName] = RGB(55, 55, 55);
+    [self.navigationItem.backBarButtonItem setTitleTextAttributes:atts forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,13 +55,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		711DB19120EA2E7F0034E6A3 /* XDebugNormalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DB19020EA2E7F0034E6A3 /* XDebugNormalDataManager.m */; };
-		711DB19420EA312C0034E6A3 /* XDebugToolsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */; };
-		712841DE20EBA61D00E8CBEA /* XAnimationSpeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */; };
-		712FDBD720EB4B6100E37B10 /* XAnimationSpeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */; };
-		7132456C20EDCBD000120AEF /* XDebugBoxTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */; };
-		7132456F20EE023F00120AEF /* XClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132456E20EE023F00120AEF /* XClearCache.m */; };
 		7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457220EE0C1000120AEF /* AnimationTestController.m */; };
 		7132457720EE13FE00120AEF /* JumpTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457520EE13FE00120AEF /* JumpTestController.m */; };
 		7132457820EE13FE00120AEF /* JumpTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132457620EE13FE00120AEF /* JumpTestController.xib */; };
@@ -22,42 +16,41 @@
 		713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57420E09AAF00CECD42 /* Assets.xcassets */; };
 		713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57620E09AAF00CECD42 /* LaunchScreen.storyboard */; };
 		713DE57B20E09AAF00CECD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE57A20E09AAF00CECD42 /* main.m */; };
-		713DE58620E09F5000CECD42 /* XSuspendedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58520E09F5000CECD42 /* XSuspendedButton.m */; };
-		713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58820E09FAF00CECD42 /* XDebugContainerWindow.m */; };
-		713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */; };
-		713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */; };
-		713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */; };
 		714C59B420E919B900A74CEB /* XDebugBoxExampleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */; };
-		7160C95520E3AA0200A5A9DD /* XDebugBox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7160C95420E3AA0200A5A9DD /* XDebugBox.xcassets */; };
-		7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */; };
-		7173E46620E4D57100AFB048 /* XDebugBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7173E46520E4D57100AFB048 /* XDebugBoxManager.m */; };
-		7173E46B20E4D97400AFB048 /* XDebugBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 7173E46A20E4D97400AFB048 /* XDebugBox.m */; };
-		719ECB3E20EF7D5600851F71 /* NSURLResponse+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB2E20EF7D5600851F71 /* NSURLResponse+Data.m */; };
-		719ECB3F20EF7D5600851F71 /* XHttpRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB2F20EF7D5600851F71 /* XHttpRecordController.m */; };
-		719ECB4020EF7D5600851F71 /* NSURLSessionTask+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB3020EF7D5600851F71 /* NSURLSessionTask+Swizzling.m */; };
-		719ECB4120EF7D5600851F71 /* JxbHttpProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB3120EF7D5600851F71 /* JxbHttpProtocol.m */; };
-		719ECB4220EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB3220EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */; };
-		719ECB4320EF7D5600851F71 /* NSURLRequest+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB3420EF7D5600851F71 /* NSURLRequest+Identify.m */; };
-		719ECB4420EF7D5600851F71 /* NSURLSessionTask+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB3520EF7D5600851F71 /* NSURLSessionTask+Data.m */; };
-		719ECB4520EF7D5600851F71 /* JxbHttpDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ECB3C20EF7D5600851F71 /* JxbHttpDatasource.m */; };
-		71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */; };
-		71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344120E60602001B55FD /* XDebugCollectionView.m */; };
-		71A1344520E60A35001B55FD /* XDebugCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */; };
-		71A1345020E63905001B55FD /* XDebugDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1344F20E63905001B55FD /* XDebugDataModel.m */; };
+		716E66C520F0917A0069E970 /* XDebugToolsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668420F0917A0069E970 /* XDebugToolsConfig.m */; };
+		716E66C620F0917A0069E970 /* XAnimationSpeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668620F0917A0069E970 /* XAnimationSpeedController.m */; };
+		716E66C720F0917A0069E970 /* NSURLResponse+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668820F0917A0069E970 /* NSURLResponse+Data.m */; };
+		716E66C820F0917A0069E970 /* XHttpRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668920F0917A0069E970 /* XHttpRecordController.m */; };
+		716E66C920F0917A0069E970 /* NSURLSessionTask+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668A20F0917A0069E970 /* NSURLSessionTask+Swizzling.m */; };
+		716E66CA20F0917A0069E970 /* JxbHttpProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668B20F0917A0069E970 /* JxbHttpProtocol.m */; };
+		716E66CB20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668D20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */; };
+		716E66CC20F0917A0069E970 /* NSURLRequest+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668F20F0917A0069E970 /* NSURLRequest+Identify.m */; };
+		716E66CD20F0917A0069E970 /* XHttpRecordDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669020F0917A0069E970 /* XHttpRecordDetailController.m */; };
+		716E66CE20F0917A0069E970 /* XHttpContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669120F0917A0069E970 /* XHttpContentController.m */; };
+		716E66CF20F0917A0069E970 /* NSURLSessionTask+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669220F0917A0069E970 /* NSURLSessionTask+Data.m */; };
+		716E66D020F0917A0069E970 /* XHttpResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669720F0917A0069E970 /* XHttpResponseController.m */; };
+		716E66D120F0917A0069E970 /* JxbHttpDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669A20F0917A0069E970 /* JxbHttpDatasource.m */; };
+		716E66D220F0917A0069E970 /* XClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669E20F0917A0069E970 /* XClearCache.m */; };
+		716E66D320F0917A0069E970 /* XAnimationSpeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */; };
+		716E66D420F0917A0069E970 /* XDebugWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66A620F0917A0069E970 /* XDebugWindowManager.m */; };
+		716E66D520F0917A0069E970 /* XDebugNormalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66A720F0917A0069E970 /* XDebugNormalDataManager.m */; };
+		716E66D620F0917A0069E970 /* XDebugBoxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66A820F0917A0069E970 /* XDebugBoxManager.m */; };
+		716E66D720F0917A0069E970 /* XDebugBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66A920F0917A0069E970 /* XDebugBox.m */; };
+		716E66D820F0917A0069E970 /* XSuspendedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66AC20F0917A0069E970 /* XSuspendedButton.m */; };
+		716E66D920F0917A0069E970 /* XRemoveSuspendedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66AD20F0917A0069E970 /* XRemoveSuspendedView.m */; };
+		716E66DA20F0917A0069E970 /* XDebugSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66B020F0917A0069E970 /* XDebugSwitchView.m */; };
+		716E66DB20F0917A0069E970 /* XDebugDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66B320F0917A0069E970 /* XDebugDataModel.m */; };
+		716E66DC20F0917A0069E970 /* XDebugCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66B420F0917A0069E970 /* XDebugCollectionView.m */; };
+		716E66DD20F0917A0069E970 /* XDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66B520F0917A0069E970 /* XDebugViewController.m */; };
+		716E66DE20F0917A0069E970 /* XDebugCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66B820F0917A0069E970 /* XDebugCollectionViewCell.m */; };
+		716E66DF20F0917A0069E970 /* XDebugContainerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66BB20F0917A0069E970 /* XDebugContainerWindow.m */; };
+		716E66E020F0917A0069E970 /* XDebugBoxTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66BC20F0917A0069E970 /* XDebugBoxTipView.m */; };
+		716E66E120F0917A0069E970 /* XDebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66BF20F0917A0069E970 /* XDebugNavigationController.m */; };
+		716E66E220F0917A0069E970 /* XSuspendedButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66C120F0917A0069E970 /* XSuspendedButtonController.m */; };
+		716E66E320F0917A0069E970 /* XDebugBox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716E66C420F0917A0069E970 /* XDebugBox.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		711DB18F20EA2E7F0034E6A3 /* XDebugNormalDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugNormalDataManager.h; sourceTree = "<group>"; };
-		711DB19020EA2E7F0034E6A3 /* XDebugNormalDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugNormalDataManager.m; sourceTree = "<group>"; };
-		711DB19220EA312C0034E6A3 /* XDebugToolsConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugToolsConfig.h; sourceTree = "<group>"; };
-		711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugToolsConfig.m; sourceTree = "<group>"; };
-		712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XAnimationSpeedController.xib; sourceTree = "<group>"; };
-		712FDBD520EB4B6100E37B10 /* XAnimationSpeedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAnimationSpeedController.h; sourceTree = "<group>"; };
-		712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAnimationSpeedController.m; sourceTree = "<group>"; };
-		7132456A20EDCBD000120AEF /* XDebugBoxTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugBoxTipView.h; sourceTree = "<group>"; };
-		7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxTipView.m; sourceTree = "<group>"; };
-		7132456D20EE023F00120AEF /* XClearCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XClearCache.h; sourceTree = "<group>"; };
-		7132456E20EE023F00120AEF /* XClearCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XClearCache.m; sourceTree = "<group>"; };
 		7132457120EE0C1000120AEF /* AnimationTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationTestController.h; sourceTree = "<group>"; };
 		7132457220EE0C1000120AEF /* AnimationTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationTestController.m; sourceTree = "<group>"; };
 		7132457420EE13FE00120AEF /* JumpTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpTestController.h; sourceTree = "<group>"; };
@@ -73,50 +66,69 @@
 		713DE57720E09AAF00CECD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		713DE57920E09AAF00CECD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		713DE57A20E09AAF00CECD42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		713DE58420E09F5000CECD42 /* XSuspendedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSuspendedButton.h; sourceTree = "<group>"; };
-		713DE58520E09F5000CECD42 /* XSuspendedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSuspendedButton.m; sourceTree = "<group>"; };
-		713DE58720E09FAF00CECD42 /* XDebugContainerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugContainerWindow.h; sourceTree = "<group>"; };
-		713DE58820E09FAF00CECD42 /* XDebugContainerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugContainerWindow.m; sourceTree = "<group>"; };
-		713DE58A20E0BF9E00CECD42 /* XDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugViewController.h; sourceTree = "<group>"; };
-		713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugViewController.m; sourceTree = "<group>"; };
-		713DE58D20E0C0A100CECD42 /* XRemoveSuspendedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemoveSuspendedView.h; sourceTree = "<group>"; };
-		713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemoveSuspendedView.m; sourceTree = "<group>"; };
-		713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugWindowManager.h; sourceTree = "<group>"; };
-		713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugWindowManager.m; sourceTree = "<group>"; };
 		714C59B220E919B900A74CEB /* XDebugBoxExampleConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugBoxExampleConfig.h; sourceTree = "<group>"; };
 		714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxExampleConfig.m; sourceTree = "<group>"; };
-		7160C95420E3AA0200A5A9DD /* XDebugBox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XDebugBox.xcassets; sourceTree = "<group>"; };
-		7173E45E20E48A9400AFB048 /* XDebugNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugNavigationController.h; sourceTree = "<group>"; };
-		7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugNavigationController.m; sourceTree = "<group>"; };
-		7173E46420E4D57100AFB048 /* XDebugBoxManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugBoxManager.h; sourceTree = "<group>"; };
-		7173E46520E4D57100AFB048 /* XDebugBoxManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxManager.m; sourceTree = "<group>"; };
-		7173E46920E4D97400AFB048 /* XDebugBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugBox.h; sourceTree = "<group>"; };
-		7173E46A20E4D97400AFB048 /* XDebugBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugBox.m; sourceTree = "<group>"; };
-		719ECB2E20EF7D5600851F71 /* NSURLResponse+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+Data.m"; sourceTree = "<group>"; };
-		719ECB2F20EF7D5600851F71 /* XHttpRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpRecordController.m; sourceTree = "<group>"; };
-		719ECB3020EF7D5600851F71 /* NSURLSessionTask+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Swizzling.m"; sourceTree = "<group>"; };
-		719ECB3120EF7D5600851F71 /* JxbHttpProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpProtocol.m; sourceTree = "<group>"; };
-		719ECB3220EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m; sourceTree = "<group>"; };
-		719ECB3320EF7D5600851F71 /* JxbHttpDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpDatasource.h; sourceTree = "<group>"; };
-		719ECB3420EF7D5600851F71 /* NSURLRequest+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Identify.m"; sourceTree = "<group>"; };
-		719ECB3520EF7D5600851F71 /* NSURLSessionTask+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Data.m"; sourceTree = "<group>"; };
-		719ECB3620EF7D5600851F71 /* NSURLSessionTask+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Swizzling.h"; sourceTree = "<group>"; };
-		719ECB3720EF7D5600851F71 /* XHttpRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpRecordController.h; sourceTree = "<group>"; };
-		719ECB3820EF7D5600851F71 /* NSURLResponse+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Data.h"; sourceTree = "<group>"; };
-		719ECB3920EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h; sourceTree = "<group>"; };
-		719ECB3A20EF7D5600851F71 /* JxbHttpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpProtocol.h; sourceTree = "<group>"; };
-		719ECB3B20EF7D5600851F71 /* NSURLRequest+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Identify.h"; sourceTree = "<group>"; };
-		719ECB3C20EF7D5600851F71 /* JxbHttpDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpDatasource.m; sourceTree = "<group>"; };
-		719ECB3D20EF7D5600851F71 /* NSURLSessionTask+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Data.h"; sourceTree = "<group>"; };
-		71A1343C20E5DD04001B55FD /* XDebugSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugSwitchView.h; sourceTree = "<group>"; };
-		71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugSwitchView.m; sourceTree = "<group>"; };
-		71A1343F20E5DE8C001B55FD /* XMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMacros.h; sourceTree = "<group>"; };
-		71A1344020E60602001B55FD /* XDebugCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionView.h; sourceTree = "<group>"; };
-		71A1344120E60602001B55FD /* XDebugCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionView.m; sourceTree = "<group>"; };
-		71A1344320E60A35001B55FD /* XDebugCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionViewCell.h; sourceTree = "<group>"; };
-		71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionViewCell.m; sourceTree = "<group>"; };
-		71A1344E20E63905001B55FD /* XDebugDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugDataModel.h; sourceTree = "<group>"; };
-		71A1344F20E63905001B55FD /* XDebugDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugDataModel.m; sourceTree = "<group>"; };
+		716E668220F0917A0069E970 /* XDebugBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugBox.h; sourceTree = "<group>"; };
+		716E668420F0917A0069E970 /* XDebugToolsConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugToolsConfig.m; sourceTree = "<group>"; };
+		716E668520F0917A0069E970 /* XClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XClearCache.h; sourceTree = "<group>"; };
+		716E668620F0917A0069E970 /* XAnimationSpeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimationSpeedController.m; sourceTree = "<group>"; };
+		716E668820F0917A0069E970 /* NSURLResponse+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+Data.m"; sourceTree = "<group>"; };
+		716E668920F0917A0069E970 /* XHttpRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpRecordController.m; sourceTree = "<group>"; };
+		716E668A20F0917A0069E970 /* NSURLSessionTask+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Swizzling.m"; sourceTree = "<group>"; };
+		716E668B20F0917A0069E970 /* JxbHttpProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpProtocol.m; sourceTree = "<group>"; };
+		716E668C20F0917A0069E970 /* XHttpResponseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpResponseController.h; sourceTree = "<group>"; };
+		716E668D20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m; sourceTree = "<group>"; };
+		716E668E20F0917A0069E970 /* JxbHttpDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpDatasource.h; sourceTree = "<group>"; };
+		716E668F20F0917A0069E970 /* NSURLRequest+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Identify.m"; sourceTree = "<group>"; };
+		716E669020F0917A0069E970 /* XHttpRecordDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpRecordDetailController.m; sourceTree = "<group>"; };
+		716E669120F0917A0069E970 /* XHttpContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpContentController.m; sourceTree = "<group>"; };
+		716E669220F0917A0069E970 /* NSURLSessionTask+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Data.m"; sourceTree = "<group>"; };
+		716E669320F0917A0069E970 /* NSURLSessionTask+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Swizzling.h"; sourceTree = "<group>"; };
+		716E669420F0917A0069E970 /* XHttpRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpRecordController.h; sourceTree = "<group>"; };
+		716E669520F0917A0069E970 /* NSURLResponse+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Data.h"; sourceTree = "<group>"; };
+		716E669620F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h; sourceTree = "<group>"; };
+		716E669720F0917A0069E970 /* XHttpResponseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpResponseController.m; sourceTree = "<group>"; };
+		716E669820F0917A0069E970 /* JxbHttpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpProtocol.h; sourceTree = "<group>"; };
+		716E669920F0917A0069E970 /* NSURLRequest+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Identify.h"; sourceTree = "<group>"; };
+		716E669A20F0917A0069E970 /* JxbHttpDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpDatasource.m; sourceTree = "<group>"; };
+		716E669B20F0917A0069E970 /* NSURLSessionTask+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Data.h"; sourceTree = "<group>"; };
+		716E669C20F0917A0069E970 /* XHttpContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpContentController.h; sourceTree = "<group>"; };
+		716E669D20F0917A0069E970 /* XHttpRecordDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpRecordDetailController.h; sourceTree = "<group>"; };
+		716E669E20F0917A0069E970 /* XClearCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XClearCache.m; sourceTree = "<group>"; };
+		716E669F20F0917A0069E970 /* XDebugToolsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugToolsConfig.h; sourceTree = "<group>"; };
+		716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XAnimationSpeedController.xib; sourceTree = "<group>"; };
+		716E66A120F0917A0069E970 /* XAnimationSpeedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimationSpeedController.h; sourceTree = "<group>"; };
+		716E66A320F0917A0069E970 /* XDebugBoxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugBoxManager.h; sourceTree = "<group>"; };
+		716E66A420F0917A0069E970 /* XDebugNormalDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugNormalDataManager.h; sourceTree = "<group>"; };
+		716E66A520F0917A0069E970 /* XDebugWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugWindowManager.h; sourceTree = "<group>"; };
+		716E66A620F0917A0069E970 /* XDebugWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugWindowManager.m; sourceTree = "<group>"; };
+		716E66A720F0917A0069E970 /* XDebugNormalDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugNormalDataManager.m; sourceTree = "<group>"; };
+		716E66A820F0917A0069E970 /* XDebugBoxManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxManager.m; sourceTree = "<group>"; };
+		716E66A920F0917A0069E970 /* XDebugBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugBox.m; sourceTree = "<group>"; };
+		716E66AB20F0917A0069E970 /* XDebugBoxTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugBoxTipView.h; sourceTree = "<group>"; };
+		716E66AC20F0917A0069E970 /* XSuspendedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSuspendedButton.m; sourceTree = "<group>"; };
+		716E66AD20F0917A0069E970 /* XRemoveSuspendedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRemoveSuspendedView.m; sourceTree = "<group>"; };
+		716E66AE20F0917A0069E970 /* XDebugNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugNavigationController.h; sourceTree = "<group>"; };
+		716E66B020F0917A0069E970 /* XDebugSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugSwitchView.m; sourceTree = "<group>"; };
+		716E66B120F0917A0069E970 /* XDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugViewController.h; sourceTree = "<group>"; };
+		716E66B220F0917A0069E970 /* XDebugCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionViewCell.h; sourceTree = "<group>"; };
+		716E66B320F0917A0069E970 /* XDebugDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugDataModel.m; sourceTree = "<group>"; };
+		716E66B420F0917A0069E970 /* XDebugCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionView.m; sourceTree = "<group>"; };
+		716E66B520F0917A0069E970 /* XDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugViewController.m; sourceTree = "<group>"; };
+		716E66B620F0917A0069E970 /* XDebugSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugSwitchView.h; sourceTree = "<group>"; };
+		716E66B720F0917A0069E970 /* XDebugDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugDataModel.h; sourceTree = "<group>"; };
+		716E66B820F0917A0069E970 /* XDebugCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugCollectionViewCell.m; sourceTree = "<group>"; };
+		716E66B920F0917A0069E970 /* XDebugCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugCollectionView.h; sourceTree = "<group>"; };
+		716E66BA20F0917A0069E970 /* XSuspendedButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSuspendedButtonController.h; sourceTree = "<group>"; };
+		716E66BB20F0917A0069E970 /* XDebugContainerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugContainerWindow.m; sourceTree = "<group>"; };
+		716E66BC20F0917A0069E970 /* XDebugBoxTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxTipView.m; sourceTree = "<group>"; };
+		716E66BD20F0917A0069E970 /* XRemoveSuspendedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRemoveSuspendedView.h; sourceTree = "<group>"; };
+		716E66BE20F0917A0069E970 /* XSuspendedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSuspendedButton.h; sourceTree = "<group>"; };
+		716E66BF20F0917A0069E970 /* XDebugNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugNavigationController.m; sourceTree = "<group>"; };
+		716E66C020F0917A0069E970 /* XDebugContainerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugContainerWindow.h; sourceTree = "<group>"; };
+		716E66C120F0917A0069E970 /* XSuspendedButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSuspendedButtonController.m; sourceTree = "<group>"; };
+		716E66C320F0917A0069E970 /* XMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMacros.h; sourceTree = "<group>"; };
+		716E66C420F0917A0069E970 /* XDebugBox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XDebugBox.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +157,7 @@
 		713DE55F20E09AAD00CECD42 = {
 			isa = PBXGroup;
 			children = (
-				713DE58120E09ABD00CECD42 /* XDebugBox */,
+				716E668120F0917A0069E970 /* XDebugBox */,
 				713DE56A20E09AAD00CECD42 /* XDebugBoxExample */,
 				713DE56920E09AAD00CECD42 /* Products */,
 			);
@@ -178,113 +190,120 @@
 			path = XDebugBoxExample;
 			sourceTree = "<group>";
 		};
-		713DE58120E09ABD00CECD42 /* XDebugBox */ = {
+		716E668120F0917A0069E970 /* XDebugBox */ = {
 			isa = PBXGroup;
 			children = (
-				7173E46920E4D97400AFB048 /* XDebugBox.h */,
-				7173E46A20E4D97400AFB048 /* XDebugBox.m */,
-				7173E46820E4D92700AFB048 /* Managers */,
-				7173E46720E4D8F700AFB048 /* Controls */,
-				7160C95320E3AA0200A5A9DD /* Sources */,
-				713DE58220E09ABD00CECD42 /* Tools */,
+				716E668220F0917A0069E970 /* XDebugBox.h */,
+				716E66A920F0917A0069E970 /* XDebugBox.m */,
+				716E66AA20F0917A0069E970 /* Controls */,
+				716E66A220F0917A0069E970 /* Managers */,
+				716E66C220F0917A0069E970 /* Sources */,
+				716E668320F0917A0069E970 /* Tools */,
 			);
-			name = XDebugBox;
-			path = ../XDebugBox;
+			path = XDebugBox;
 			sourceTree = "<group>";
 		};
-		713DE58220E09ABD00CECD42 /* Tools */ = {
+		716E668320F0917A0069E970 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				719ECB2D20EF7D5600851F71 /* XHttpRecord */,
-				711DB19220EA312C0034E6A3 /* XDebugToolsConfig.h */,
-				711DB19320EA312C0034E6A3 /* XDebugToolsConfig.m */,
-				712FDBD520EB4B6100E37B10 /* XAnimationSpeedController.h */,
-				712FDBD620EB4B6100E37B10 /* XAnimationSpeedController.m */,
-				712841DD20EBA61D00E8CBEA /* XAnimationSpeedController.xib */,
-				7132456D20EE023F00120AEF /* XClearCache.h */,
-				7132456E20EE023F00120AEF /* XClearCache.m */,
+				716E66A120F0917A0069E970 /* XAnimationSpeedController.h */,
+				716E668620F0917A0069E970 /* XAnimationSpeedController.m */,
+				716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */,
+				716E668520F0917A0069E970 /* XClearCache.h */,
+				716E669E20F0917A0069E970 /* XClearCache.m */,
+				716E669F20F0917A0069E970 /* XDebugToolsConfig.h */,
+				716E668420F0917A0069E970 /* XDebugToolsConfig.m */,
+				716E668720F0917A0069E970 /* XHttpRecord */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		7160C95320E3AA0200A5A9DD /* Sources */ = {
+		716E668720F0917A0069E970 /* XHttpRecord */ = {
 			isa = PBXGroup;
 			children = (
-				71A1343F20E5DE8C001B55FD /* XMacros.h */,
-				7160C95420E3AA0200A5A9DD /* XDebugBox.xcassets */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		7173E46720E4D8F700AFB048 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				71A1343B20E5DCD3001B55FD /* XDebugViewController */,
-				713DE58420E09F5000CECD42 /* XSuspendedButton.h */,
-				713DE58520E09F5000CECD42 /* XSuspendedButton.m */,
-				713DE58720E09FAF00CECD42 /* XDebugContainerWindow.h */,
-				713DE58820E09FAF00CECD42 /* XDebugContainerWindow.m */,
-				713DE58D20E0C0A100CECD42 /* XRemoveSuspendedView.h */,
-				713DE58E20E0C0A100CECD42 /* XRemoveSuspendedView.m */,
-				7173E45E20E48A9400AFB048 /* XDebugNavigationController.h */,
-				7173E45F20E48A9400AFB048 /* XDebugNavigationController.m */,
-				7132456A20EDCBD000120AEF /* XDebugBoxTipView.h */,
-				7132456B20EDCBD000120AEF /* XDebugBoxTipView.m */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
-		7173E46820E4D92700AFB048 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				7173E46420E4D57100AFB048 /* XDebugBoxManager.h */,
-				7173E46520E4D57100AFB048 /* XDebugBoxManager.m */,
-				713DE59020E0C46A00CECD42 /* XDebugWindowManager.h */,
-				713DE59120E0C46A00CECD42 /* XDebugWindowManager.m */,
-				711DB18F20EA2E7F0034E6A3 /* XDebugNormalDataManager.h */,
-				711DB19020EA2E7F0034E6A3 /* XDebugNormalDataManager.m */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		719ECB2D20EF7D5600851F71 /* XHttpRecord */ = {
-			isa = PBXGroup;
-			children = (
-				719ECB2E20EF7D5600851F71 /* NSURLResponse+Data.m */,
-				719ECB2F20EF7D5600851F71 /* XHttpRecordController.m */,
-				719ECB3020EF7D5600851F71 /* NSURLSessionTask+Swizzling.m */,
-				719ECB3120EF7D5600851F71 /* JxbHttpProtocol.m */,
-				719ECB3220EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */,
-				719ECB3320EF7D5600851F71 /* JxbHttpDatasource.h */,
-				719ECB3420EF7D5600851F71 /* NSURLRequest+Identify.m */,
-				719ECB3520EF7D5600851F71 /* NSURLSessionTask+Data.m */,
-				719ECB3620EF7D5600851F71 /* NSURLSessionTask+Swizzling.h */,
-				719ECB3720EF7D5600851F71 /* XHttpRecordController.h */,
-				719ECB3820EF7D5600851F71 /* NSURLResponse+Data.h */,
-				719ECB3920EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */,
-				719ECB3A20EF7D5600851F71 /* JxbHttpProtocol.h */,
-				719ECB3B20EF7D5600851F71 /* NSURLRequest+Identify.h */,
-				719ECB3C20EF7D5600851F71 /* JxbHttpDatasource.m */,
-				719ECB3D20EF7D5600851F71 /* NSURLSessionTask+Data.h */,
+				716E668E20F0917A0069E970 /* JxbHttpDatasource.h */,
+				716E669A20F0917A0069E970 /* JxbHttpDatasource.m */,
+				716E669820F0917A0069E970 /* JxbHttpProtocol.h */,
+				716E668B20F0917A0069E970 /* JxbHttpProtocol.m */,
+				716E669620F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */,
+				716E668D20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */,
+				716E669920F0917A0069E970 /* NSURLRequest+Identify.h */,
+				716E668F20F0917A0069E970 /* NSURLRequest+Identify.m */,
+				716E669520F0917A0069E970 /* NSURLResponse+Data.h */,
+				716E668820F0917A0069E970 /* NSURLResponse+Data.m */,
+				716E669B20F0917A0069E970 /* NSURLSessionTask+Data.h */,
+				716E669220F0917A0069E970 /* NSURLSessionTask+Data.m */,
+				716E669320F0917A0069E970 /* NSURLSessionTask+Swizzling.h */,
+				716E668A20F0917A0069E970 /* NSURLSessionTask+Swizzling.m */,
+				716E669C20F0917A0069E970 /* XHttpContentController.h */,
+				716E669120F0917A0069E970 /* XHttpContentController.m */,
+				716E669420F0917A0069E970 /* XHttpRecordController.h */,
+				716E668920F0917A0069E970 /* XHttpRecordController.m */,
+				716E669D20F0917A0069E970 /* XHttpRecordDetailController.h */,
+				716E669020F0917A0069E970 /* XHttpRecordDetailController.m */,
+				716E668C20F0917A0069E970 /* XHttpResponseController.h */,
+				716E669720F0917A0069E970 /* XHttpResponseController.m */,
 			);
 			path = XHttpRecord;
 			sourceTree = "<group>";
 		};
-		71A1343B20E5DCD3001B55FD /* XDebugViewController */ = {
+		716E66A220F0917A0069E970 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				713DE58A20E0BF9E00CECD42 /* XDebugViewController.h */,
-				713DE58B20E0BF9E00CECD42 /* XDebugViewController.m */,
-				71A1343C20E5DD04001B55FD /* XDebugSwitchView.h */,
-				71A1343D20E5DD04001B55FD /* XDebugSwitchView.m */,
-				71A1344020E60602001B55FD /* XDebugCollectionView.h */,
-				71A1344120E60602001B55FD /* XDebugCollectionView.m */,
-				71A1344320E60A35001B55FD /* XDebugCollectionViewCell.h */,
-				71A1344420E60A35001B55FD /* XDebugCollectionViewCell.m */,
-				71A1344E20E63905001B55FD /* XDebugDataModel.h */,
-				71A1344F20E63905001B55FD /* XDebugDataModel.m */,
+				716E66A320F0917A0069E970 /* XDebugBoxManager.h */,
+				716E66A820F0917A0069E970 /* XDebugBoxManager.m */,
+				716E66A420F0917A0069E970 /* XDebugNormalDataManager.h */,
+				716E66A720F0917A0069E970 /* XDebugNormalDataManager.m */,
+				716E66A520F0917A0069E970 /* XDebugWindowManager.h */,
+				716E66A620F0917A0069E970 /* XDebugWindowManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		716E66AA20F0917A0069E970 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				716E66AF20F0917A0069E970 /* XDebugViewController */,
+				716E66AB20F0917A0069E970 /* XDebugBoxTipView.h */,
+				716E66BC20F0917A0069E970 /* XDebugBoxTipView.m */,
+				716E66C020F0917A0069E970 /* XDebugContainerWindow.h */,
+				716E66BB20F0917A0069E970 /* XDebugContainerWindow.m */,
+				716E66AE20F0917A0069E970 /* XDebugNavigationController.h */,
+				716E66BF20F0917A0069E970 /* XDebugNavigationController.m */,
+				716E66BD20F0917A0069E970 /* XRemoveSuspendedView.h */,
+				716E66AD20F0917A0069E970 /* XRemoveSuspendedView.m */,
+				716E66BE20F0917A0069E970 /* XSuspendedButton.h */,
+				716E66AC20F0917A0069E970 /* XSuspendedButton.m */,
+				716E66BA20F0917A0069E970 /* XSuspendedButtonController.h */,
+				716E66C120F0917A0069E970 /* XSuspendedButtonController.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		716E66AF20F0917A0069E970 /* XDebugViewController */ = {
+			isa = PBXGroup;
+			children = (
+				716E66B920F0917A0069E970 /* XDebugCollectionView.h */,
+				716E66B420F0917A0069E970 /* XDebugCollectionView.m */,
+				716E66B220F0917A0069E970 /* XDebugCollectionViewCell.h */,
+				716E66B820F0917A0069E970 /* XDebugCollectionViewCell.m */,
+				716E66B720F0917A0069E970 /* XDebugDataModel.h */,
+				716E66B320F0917A0069E970 /* XDebugDataModel.m */,
+				716E66B620F0917A0069E970 /* XDebugSwitchView.h */,
+				716E66B020F0917A0069E970 /* XDebugSwitchView.m */,
+				716E66B120F0917A0069E970 /* XDebugViewController.h */,
+				716E66B520F0917A0069E970 /* XDebugViewController.m */,
 			);
 			path = XDebugViewController;
+			sourceTree = "<group>";
+		};
+		716E66C220F0917A0069E970 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				716E66C320F0917A0069E970 /* XMacros.h */,
+				716E66C420F0917A0069E970 /* XDebugBox.xcassets */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,9 +367,9 @@
 			files = (
 				713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */,
 				7132457820EE13FE00120AEF /* JumpTestController.xib in Resources */,
+				716E66E320F0917A0069E970 /* XDebugBox.xcassets in Resources */,
 				713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */,
-				7160C95520E3AA0200A5A9DD /* XDebugBox.xcassets in Resources */,
-				712841DE20EBA61D00E8CBEA /* XAnimationSpeedController.xib in Resources */,
+				716E66D320F0917A0069E970 /* XAnimationSpeedController.xib in Resources */,
 				713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,37 +381,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				713DE58620E09F5000CECD42 /* XSuspendedButton.m in Sources */,
 				713DE57020E09AAD00CECD42 /* ViewController.m in Sources */,
-				713DE59220E0C46A00CECD42 /* XDebugWindowManager.m in Sources */,
 				7132457720EE13FE00120AEF /* JumpTestController.m in Sources */,
-				711DB19420EA312C0034E6A3 /* XDebugToolsConfig.m in Sources */,
-				713DE58920E09FAF00CECD42 /* XDebugContainerWindow.m in Sources */,
-				71A1344220E60602001B55FD /* XDebugCollectionView.m in Sources */,
-				7173E46020E48A9400AFB048 /* XDebugNavigationController.m in Sources */,
-				71A1345020E63905001B55FD /* XDebugDataModel.m in Sources */,
-				719ECB4520EF7D5600851F71 /* JxbHttpDatasource.m in Sources */,
+				716E66C520F0917A0069E970 /* XDebugToolsConfig.m in Sources */,
+				716E66C620F0917A0069E970 /* XAnimationSpeedController.m in Sources */,
 				7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */,
-				71A1343E20E5DD04001B55FD /* XDebugSwitchView.m in Sources */,
-				7132456F20EE023F00120AEF /* XClearCache.m in Sources */,
-				719ECB4120EF7D5600851F71 /* JxbHttpProtocol.m in Sources */,
+				716E66CF20F0917A0069E970 /* NSURLSessionTask+Data.m in Sources */,
 				714C59B420E919B900A74CEB /* XDebugBoxExampleConfig.m in Sources */,
-				719ECB4220EF7D5600851F71 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */,
-				713DE58C20E0BF9E00CECD42 /* XDebugViewController.m in Sources */,
-				7173E46B20E4D97400AFB048 /* XDebugBox.m in Sources */,
-				719ECB3E20EF7D5600851F71 /* NSURLResponse+Data.m in Sources */,
-				7173E46620E4D57100AFB048 /* XDebugBoxManager.m in Sources */,
+				716E66D020F0917A0069E970 /* XHttpResponseController.m in Sources */,
+				716E66D620F0917A0069E970 /* XDebugBoxManager.m in Sources */,
+				716E66D920F0917A0069E970 /* XRemoveSuspendedView.m in Sources */,
+				716E66D420F0917A0069E970 /* XDebugWindowManager.m in Sources */,
+				716E66D820F0917A0069E970 /* XSuspendedButton.m in Sources */,
+				716E66E120F0917A0069E970 /* XDebugNavigationController.m in Sources */,
+				716E66DF20F0917A0069E970 /* XDebugContainerWindow.m in Sources */,
+				716E66CA20F0917A0069E970 /* JxbHttpProtocol.m in Sources */,
+				716E66CD20F0917A0069E970 /* XHttpRecordDetailController.m in Sources */,
+				716E66C920F0917A0069E970 /* NSURLSessionTask+Swizzling.m in Sources */,
+				716E66C720F0917A0069E970 /* NSURLResponse+Data.m in Sources */,
+				716E66D520F0917A0069E970 /* XDebugNormalDataManager.m in Sources */,
+				716E66E220F0917A0069E970 /* XSuspendedButtonController.m in Sources */,
+				716E66DA20F0917A0069E970 /* XDebugSwitchView.m in Sources */,
+				716E66CE20F0917A0069E970 /* XHttpContentController.m in Sources */,
+				716E66C820F0917A0069E970 /* XHttpRecordController.m in Sources */,
+				716E66CB20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */,
+				716E66DD20F0917A0069E970 /* XDebugViewController.m in Sources */,
+				716E66E020F0917A0069E970 /* XDebugBoxTipView.m in Sources */,
+				716E66D120F0917A0069E970 /* JxbHttpDatasource.m in Sources */,
 				713DE57B20E09AAF00CECD42 /* main.m in Sources */,
-				719ECB4020EF7D5600851F71 /* NSURLSessionTask+Swizzling.m in Sources */,
-				712FDBD720EB4B6100E37B10 /* XAnimationSpeedController.m in Sources */,
-				71A1344520E60A35001B55FD /* XDebugCollectionViewCell.m in Sources */,
-				711DB19120EA2E7F0034E6A3 /* XDebugNormalDataManager.m in Sources */,
-				7132456C20EDCBD000120AEF /* XDebugBoxTipView.m in Sources */,
-				719ECB3F20EF7D5600851F71 /* XHttpRecordController.m in Sources */,
-				719ECB4420EF7D5600851F71 /* NSURLSessionTask+Data.m in Sources */,
-				719ECB4320EF7D5600851F71 /* NSURLRequest+Identify.m in Sources */,
+				716E66CC20F0917A0069E970 /* NSURLRequest+Identify.m in Sources */,
 				713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */,
-				713DE58F20E0C0A100CECD42 /* XRemoveSuspendedView.m in Sources */,
+				716E66DE20F0917A0069E970 /* XDebugCollectionViewCell.m in Sources */,
+				716E66D720F0917A0069E970 /* XDebugBox.m in Sources */,
+				716E66DC20F0917A0069E970 /* XDebugCollectionView.m in Sources */,
+				716E66DB20F0917A0069E970 /* XDebugDataModel.m in Sources */,
+				716E66D220F0917A0069E970 /* XClearCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import "XHttpRecordController.h"
 #import "JxbHttpDatasource.h"
+#import "XHttpRecordDetailController.h"
+#import "XMacros.h"
 
 @interface XHttpRecordController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -80,7 +82,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:18];
+        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:17];
         cell.textLabel.textColor = RGB(255, 83, 77);
         cell.detailTextLabel.textColor = [UIColor darkGrayColor];
         cell.detailTextLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:12];
@@ -94,6 +96,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    XHttpRecordDetailController *vc = [[XHttpRecordDetailController alloc] init];
+    vc.detail = [self.dataArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

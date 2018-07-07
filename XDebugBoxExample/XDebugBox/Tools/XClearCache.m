@@ -75,7 +75,10 @@
     for (NSString *subPath in subPathArr)
     {
         filePath = [path stringByAppendingPathComponent:subPath];
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+        if (![filePath containsString:@"/Caches/Snapshots"]) {
+            //删除子文件夹
+            [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+        }
         if (error) {
             NSLog(@"缓存清理失败，file路径 ---------> %@",filePath);
             return NO;

@@ -188,8 +188,7 @@ NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 
 - (void)dealloc
 {
-    [[XDebugBoxManager shared] removeObserver:self forKeyPath:@"extensionArray"];
-    [[XDebugBoxManager shared] removeObserver:self forKeyPath:@"normalArray"];
+    
 }
 
 - (void)didReceiveMemoryWarning {

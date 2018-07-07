@@ -9,6 +9,7 @@
 #import "XSuspendedButton.h"
 #import "XDebugWindowManager.h"
 #import "XDebugContainerWindow.h"
+#import "XSuspendedButtonController.h"
 
 #define kSuspendedButtonWidth 65.0
 #define kStayProportion (8/kSuspendedButtonWidth)
@@ -65,7 +66,7 @@
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     
     XDebugContainerWindow *window = [[XDebugContainerWindow alloc] initWithFrame:self.frame];
-    window.rootViewController = [[UIViewController alloc] init];
+    window.rootViewController = [[XSuspendedButtonController alloc] init];
     [window makeKeyAndVisible];
     [currentWindow makeKeyWindow];
     

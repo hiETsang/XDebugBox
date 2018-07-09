@@ -74,11 +74,9 @@ static XDebugBoxManager * _instance;
 
 + (void)openDebugBox
 {
-#if DEBUG
     [[XDebugBoxManager shared] configDebugBox];
     //开启网络监控
     [XNetworkObserver setEnabled:YES];
-#endif
 }
 
 - (void)configDebugBox
@@ -107,11 +105,10 @@ static XDebugBoxManager * _instance;
         self.debugController = nil;
         _normalArray = nil;
         _extensionArray = nil;
+        [XNetworkObserver setEnabled:NO];
+        [XDebugNormalDataManager sharedDelloc];
+        [XDebugWindowManager sharedDelloc];
     }
-    
-    [XNetworkObserver setEnabled:NO];
-    [XDebugNormalDataManager sharedDelloc];
-    [XDebugWindowManager sharedDelloc];
 }
 
 #pragma mark - suspendedButtonDelegate

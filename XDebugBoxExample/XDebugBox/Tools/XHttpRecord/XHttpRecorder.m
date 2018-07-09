@@ -81,13 +81,6 @@ NSString *const kXHttpRecorderTransactionsClearedNotification = @"kXHttpRecorder
     return defaultRecorder;
 }
 
-//-(void)setLimitCount:(NSUInteger)limitCount
-//{
-//    _limitCount = limitCount;
-//
-//    while (self.httpArray.count > limitCount) [self.httpArray removeLastObject];
-//}
-
 - (void)clear {
     @synchronized(self.httpArray) {
         [self.httpArray removeAllObjects];

@@ -19,7 +19,6 @@
     id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     if ([NSJSONSerialization isValidJSONObject:jsonObject]) {
         prettyString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:jsonObject options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding];
-        // NSJSONSerialization escapes forward slashes. We want pretty json, so run through and unescape the slashes.
         prettyString = [prettyString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
     } else {
         prettyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -82,12 +81,12 @@ NSString *const kXHttpRecorderTransactionsClearedNotification = @"kXHttpRecorder
     return defaultRecorder;
 }
 
--(void)setLimitCount:(NSUInteger)limitCount
-{
-    _limitCount = limitCount;
-    
-    while (self.httpArray.count > limitCount) [self.httpArray removeLastObject];
-}
+//-(void)setLimitCount:(NSUInteger)limitCount
+//{
+//    _limitCount = limitCount;
+//
+//    while (self.httpArray.count > limitCount) [self.httpArray removeLastObject];
+//}
 
 - (void)clear {
     @synchronized(self.httpArray) {

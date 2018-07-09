@@ -45,9 +45,6 @@ extern NSString *const kXHttpRecorderTransactionsClearedNotification;
 
 - (void)clear;
 
-//最大缓存数量,默认不限制
-@property (nonatomic, assign) NSUInteger limitCount;
-
 @property (nonatomic,strong,readonly) NSMutableArray<XHttpModel *> *httpArray;
 
 // Recording network activity

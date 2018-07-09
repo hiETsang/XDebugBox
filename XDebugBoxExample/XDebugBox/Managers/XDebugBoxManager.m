@@ -105,12 +105,13 @@ static XDebugBoxManager * _instance;
         self.suspendedView = nil;
         self.suspendedButton = nil;
         self.debugController = nil;
-        self.normalArray = nil;
-        self.extensionArray = nil;
+        _normalArray = nil;
+        _extensionArray = nil;
     }
     
-    [XNetworkObserver setEnabled:YES];
-    
+    [XNetworkObserver setEnabled:NO];
+    [XDebugNormalDataManager sharedDelloc];
+    [XDebugWindowManager sharedDelloc];
 }
 
 #pragma mark - suspendedButtonDelegate

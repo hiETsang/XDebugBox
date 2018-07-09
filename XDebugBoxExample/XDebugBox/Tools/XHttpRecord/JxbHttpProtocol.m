@@ -32,10 +32,10 @@
 }
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
-    if (![request.URL.scheme isEqualToString:@"http"] &&
-        ![request.URL.scheme isEqualToString:@"https"]) {
-        return NO;
-    }
+//    if (![request.URL.scheme isEqualToString:@"http"] &&
+//        ![request.URL.scheme isEqualToString:@"https"]) {
+//        return NO;
+//    }
     
     if ([NSURLProtocol propertyForKey:myProtocolKey inRequest:request] ) {
         return NO;

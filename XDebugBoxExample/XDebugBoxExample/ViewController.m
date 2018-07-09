@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AnimationTestController.h"
 #import "JumpTestController.h"
+#import "NetworkTestController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -30,7 +31,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.dataArray = @[@"AniamtionTest",@"JumpTest"];
+    self.dataArray = @[@"AniamtionTest",@"JumpTest",@"NetworkTest"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -52,7 +53,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.textLabel.text = self.dataArray[indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:@"PingFangSC-Ultralight" size:14];
+    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
     return cell;
 }
 
@@ -71,11 +72,15 @@
             viewController = [[JumpTestController alloc]init];
         }
             break;
-            
+        case 2:
+        {
+            viewController = [[NetworkTestController alloc]init];
+        }
+            break;
         default:
+            viewController = [[UIViewController alloc]init];
             break;
     }
-    if (!viewController) return;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

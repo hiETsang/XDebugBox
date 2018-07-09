@@ -7,7 +7,7 @@
 //
 
 #import "XHttpRecordController.h"
-#import "JxbHttpDatasource.h"
+#import "XHttpRecorder.h"
 #import "XHttpRecordDetailController.h"
 #import "XMacros.h"
 
@@ -20,6 +20,17 @@
 @end
 
 @implementation XHttpRecordController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadHttp) name:kXHttpRecorderNewTransactionNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadHttp) name:kXHttpRecorderTransactionUpdatedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadHttp) name:kXHttpRecorderTransactionsClearedNotification object:nil];
+    }
+    return self;
+}
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -42,10 +53,9 @@
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [[UIView alloc]init];
     
     [self reloadHttp];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadHttp) name:kNotifyKeyReloadHttp object:nil];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -54,13 +64,11 @@
 }
 
 - (void)clearAction {
-    [[JxbHttpDatasource shareInstance] clear];
-    self.dataArray = nil;
-    [self.tableView reloadData];
+    [[XHttpRecorder defaultRecorder] clear];
 }
 
 - (void)reloadHttp {
-    self.dataArray = [[[JxbHttpDatasource shareInstance] httpArray] copy];
+    self.dataArray = [[[XHttpRecorder defaultRecorder] httpArray] copy];
     [self.tableView reloadData];
 }
 
@@ -87,7 +95,7 @@
         cell.detailTextLabel.textColor = [UIColor darkGrayColor];
         cell.detailTextLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:12];
     }
-    JxbHttpModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    XHttpModel *model = [self.dataArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [model.method stringByAppendingString:[NSString stringWithFormat:@": %@",model.url.host]];
     cell.detailTextLabel.text = model.url.path;
 

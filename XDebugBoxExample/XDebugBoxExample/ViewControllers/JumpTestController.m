@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"JumpTestController";
+    self.title = NSStringFromClass(self.class);
     // Do any additional setup after loading the view from its nib.
 }
 

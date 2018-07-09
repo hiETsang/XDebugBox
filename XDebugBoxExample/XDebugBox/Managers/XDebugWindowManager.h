@@ -13,6 +13,8 @@
 
 + (instancetype)shared;
 
++ (void)sharedDelloc;
+
 + (UIWindow *)windowForkey:(NSString *)key;
 
 + (void)saveWindow:(UIWindow *)window ForKey:(NSString *)key;

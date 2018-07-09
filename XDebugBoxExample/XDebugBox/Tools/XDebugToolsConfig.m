@@ -16,6 +16,7 @@
 #import "XAnimationSpeedController.h"
 #import "XDebugBoxTipView.h"
 #import "XClearCache.h"
+#import "XCurrentControllerClass.h"
 #import "XHttpRecordController.h"
 
 NSString *const kNormalTitle = @"titleStr";
@@ -63,7 +64,12 @@ NSString *const kNormalMethodName = @"methodName";
               @{kNormalTitle:@"缓存清理",
                 kNormalDetail:@"清理沙盒路径Cache文件夹中的缓存文件",
                 kNormalAutoClose:@(0),
-                kNormalMethodName:@"ClearCache:"
+                kNormalMethodName:@"clearCache:"
+                },
+              @{kNormalTitle:@"当前页的类名",
+                kNormalDetail:@"获取当前正显示的ViewController的类名",
+                kNormalAutoClose:@(0),
+                kNormalMethodName:@"currentViewController:"
                 },
               @{kNormalTitle:@"刷新通用工具列表",
                 kNormalDetail:@"清理本地的plist，重新加载通用方法数组",
@@ -101,7 +107,7 @@ NSString *const kNormalMethodName = @"methodName";
 }
 
 //清理缓存
-- (void)ClearCache:(XDebugViewController *)viewController
+- (void)clearCache:(XDebugViewController *)viewController
 {
     NSString *size = [XClearCache getCacheSize];
     if ([XClearCache cleanAppCache]) {
@@ -110,6 +116,11 @@ NSString *const kNormalMethodName = @"methodName";
     {
         [XDebugBoxTipView showTip:@"缓存清理失败\n请查看控制台输出的路径"];
     }
+}
+
+//当前页面的类名
+- (void)currentViewController:(XDebugViewController *)viewController {
+    [XDebugBoxTipView showTip:NSStringFromClass([XCurrentControllerClass currentViewController].class)];
 }
 
 //刷新通用方法列表

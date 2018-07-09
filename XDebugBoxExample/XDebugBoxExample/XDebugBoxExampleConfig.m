@@ -25,9 +25,6 @@
     }],
        [XDebugDataModel debugModelWithTitle:@"跳转页面" detail:@"跳到JumpTestViewController" autoClose:YES action:^(UIViewController *debugController){
         [self jumpToViewController:[[JumpTestController alloc] init]];
-    }],
-       [XDebugDataModel debugModelWithTitle:@"当前页面Class" detail:@"显示当前的ViewController" autoClose:NO action:^(UIViewController *debugController){
-        [XDebugBox showTip:NSStringFromClass([self currentViewController].class)];
     }]
        ]];
 }

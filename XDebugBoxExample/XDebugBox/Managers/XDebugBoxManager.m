@@ -13,6 +13,7 @@
 #import "XRemoveSuspendedView.h"
 #import "XDebugViewController.h"
 #import "XSuspendedButton.h"
+#import "XNetworkObserver.h"
 
 static XDebugBoxManager * _instance;
 
@@ -75,6 +76,8 @@ static XDebugBoxManager * _instance;
 {
 #if DEBUG
     [[XDebugBoxManager shared] configDebugBox];
+    //开启网络监控
+    [XNetworkObserver setEnabled:YES];
 #endif
 }
 
@@ -105,6 +108,9 @@ static XDebugBoxManager * _instance;
         self.normalArray = nil;
         self.extensionArray = nil;
     }
+    
+    [XNetworkObserver setEnabled:YES];
+    
 }
 
 #pragma mark - suspendedButtonDelegate

@@ -12,6 +12,8 @@
 
 + (instancetype)shared;
 
++ (void)sharedDelloc;
+
 /**
  获取通用数组
 

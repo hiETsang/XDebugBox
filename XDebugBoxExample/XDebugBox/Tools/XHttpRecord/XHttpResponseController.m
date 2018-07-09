@@ -7,7 +7,7 @@
 //
 
 #import "XHttpResponseController.h"
-#import "JxbHttpDatasource.h"
+#import "XHttpRecorder.h"
 #import "XDebugBoxTipView.h"
 #import "XMacros.h"
 
@@ -46,7 +46,7 @@
     [self.textView setEditable:NO];
     self.textView.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
     self.textView.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
-    self.textView.text = [JxbHttpDatasource prettyJSONStringFromData:self.data];
+    self.textView.text = [XHttpModel prettyJSONStringFromData:self.data];
     
     [self.view addSubview:self.textView];
     
@@ -67,8 +67,9 @@
     
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:14],
                                  NSParagraphStyleAttributeName : style};
-    CGRect r = [[JxbHttpDatasource prettyJSONStringFromData:self.data] boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
+    CGRect r = [[XHttpModel prettyJSONStringFromData:self.data] boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
     self.textView.contentSize = CGSizeMake(self.view.bounds.size.width, r.size.height);
+    [self.textView layoutIfNeeded];
 }
 
 - (void)copyContent {

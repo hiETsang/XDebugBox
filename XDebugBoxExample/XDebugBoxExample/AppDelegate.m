@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "XDebugBoxExampleConfig.h"
+//#import <FLEX/FLEX.h>
 
 @interface AppDelegate ()
 
@@ -25,6 +26,9 @@
     
     XDebugBoxExampleConfig *config = [[XDebugBoxExampleConfig alloc] init];
     [config configDebugBox];
+    
+//    [[FLEXManager sharedManager] showExplorer];
+//    [[FLEXManager sharedManager] setNetworkDebuggingEnabled:YES];
 
     return YES;
 }

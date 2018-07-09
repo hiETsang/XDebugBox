@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		711413D620F0955B002F76E7 /* NetworkTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711413D520F0955B002F76E7 /* NetworkTestController.m */; };
+		712A97A420F10407000C57FE /* XNetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 712A97A320F10407000C57FE /* XNetworkObserver.m */; };
 		7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457220EE0C1000120AEF /* AnimationTestController.m */; };
 		7132457720EE13FE00120AEF /* JumpTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132457520EE13FE00120AEF /* JumpTestController.m */; };
 		7132457820EE13FE00120AEF /* JumpTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132457620EE13FE00120AEF /* JumpTestController.xib */; };
@@ -19,17 +21,10 @@
 		714C59B420E919B900A74CEB /* XDebugBoxExampleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */; };
 		716E66C520F0917A0069E970 /* XDebugToolsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668420F0917A0069E970 /* XDebugToolsConfig.m */; };
 		716E66C620F0917A0069E970 /* XAnimationSpeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668620F0917A0069E970 /* XAnimationSpeedController.m */; };
-		716E66C720F0917A0069E970 /* NSURLResponse+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668820F0917A0069E970 /* NSURLResponse+Data.m */; };
 		716E66C820F0917A0069E970 /* XHttpRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668920F0917A0069E970 /* XHttpRecordController.m */; };
-		716E66C920F0917A0069E970 /* NSURLSessionTask+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668A20F0917A0069E970 /* NSURLSessionTask+Swizzling.m */; };
-		716E66CA20F0917A0069E970 /* JxbHttpProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668B20F0917A0069E970 /* JxbHttpProtocol.m */; };
-		716E66CB20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668D20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */; };
-		716E66CC20F0917A0069E970 /* NSURLRequest+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668F20F0917A0069E970 /* NSURLRequest+Identify.m */; };
 		716E66CD20F0917A0069E970 /* XHttpRecordDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669020F0917A0069E970 /* XHttpRecordDetailController.m */; };
 		716E66CE20F0917A0069E970 /* XHttpContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669120F0917A0069E970 /* XHttpContentController.m */; };
-		716E66CF20F0917A0069E970 /* NSURLSessionTask+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669220F0917A0069E970 /* NSURLSessionTask+Data.m */; };
 		716E66D020F0917A0069E970 /* XHttpResponseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669720F0917A0069E970 /* XHttpResponseController.m */; };
-		716E66D120F0917A0069E970 /* JxbHttpDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669A20F0917A0069E970 /* JxbHttpDatasource.m */; };
 		716E66D220F0917A0069E970 /* XClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E669E20F0917A0069E970 /* XClearCache.m */; };
 		716E66D320F0917A0069E970 /* XAnimationSpeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */; };
 		716E66D420F0917A0069E970 /* XDebugWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66A620F0917A0069E970 /* XDebugWindowManager.m */; };
@@ -48,9 +43,17 @@
 		716E66E120F0917A0069E970 /* XDebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66BF20F0917A0069E970 /* XDebugNavigationController.m */; };
 		716E66E220F0917A0069E970 /* XSuspendedButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66C120F0917A0069E970 /* XSuspendedButtonController.m */; };
 		716E66E320F0917A0069E970 /* XDebugBox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716E66C420F0917A0069E970 /* XDebugBox.xcassets */; };
+		7193CC4C20F2077A00164EE4 /* XHttpRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193CC4B20F2077A00164EE4 /* XHttpRecorder.m */; };
+		7193CC5220F25A6300164EE4 /* XCurrentControllerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193CC5120F25A6300164EE4 /* XCurrentControllerClass.m */; };
+		CE9F26123C6504A6FAE5C52F /* libPods-XDebugBoxExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AAFF3F7F4BC115154698CF /* libPods-XDebugBoxExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12D43887ABDCC76407BA9AB1 /* Pods-XDebugBoxExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDebugBoxExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-XDebugBoxExample/Pods-XDebugBoxExample.release.xcconfig"; sourceTree = "<group>"; };
+		711413D420F0955B002F76E7 /* NetworkTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkTestController.h; sourceTree = "<group>"; };
+		711413D520F0955B002F76E7 /* NetworkTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkTestController.m; sourceTree = "<group>"; };
+		712A97A220F10407000C57FE /* XNetworkObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNetworkObserver.h; sourceTree = "<group>"; };
+		712A97A320F10407000C57FE /* XNetworkObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNetworkObserver.m; sourceTree = "<group>"; };
 		7132457120EE0C1000120AEF /* AnimationTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationTestController.h; sourceTree = "<group>"; };
 		7132457220EE0C1000120AEF /* AnimationTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationTestController.m; sourceTree = "<group>"; };
 		7132457420EE13FE00120AEF /* JumpTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpTestController.h; sourceTree = "<group>"; };
@@ -72,26 +75,12 @@
 		716E668420F0917A0069E970 /* XDebugToolsConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugToolsConfig.m; sourceTree = "<group>"; };
 		716E668520F0917A0069E970 /* XClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XClearCache.h; sourceTree = "<group>"; };
 		716E668620F0917A0069E970 /* XAnimationSpeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimationSpeedController.m; sourceTree = "<group>"; };
-		716E668820F0917A0069E970 /* NSURLResponse+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+Data.m"; sourceTree = "<group>"; };
 		716E668920F0917A0069E970 /* XHttpRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpRecordController.m; sourceTree = "<group>"; };
-		716E668A20F0917A0069E970 /* NSURLSessionTask+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Swizzling.m"; sourceTree = "<group>"; };
-		716E668B20F0917A0069E970 /* JxbHttpProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpProtocol.m; sourceTree = "<group>"; };
 		716E668C20F0917A0069E970 /* XHttpResponseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpResponseController.h; sourceTree = "<group>"; };
-		716E668D20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m; sourceTree = "<group>"; };
-		716E668E20F0917A0069E970 /* JxbHttpDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpDatasource.h; sourceTree = "<group>"; };
-		716E668F20F0917A0069E970 /* NSURLRequest+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Identify.m"; sourceTree = "<group>"; };
 		716E669020F0917A0069E970 /* XHttpRecordDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpRecordDetailController.m; sourceTree = "<group>"; };
 		716E669120F0917A0069E970 /* XHttpContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpContentController.m; sourceTree = "<group>"; };
-		716E669220F0917A0069E970 /* NSURLSessionTask+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Data.m"; sourceTree = "<group>"; };
-		716E669320F0917A0069E970 /* NSURLSessionTask+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Swizzling.h"; sourceTree = "<group>"; };
 		716E669420F0917A0069E970 /* XHttpRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpRecordController.h; sourceTree = "<group>"; };
-		716E669520F0917A0069E970 /* NSURLResponse+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Data.h"; sourceTree = "<group>"; };
-		716E669620F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h; sourceTree = "<group>"; };
 		716E669720F0917A0069E970 /* XHttpResponseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHttpResponseController.m; sourceTree = "<group>"; };
-		716E669820F0917A0069E970 /* JxbHttpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpProtocol.h; sourceTree = "<group>"; };
-		716E669920F0917A0069E970 /* NSURLRequest+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Identify.h"; sourceTree = "<group>"; };
-		716E669A20F0917A0069E970 /* JxbHttpDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpDatasource.m; sourceTree = "<group>"; };
-		716E669B20F0917A0069E970 /* NSURLSessionTask+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Data.h"; sourceTree = "<group>"; };
 		716E669C20F0917A0069E970 /* XHttpContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpContentController.h; sourceTree = "<group>"; };
 		716E669D20F0917A0069E970 /* XHttpRecordDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHttpRecordDetailController.h; sourceTree = "<group>"; };
 		716E669E20F0917A0069E970 /* XClearCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XClearCache.m; sourceTree = "<group>"; };
@@ -129,6 +118,12 @@
 		716E66C120F0917A0069E970 /* XSuspendedButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSuspendedButtonController.m; sourceTree = "<group>"; };
 		716E66C320F0917A0069E970 /* XMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMacros.h; sourceTree = "<group>"; };
 		716E66C420F0917A0069E970 /* XDebugBox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XDebugBox.xcassets; sourceTree = "<group>"; };
+		7193CC4A20F2077A00164EE4 /* XHttpRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHttpRecorder.h; sourceTree = "<group>"; };
+		7193CC4B20F2077A00164EE4 /* XHttpRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHttpRecorder.m; sourceTree = "<group>"; };
+		7193CC5020F25A6300164EE4 /* XCurrentControllerClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCurrentControllerClass.h; sourceTree = "<group>"; };
+		7193CC5120F25A6300164EE4 /* XCurrentControllerClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCurrentControllerClass.m; sourceTree = "<group>"; };
+		91AAFF3F7F4BC115154698CF /* libPods-XDebugBoxExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XDebugBoxExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9D0EE000F7B69285C39EE7 /* Pods-XDebugBoxExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDebugBoxExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XDebugBoxExample/Pods-XDebugBoxExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +131,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9F26123C6504A6FAE5C52F /* libPods-XDebugBoxExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2940A8F4D02A612E7DE7BC84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF9D0EE000F7B69285C39EE7 /* Pods-XDebugBoxExample.debug.xcconfig */,
+				12D43887ABDCC76407BA9AB1 /* Pods-XDebugBoxExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		43E6AAA15E2CE72DA7A8BD49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91AAFF3F7F4BC115154698CF /* libPods-XDebugBoxExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7132457020EE08B000120AEF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,8 @@
 				7132457420EE13FE00120AEF /* JumpTestController.h */,
 				7132457520EE13FE00120AEF /* JumpTestController.m */,
 				7132457620EE13FE00120AEF /* JumpTestController.xib */,
+				711413D420F0955B002F76E7 /* NetworkTestController.h */,
+				711413D520F0955B002F76E7 /* NetworkTestController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,6 +175,8 @@
 				716E668120F0917A0069E970 /* XDebugBox */,
 				713DE56A20E09AAD00CECD42 /* XDebugBoxExample */,
 				713DE56920E09AAD00CECD42 /* Products */,
+				2940A8F4D02A612E7DE7BC84 /* Pods */,
+				43E6AAA15E2CE72DA7A8BD49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,13 +223,11 @@
 		716E668320F0917A0069E970 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				716E66A120F0917A0069E970 /* XAnimationSpeedController.h */,
-				716E668620F0917A0069E970 /* XAnimationSpeedController.m */,
-				716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */,
-				716E668520F0917A0069E970 /* XClearCache.h */,
-				716E669E20F0917A0069E970 /* XClearCache.m */,
 				716E669F20F0917A0069E970 /* XDebugToolsConfig.h */,
 				716E668420F0917A0069E970 /* XDebugToolsConfig.m */,
+				7193CC4F20F25A0900164EE4 /* XCurrentControllerClass */,
+				7193CC4E20F2595600164EE4 /* XClearCache */,
+				7193CC4D20F2594600164EE4 /* XAnimationSpeed */,
 				716E668720F0917A0069E970 /* XHttpRecord */,
 			);
 			path = Tools;
@@ -221,20 +236,10 @@
 		716E668720F0917A0069E970 /* XHttpRecord */ = {
 			isa = PBXGroup;
 			children = (
-				716E668E20F0917A0069E970 /* JxbHttpDatasource.h */,
-				716E669A20F0917A0069E970 /* JxbHttpDatasource.m */,
-				716E669820F0917A0069E970 /* JxbHttpProtocol.h */,
-				716E668B20F0917A0069E970 /* JxbHttpProtocol.m */,
-				716E669620F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */,
-				716E668D20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */,
-				716E669920F0917A0069E970 /* NSURLRequest+Identify.h */,
-				716E668F20F0917A0069E970 /* NSURLRequest+Identify.m */,
-				716E669520F0917A0069E970 /* NSURLResponse+Data.h */,
-				716E668820F0917A0069E970 /* NSURLResponse+Data.m */,
-				716E669B20F0917A0069E970 /* NSURLSessionTask+Data.h */,
-				716E669220F0917A0069E970 /* NSURLSessionTask+Data.m */,
-				716E669320F0917A0069E970 /* NSURLSessionTask+Swizzling.h */,
-				716E668A20F0917A0069E970 /* NSURLSessionTask+Swizzling.m */,
+				712A97A220F10407000C57FE /* XNetworkObserver.h */,
+				712A97A320F10407000C57FE /* XNetworkObserver.m */,
+				7193CC4A20F2077A00164EE4 /* XHttpRecorder.h */,
+				7193CC4B20F2077A00164EE4 /* XHttpRecorder.m */,
 				716E669C20F0917A0069E970 /* XHttpContentController.h */,
 				716E669120F0917A0069E970 /* XHttpContentController.m */,
 				716E669420F0917A0069E970 /* XHttpRecordController.h */,
@@ -306,6 +311,34 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		7193CC4D20F2594600164EE4 /* XAnimationSpeed */ = {
+			isa = PBXGroup;
+			children = (
+				716E66A120F0917A0069E970 /* XAnimationSpeedController.h */,
+				716E668620F0917A0069E970 /* XAnimationSpeedController.m */,
+				716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */,
+			);
+			path = XAnimationSpeed;
+			sourceTree = "<group>";
+		};
+		7193CC4E20F2595600164EE4 /* XClearCache */ = {
+			isa = PBXGroup;
+			children = (
+				716E668520F0917A0069E970 /* XClearCache.h */,
+				716E669E20F0917A0069E970 /* XClearCache.m */,
+			);
+			path = XClearCache;
+			sourceTree = "<group>";
+		};
+		7193CC4F20F25A0900164EE4 /* XCurrentControllerClass */ = {
+			isa = PBXGroup;
+			children = (
+				7193CC5020F25A6300164EE4 /* XCurrentControllerClass.h */,
+				7193CC5120F25A6300164EE4 /* XCurrentControllerClass.m */,
+			);
+			path = XCurrentControllerClass;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,9 +346,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 713DE57E20E09AAF00CECD42 /* Build configuration list for PBXNativeTarget "XDebugBoxExample" */;
 			buildPhases = (
+				2C6AA564D9ECC53A99CE6088 /* [CP] Check Pods Manifest.lock */,
 				713DE56420E09AAD00CECD42 /* Sources */,
 				713DE56520E09AAD00CECD42 /* Frameworks */,
 				713DE56620E09AAD00CECD42 /* Resources */,
+				B137F6DE811B2AA8D5099DDD /* [CP] Embed Pods Frameworks */,
+				C805A1DC28AE17AA7BCEAE38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,6 +412,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C6AA564D9ECC53A99CE6088 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XDebugBoxExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B137F6DE811B2AA8D5099DDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XDebugBoxExample/Pods-XDebugBoxExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C805A1DC28AE17AA7BCEAE38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XDebugBoxExample/Pods-XDebugBoxExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		713DE56420E09AAD00CECD42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -386,30 +473,27 @@
 				716E66C520F0917A0069E970 /* XDebugToolsConfig.m in Sources */,
 				716E66C620F0917A0069E970 /* XAnimationSpeedController.m in Sources */,
 				7132457320EE0C1000120AEF /* AnimationTestController.m in Sources */,
-				716E66CF20F0917A0069E970 /* NSURLSessionTask+Data.m in Sources */,
 				714C59B420E919B900A74CEB /* XDebugBoxExampleConfig.m in Sources */,
 				716E66D020F0917A0069E970 /* XHttpResponseController.m in Sources */,
 				716E66D620F0917A0069E970 /* XDebugBoxManager.m in Sources */,
 				716E66D920F0917A0069E970 /* XRemoveSuspendedView.m in Sources */,
+				7193CC5220F25A6300164EE4 /* XCurrentControllerClass.m in Sources */,
 				716E66D420F0917A0069E970 /* XDebugWindowManager.m in Sources */,
 				716E66D820F0917A0069E970 /* XSuspendedButton.m in Sources */,
 				716E66E120F0917A0069E970 /* XDebugNavigationController.m in Sources */,
 				716E66DF20F0917A0069E970 /* XDebugContainerWindow.m in Sources */,
-				716E66CA20F0917A0069E970 /* JxbHttpProtocol.m in Sources */,
 				716E66CD20F0917A0069E970 /* XHttpRecordDetailController.m in Sources */,
-				716E66C920F0917A0069E970 /* NSURLSessionTask+Swizzling.m in Sources */,
-				716E66C720F0917A0069E970 /* NSURLResponse+Data.m in Sources */,
+				711413D620F0955B002F76E7 /* NetworkTestController.m in Sources */,
 				716E66D520F0917A0069E970 /* XDebugNormalDataManager.m in Sources */,
 				716E66E220F0917A0069E970 /* XSuspendedButtonController.m in Sources */,
 				716E66DA20F0917A0069E970 /* XDebugSwitchView.m in Sources */,
 				716E66CE20F0917A0069E970 /* XHttpContentController.m in Sources */,
 				716E66C820F0917A0069E970 /* XHttpRecordController.m in Sources */,
-				716E66CB20F0917A0069E970 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */,
 				716E66DD20F0917A0069E970 /* XDebugViewController.m in Sources */,
 				716E66E020F0917A0069E970 /* XDebugBoxTipView.m in Sources */,
-				716E66D120F0917A0069E970 /* JxbHttpDatasource.m in Sources */,
+				712A97A420F10407000C57FE /* XNetworkObserver.m in Sources */,
+				7193CC4C20F2077A00164EE4 /* XHttpRecorder.m in Sources */,
 				713DE57B20E09AAF00CECD42 /* main.m in Sources */,
-				716E66CC20F0917A0069E970 /* NSURLRequest+Identify.m in Sources */,
 				713DE56D20E09AAD00CECD42 /* AppDelegate.m in Sources */,
 				716E66DE20F0917A0069E970 /* XDebugCollectionViewCell.m in Sources */,
 				716E66D720F0917A0069E970 /* XDebugBox.m in Sources */,
@@ -553,6 +637,7 @@
 		};
 		713DE57F20E09AAF00CECD42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF9D0EE000F7B69285C39EE7 /* Pods-XDebugBoxExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -568,6 +653,7 @@
 		};
 		713DE58020E09AAF00CECD42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12D43887ABDCC76407BA9AB1 /* Pods-XDebugBoxExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

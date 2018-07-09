@@ -14,6 +14,8 @@
 
 static XDebugNormalDataManager * _instance;
 
+static dispatch_once_t onceToken;
+
 @interface XDebugNormalDataManager ()
 
 @property(nonatomic, strong) XDebugToolsConfig *config;
@@ -25,7 +27,7 @@ static XDebugNormalDataManager * _instance;
 + (instancetype)shared
 {
     if (!_instance) {
-        static dispatch_once_t onceToken;
+
         dispatch_once(&onceToken, ^{
             _instance = [[self alloc] init];
         });
@@ -53,6 +55,12 @@ static XDebugNormalDataManager * _instance;
         _config = [[XDebugToolsConfig alloc] init];
     }
     return _config;
+}
+
++ (void)sharedDelloc
+{
+    onceToken = 0;
+    _instance = nil;
 }
 
 

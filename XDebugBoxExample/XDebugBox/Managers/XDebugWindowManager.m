@@ -10,6 +10,8 @@
 
 static XDebugWindowManager * _instance;
 
+static dispatch_once_t onceToken;
+
 @interface XDebugWindowManager ()
 
 @property(nonatomic, strong) NSMutableDictionary *windowsDict;
@@ -21,7 +23,6 @@ static XDebugWindowManager * _instance;
 + (instancetype)shared
 {
     if (!_instance) {
-        static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             _instance = [[self alloc] init];
         });
@@ -49,6 +50,12 @@ static XDebugWindowManager * _instance;
         _windowsDict = [NSMutableDictionary dictionary];
     }
     return _windowsDict;
+}
+
++ (void)sharedDelloc
+{
+    onceToken = 0;
+    _instance = nil;
 }
 
 #pragma mark - public method

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JxbHttpDatasource.h"
+#import "XHttpRecorder.h"
 
 @interface XHttpRecordDetailController : UIViewController
 
-@property (nonatomic,strong) JxbHttpModel *detail;
+@property (nonatomic,strong) XHttpModel *detail;
 
 @end

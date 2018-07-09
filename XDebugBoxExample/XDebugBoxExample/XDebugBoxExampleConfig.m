@@ -20,12 +20,14 @@
     
     //配置自定义的工具
     [XDebugBox configActionArray:
+     
      @[[XDebugDataModel debugModelWithTitle:@"自动登陆" detail:@"登陆账号176********" autoClose:YES action:^(UIViewController *debugController){
         NSLog(@"自动登录 ---------> ");
     }],
        [XDebugDataModel debugModelWithTitle:@"跳转页面" detail:@"跳到JumpTestViewController" autoClose:YES action:^(UIViewController *debugController){
         [self jumpToViewController:[[JumpTestController alloc] init]];
-    }]
+    }],
+       
        ]];
 }
 
@@ -46,10 +48,8 @@
 {
     UIViewController *topController = [[UIApplication sharedApplication].keyWindow rootViewController];
     
-    //  Getting topMost ViewController
     while ([topController presentedViewController])    topController = [topController presentedViewController];
     
-    //  Returning topMost ViewController
     return topController;
 }
 

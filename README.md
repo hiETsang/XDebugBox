@@ -1,7 +1,7 @@
 
 ![](https://github.com/hiETsang/XDebugBox/blob/master/XDebugBox.png)
 
-![](https://img.shields.io/badge/xcode-9.4-green.svg) ![](https://img.shields.io/travis/USER/REPO.svg) ![](https://img.shields.io/badge/platform-iOS-blue.svg)
+![](https://img.shields.io/badge/xcode-9.0-green.svg) ![](https://img.shields.io/badge/build-success-brightgreen.svg) ![](https://img.shields.io/badge/platform-iOS-blue.svg)
 
 XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具。对项目无侵入，配置简单，并且可以自定义项目开发需求，致力于减少一些开发过程中不必要且耗时的操作。
 

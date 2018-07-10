@@ -1,5 +1,3 @@
-# XDebugBox🔨
-
 
 ![](https://github.com/hiETsang/XDebugBox/blob/master/XDebugBox.png)
 
@@ -50,9 +48,12 @@ XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具�
 
 
 ## Getting Started
-1、导入头文件`#import "XDebugBox.h"`
-2、开启调试小圆点`[XDebugBox open];`
-3、配置自定义的快捷工具
+1. 导入头文件`#import "XDebugBox.h"`
+
+2. 开启调试小圆点`[XDebugBox open];`
+
+3. 配置自定义的快捷工具
+
 ```objective-c
 [XDebugBox configActionArray:
      

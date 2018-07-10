@@ -5,8 +5,11 @@ XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具�
 
 ## Screenshots
 ![](https://github.com/hiETsang/XDebugBox/blob/master/move.gif)
+
 ![](https://github.com/hiETsang/XDebugBox/blob/master/animation.gif)
+
 ![](https://github.com/hiETsang/XDebugBox/blob/master/cache.gif)
+
 ![](https://github.com/hiETsang/XDebugBox/blob/master/network.gif)
 
 

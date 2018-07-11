@@ -9,6 +9,7 @@
 #import "XRemoveSuspendedView.h"
 #import "XDebugWindowManager.h"
 #import "XDebugContainerWindow.h"
+#import "XMacros.h"
 
 #define kXAnimationKey @"XAnimationKey"
 #define kXShowAnimation @"XShowAnimation"
@@ -55,7 +56,7 @@
     [self.layer addSublayer:self.backLayer];
     
     CALayer *trashLayer = [CALayer layer];
-    trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"delete_close"].CGImage);
+    trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:kXDebugBoxSrcName(@"delete_close")?:kXDebugBoxFrameworkSrcName(@"delete_close")].CGImage);
     trashLayer.contentsGravity = kCAGravityResizeAspect;
     trashLayer.frame = CGRectMake(kXRemoveSuspendedViewWidth - 70, kXRemoveSuspendedViewWidth - 80, 30, 42);
     [self.backLayer addSublayer:trashLayer];
@@ -140,7 +141,7 @@
 {
     if (self.backLayer.lineWidth != 30) {
         self.backLayer.lineWidth = 30;
-        self.trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"delete"].CGImage);
+        self.trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:kXDebugBoxSrcName(@"delete")?:kXDebugBoxFrameworkSrcName(@"delete")].CGImage);
     }
 }
 
@@ -148,7 +149,7 @@
 {
     if (self.backLayer.lineWidth != 0) {
         self.backLayer.lineWidth = 0;
-        self.trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"delete_close"].CGImage);
+        self.trashLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:kXDebugBoxSrcName(@"delete_close")?:kXDebugBoxFrameworkSrcName(@"delete_close")].CGImage);
     }
 }
 

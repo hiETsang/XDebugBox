@@ -19,6 +19,7 @@
 		713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713DE57620E09AAF00CECD42 /* LaunchScreen.storyboard */; };
 		713DE57B20E09AAF00CECD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 713DE57A20E09AAF00CECD42 /* main.m */; };
 		714C59B420E919B900A74CEB /* XDebugBoxExampleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */; };
+		71689FE220F5D89200306417 /* XDebugBox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71689FE120F5D89200306417 /* XDebugBox.bundle */; };
 		716E66C520F0917A0069E970 /* XDebugToolsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668420F0917A0069E970 /* XDebugToolsConfig.m */; };
 		716E66C620F0917A0069E970 /* XAnimationSpeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668620F0917A0069E970 /* XAnimationSpeedController.m */; };
 		716E66C820F0917A0069E970 /* XHttpRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E668920F0917A0069E970 /* XHttpRecordController.m */; };
@@ -42,7 +43,6 @@
 		716E66E020F0917A0069E970 /* XDebugBoxTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66BC20F0917A0069E970 /* XDebugBoxTipView.m */; };
 		716E66E120F0917A0069E970 /* XDebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66BF20F0917A0069E970 /* XDebugNavigationController.m */; };
 		716E66E220F0917A0069E970 /* XSuspendedButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716E66C120F0917A0069E970 /* XSuspendedButtonController.m */; };
-		716E66E320F0917A0069E970 /* XDebugBox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716E66C420F0917A0069E970 /* XDebugBox.xcassets */; };
 		7193CC4C20F2077A00164EE4 /* XHttpRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193CC4B20F2077A00164EE4 /* XHttpRecorder.m */; };
 		7193CC5220F25A6300164EE4 /* XCurrentControllerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193CC5120F25A6300164EE4 /* XCurrentControllerClass.m */; };
 		CE9F26123C6504A6FAE5C52F /* libPods-XDebugBoxExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AAFF3F7F4BC115154698CF /* libPods-XDebugBoxExample.a */; };
@@ -71,6 +71,7 @@
 		713DE57A20E09AAF00CECD42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		714C59B220E919B900A74CEB /* XDebugBoxExampleConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDebugBoxExampleConfig.h; sourceTree = "<group>"; };
 		714C59B320E919B900A74CEB /* XDebugBoxExampleConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDebugBoxExampleConfig.m; sourceTree = "<group>"; };
+		71689FE120F5D89200306417 /* XDebugBox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XDebugBox.bundle; sourceTree = "<group>"; };
 		716E668220F0917A0069E970 /* XDebugBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugBox.h; sourceTree = "<group>"; };
 		716E668420F0917A0069E970 /* XDebugToolsConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDebugToolsConfig.m; sourceTree = "<group>"; };
 		716E668520F0917A0069E970 /* XClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XClearCache.h; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		716E66C020F0917A0069E970 /* XDebugContainerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDebugContainerWindow.h; sourceTree = "<group>"; };
 		716E66C120F0917A0069E970 /* XSuspendedButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSuspendedButtonController.m; sourceTree = "<group>"; };
 		716E66C320F0917A0069E970 /* XMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMacros.h; sourceTree = "<group>"; };
-		716E66C420F0917A0069E970 /* XDebugBox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XDebugBox.xcassets; sourceTree = "<group>"; };
 		7193CC4A20F2077A00164EE4 /* XHttpRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHttpRecorder.h; sourceTree = "<group>"; };
 		7193CC4B20F2077A00164EE4 /* XHttpRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHttpRecorder.m; sourceTree = "<group>"; };
 		7193CC5020F25A6300164EE4 /* XCurrentControllerClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCurrentControllerClass.h; sourceTree = "<group>"; };
@@ -268,6 +268,7 @@
 		716E66AA20F0917A0069E970 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				716E66C320F0917A0069E970 /* XMacros.h */,
 				716E66AF20F0917A0069E970 /* XDebugViewController */,
 				716E66AB20F0917A0069E970 /* XDebugBoxTipView.h */,
 				716E66BC20F0917A0069E970 /* XDebugBoxTipView.m */,
@@ -305,8 +306,8 @@
 		716E66C220F0917A0069E970 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				716E66C320F0917A0069E970 /* XMacros.h */,
-				716E66C420F0917A0069E970 /* XDebugBox.xcassets */,
+				716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */,
+				71689FE120F5D89200306417 /* XDebugBox.bundle */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -316,7 +317,6 @@
 			children = (
 				716E66A120F0917A0069E970 /* XAnimationSpeedController.h */,
 				716E668620F0917A0069E970 /* XAnimationSpeedController.m */,
-				716E66A020F0917A0069E970 /* XAnimationSpeedController.xib */,
 			);
 			path = XAnimationSpeed;
 			sourceTree = "<group>";
@@ -401,9 +401,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71689FE220F5D89200306417 /* XDebugBox.bundle in Resources */,
 				713DE57820E09AAF00CECD42 /* LaunchScreen.storyboard in Resources */,
 				7132457820EE13FE00120AEF /* JumpTestController.xib in Resources */,
-				716E66E320F0917A0069E970 /* XDebugBox.xcassets in Resources */,
 				713DE57520E09AAF00CECD42 /* Assets.xcassets in Resources */,
 				716E66D320F0917A0069E970 /* XAnimationSpeedController.xib in Resources */,
 				713DE57320E09AAD00CECD42 /* Main.storyboard in Resources */,

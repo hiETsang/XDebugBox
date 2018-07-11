@@ -10,6 +10,7 @@
 #import "XDebugWindowManager.h"
 #import "XDebugContainerWindow.h"
 #import "XSuspendedButtonController.h"
+#import "XMacros.h"
 
 #define kSuspendedButtonWidth 65.0
 #define kStayProportion (8/kSuspendedButtonWidth)
@@ -38,7 +39,7 @@
         self.layer.borderColor = [UIColor colorWithWhite:0.3 alpha:1].CGColor;
         self.layer.borderWidth = 8;
         self.layer.cornerRadius = kSuspendedButtonWidth/2.0;
-        [self setImage:[UIImage imageNamed:@"mainIcon"] forState:UIControlStateNormal];
+        [self setImage:[UIImage imageNamed:kXDebugBoxSrcName(@"mainIcon")?:kXDebugBoxFrameworkSrcName(@"mainIcon")] forState:UIControlStateNormal];
         self.imageEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePanGesture:)];

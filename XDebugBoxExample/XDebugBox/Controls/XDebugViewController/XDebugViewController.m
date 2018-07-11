@@ -76,7 +76,7 @@ NSString *const kXDebugViewController = @"XDebugViewControllerKey";
 - (void)configUI
 {
     UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
-    titleImageView.image = [UIImage imageNamed:@"logo"];
+    titleImageView.image = [UIImage imageNamed:kXDebugBoxSrcName(@"logo")?:kXDebugBoxFrameworkSrcName(@"logo")];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 3, 34, 34)];
     [view addSubview:titleImageView];
     self.navigationItem.titleView = view;

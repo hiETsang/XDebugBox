@@ -11,13 +11,13 @@ XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具�
 ![](https://github.com/hiETsang/XDebugBox/blob/master/cache.gif)
 
 ![](https://github.com/hiETsang/XDebugBox/blob/master/network.gif)
-
-
-
+ 
+ 
+ 
 ## Features
 全局小圆点，可随意滑动，只在Debug模式下才会创建，点击打开调试窗口，滑动到右下角删除。
-
-
+ 
+ 
 ### 通用模块（内置常用功能）
 * 全局动画速度调整
 * 网络请求记录
@@ -32,23 +32,26 @@ XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具�
 * 跳转到个人中心或者app设置页面
 * 显示当前所登录用户的本地缓存数据
 * 所有能简化调试操作的功能
-
-
-
+  
+  
+  
 ## Remind
-* iOS8.0 +
+* iOS 9.0 +
 * Xcode 9 +
 * ARC
+  
 
-
-
+  
 ## Installation
 ### 手动安装
 下载XDebugBox，将XDebugBoxExample目录下的XDebugBox文件夹拖到项目中。
 
 ### cocopods
+```
+pod 'XDebugBox'
+```
 
-
+ 
 
 ## Getting Started
 1. 导入头文件`#import "XDebugBox.h"`
@@ -71,9 +74,9 @@ XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具�
 ```
 
 **建议新建一个类用于管理自定义的点击事件，参考XDebugBoxExample**
-
-
-
+ 
+ 
+ 
 ## Contact
 https://github.com/hiETsang
 

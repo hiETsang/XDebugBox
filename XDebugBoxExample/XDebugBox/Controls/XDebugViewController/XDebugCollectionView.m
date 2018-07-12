@@ -76,11 +76,9 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     XDebugDataModel *model = self.dataArray[indexPath.row];
     if (self.didSelectedItem) {
         self.didSelectedItem(model);
     }
 }
-
 @end

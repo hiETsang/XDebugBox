@@ -36,6 +36,7 @@
     mainView.layer.shadowOpacity = 1.0;
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:mainView.bounds];
     mainView.layer.shadowPath = path.CGPath;
+    self.mainView = mainView;
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kRatioWidth(12), kRatioHeight(8), kRatioWidth(106), 20)];
     [mainView addSubview:self.titleLabel];
@@ -48,6 +49,17 @@
     self.descLabel.numberOfLines = 2;
     self.descLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:10];
     self.descLabel.textColor = RGBA(155, 155, 155, 1);
+}
+
+- (void)setHighlighted:(BOOL)highlighted{
+    [super setHighlighted:highlighted];
+    if (highlighted) {
+        //选中时
+        self.mainView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    }else{
+        //非选中
+        self.mainView.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 @end

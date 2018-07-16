@@ -36,7 +36,7 @@ XDebugBox是一个轻量级且安全，可视化的便于开发调试的工具�
   
   
 ## Remind
-* iOS 9.0 +
+* iOS 8.0 +
 * Xcode 9 +
 * ARC
   

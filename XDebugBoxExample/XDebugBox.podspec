@@ -8,7 +8,7 @@ s.homepage = "https://github.com/hiETsang/XDebugBox"
 s.license = 'MIT'
 s.author = { "canoe" => "canoe_likecode@163.com" } 
 
-s.ios.deployment_target = '9.0'
+s.ios.deployment_target = '8.0'
 s.source = { :git => "https://github.com/hiETsang/XDebugBox.git", :tag => "v#{s.version}" } 
 s.source_files = 'XDebugBoxExample/XDebugBox/**/*.{h,m}' 
 s.resources    = 'XDebugBoxExample/XDebugBox/Sources/*.{png,xib,nib,bundle}'

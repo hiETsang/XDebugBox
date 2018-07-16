@@ -91,20 +91,12 @@
     /**
      *  清除WKWebView的缓存
      */
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0) {
-        
+    if (@available(iOS 9.0, *)) {
         NSSet *websiteDataTypes = [NSSet setWithArray:@[
-                                WKWebsiteDataTypeDiskCache,
-                                //WKWebsiteDataTypeOfflineWebApplicationCache,
-                                WKWebsiteDataTypeMemoryCache,
-                                //WKWebsiteDataTypeLocalStorage,
-                                //WKWebsiteDataTypeCookies,
-                                //WKWebsiteDataTypeSessionStorage,
-                                //WKWebsiteDataTypeIndexedDBDatabases,
-                                //WKWebsiteDataTypeWebSQLDatabases
-                                ]];
-        //清除所有的web信息
-        //NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
+                                                        WKWebsiteDataTypeDiskCache,
+                                                        WKWebsiteDataTypeMemoryCache,
+                                                        ]];
+
         NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
         [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
         }];
@@ -114,6 +106,7 @@
         NSError *errors;
         [[NSFileManager defaultManager] removeItemAtPath:cookiesFolderPath error:&errors];
     }
+    
     /**
      *  清除UIWebView的缓存
      */

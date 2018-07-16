@@ -69,7 +69,8 @@
                                  NSParagraphStyleAttributeName : style};
     CGRect r = [[XHttpModel prettyJSONStringFromData:self.data] boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
     self.textView.contentSize = CGSizeMake(self.view.bounds.size.width, r.size.height);
-    [self.textView layoutIfNeeded];
+    
+    [self.textView setContentOffset:CGPointMake(0, -44) animated:NO];
 }
 
 - (void)copyContent {

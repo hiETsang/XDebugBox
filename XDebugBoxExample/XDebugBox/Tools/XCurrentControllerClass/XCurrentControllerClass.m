@@ -10,25 +10,24 @@
 
 @implementation XCurrentControllerClass
 
-+ (UIViewController*) topMostController
-{
-    UIViewController *topController = [[UIApplication sharedApplication].keyWindow rootViewController];
-    
-    //  Getting topMost ViewController
-    while ([topController presentedViewController])    topController = [topController presentedViewController];
-    
-    //  Returning topMost ViewController
-    return topController;
++ (UIViewController *)currentViewController{
+    return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
-+ (UIViewController*)currentViewController;
++ (UIViewController *)topViewController:(UIViewController *)rootViewController
 {
-    UIViewController *currentViewController = [XCurrentControllerClass topMostController];
+    if (rootViewController.presentedViewController == nil) {
+        return rootViewController;
+    }
     
-    while ([currentViewController isKindOfClass:[UINavigationController class]] && [(UINavigationController*)currentViewController topViewController])
-        currentViewController = [(UINavigationController*)currentViewController topViewController];
+    if ([rootViewController.presentedViewController isMemberOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)rootViewController.presentedViewController;
+        UIViewController *lastViewController = [[navigationController viewControllers] lastObject];
+        return [self topViewController:lastViewController];
+    }
     
-    return currentViewController;
+    UIViewController *presentedViewController = (UIViewController *)rootViewController.presentedViewController;
+    return [self topViewController:presentedViewController];
 }
 
 @end

@@ -11,23 +11,64 @@
 @implementation XCurrentControllerClass
 
 + (UIViewController *)currentViewController{
-    return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    return [XCurrentControllerClass topViewControllerWithRootViewController:window.rootViewController];
 }
 
-+ (UIViewController *)topViewController:(UIViewController *)rootViewController
++ (UIViewController *)topViewControllerWithRootViewController:(UIViewController *)rootViewController
 {
-    if (rootViewController.presentedViewController == nil) {
+    if (rootViewController == nil) {
+        return nil;
+    }
+    
+    if (rootViewController.presentedViewController) {
+        return [XCurrentControllerClass topViewControllerWithRootViewController:rootViewController.presentedViewController];
+    }else if ([rootViewController isKindOfClass:[UITabBarController class]])
+    {
+        return [XCurrentControllerClass topViewControllerWithRootViewController:[(UITabBarController *)rootViewController selectedViewController]];
+    }else if ([rootViewController isKindOfClass:[UINavigationController class]])
+    {
+        return [XCurrentControllerClass topViewControllerWithRootViewController:[(UINavigationController *)rootViewController visibleViewController]];
+    }else
+    {
         return rootViewController;
     }
+}
+
++ (id)currentViewControllerAndSubViewControllers
+{
+    UIViewController *vc = [XCurrentControllerClass currentViewController];
     
-    if ([rootViewController.presentedViewController isMemberOfClass:[UINavigationController class]]) {
-        UINavigationController *navigationController = (UINavigationController *)rootViewController.presentedViewController;
-        UIViewController *lastViewController = [[navigationController viewControllers] lastObject];
-        return [self topViewController:lastViewController];
+    return [XCurrentControllerClass subViewControllerArrayWithController:vc];
+}
+
++ (id)subViewControllerArrayWithController:(UIViewController *)viewController
+{
+    if (viewController.childViewControllers.count > 0) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        NSMutableArray *array = [NSMutableArray array];
+        for (NSInteger i = 0; i < viewController.childViewControllers.count; i++) {
+            [array addObject:[XCurrentControllerClass subViewControllerArrayWithController: viewController.childViewControllers[i]]];
+        }
+        [dict setValue:array forKey:NSStringFromClass([XCurrentControllerClass currentViewController].class)];
+        return dict;
+    }else
+    {
+        return NSStringFromClass(viewController.class);
     }
-    
-    UIViewController *presentedViewController = (UIViewController *)rootViewController.presentedViewController;
-    return [self topViewController:presentedViewController];
 }
 
 @end

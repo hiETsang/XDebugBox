@@ -18,6 +18,7 @@
 #import "XClearCache.h"
 #import "XCurrentControllerClass.h"
 #import "XHttpRecordController.h"
+#import "XHttpContentController.h"
 
 NSString *const kNormalTitle = @"titleStr";
 NSString *const kNormalDetail = @"detailStr";
@@ -120,7 +121,16 @@ NSString *const kNormalMethodName = @"methodName";
 
 //当前页面的类名
 - (void)currentViewController:(XDebugViewController *)viewController {
-    [XDebugBoxTipView showTip:NSStringFromClass([XCurrentControllerClass currentViewController].class)];
+    id vcs = [XCurrentControllerClass currentViewControllerAndSubViewControllers];
+    if ([vcs isKindOfClass:[NSString class]]) {
+        [XDebugBoxTipView showTip:(NSString *)vcs];
+    }else
+    {
+        XHttpContentController *vc = [[XHttpContentController alloc] init];
+        vc.title = @"VisibleViewController";
+        vc.content = [vcs debugDescription];
+        [viewController.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 //刷新通用方法列表

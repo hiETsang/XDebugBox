@@ -2,14 +2,16 @@
 //  XHttpRecordController.m
 //  LEVE
 //
-//  Created by canoe on 2018/7/6.
-//  Copyright © 2018年 dashuju. All rights reserved.
+//  Created by canoe on 2017/7/6.
+//  Copyright © 2019年 dashuju. All rights reserved.
 //
 
 #import "XHttpRecordController.h"
 #import "XHttpRecorder.h"
 #import "XHttpRecordDetailController.h"
 #import "XMacros.h"
+#import "XNetworkObserver.h"
+#import "XDebugBoxTipView.h"
 
 @interface XHttpRecordController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -45,22 +47,46 @@
     [btnclear setTitle:@"清空" forState:UIControlStateNormal];
     [btnclear setTitleColor:RGB(55, 55, 55) forState:UIControlStateNormal];
     [btnclear addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
-    
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnclear];
-    self.navigationItem.rightBarButtonItem = btnright;
+    
+    UISwitch *close = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    close.on = [XNetworkObserver isEnabled];
+    UIBarButtonItem *closeBtn = [[UIBarButtonItem alloc] initWithCustomView:close];
+    [close addTarget:self action:@selector(swicthNetworkObsever:) forControlEvents:UIControlEventValueChanged];
+    
+    self.navigationItem.rightBarButtonItems = @[btnright,closeBtn];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     self.tableView.tableFooterView = [[UIView alloc]init];
-    
+
     [self reloadHttp];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.tableView.frame = self.view.bounds;
+    self.tableView.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44);
+}
+
+- (void)swicthNetworkObsever:(UISwitch *)close {
+    if (close.isOn) {
+        [XNetworkObserver setEnabled:YES];
+        [XDebugBoxTipView showTip:@"网络监听已开启"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [XDebugBoxTipView showTip:@"网络监听有可能造成偶尔的闪退\n请在需要时使用" duration:2.0];
+        });
+    }else
+    {
+        [XNetworkObserver setEnabled:NO];
+        [XDebugBoxTipView showTip:@"已关闭网络监听"];
+    }
 }
 
 - (void)clearAction {

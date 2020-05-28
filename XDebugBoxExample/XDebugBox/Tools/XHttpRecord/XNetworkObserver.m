@@ -2,8 +2,8 @@
 //  XNetworkObserver.m
 //  XDebugBoxExample
 //
-//  Created by canoe on 2018/7/7.
-//  Copyright © 2018 canoe. All rights reserved.
+//  Created by canoe on 2017/7/7.
+//  Copyright © 2019 canoe. All rights reserved.
 //
 
 #import "XNetworkObserver.h"
@@ -13,7 +13,7 @@
 #import <objc/message.h>
 #import <dispatch/queue.h>
 
-static NSString *const kXNetworkObserverEnabledDefaultsKey = @"com.X.XNetworkObserver.enableOnLaunch";
+static NSString *const kXNetworkObserverEnabledDefaultsKey = @"com.X.XNetworkObserver.enabledOnLaunch";
 
 typedef void (^NSURLSessionAsyncCompletion)(id fileURLOrData, NSURLResponse *response, NSError *error);
 
@@ -70,15 +70,16 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
 
 #pragma mark - Public Methods
 
-+ (void)setEnabled:(BOOL)enabled
++ (void)setEnabled:(BOOL)enabled;
 {
-    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kXNetworkObserverEnabledDefaultsKey];
-    
-    if (enabled) {
+    if (enabled && ![XNetworkObserver isEnabled]) {
         // Inject if needed. This injection is protected with a dispatch_once, so we're ok calling it multiple times.
         // By doing the injection lazily, we keep the impact of the tool lower when this feature isn't enabled.
         [self injectIntoAllNSURLConnectionDelegateClasses];
     }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:kXNetworkObserverEnabledDefaultsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (BOOL)isEnabled
@@ -88,10 +89,9 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
 
 + (void)load
 {
-    
     // We don't want to do the swizzling from +load because not all the classes may be loaded at this point.
     dispatch_async(dispatch_get_main_queue(), ^{
-        if ([self isEnabled]) {
+        if ([self isEnabled] == YES) {
             [self injectIntoAllNSURLConnectionDelegateClasses];
         }
     });
@@ -347,6 +347,7 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
         Method originalResume = class_getInstanceMethod(class, selector);
         
         void (^swizzleBlock)(NSURLSessionTask *) = ^(NSURLSessionTask *slf) {
+            [slf.currentRequest HTTPBody];
             [[XNetworkObserver sharedObserver] URLSessionTaskWillResume:slf];
             ((void(*)(id, SEL))objc_msgSend)(slf, swizzledSelector);
         };

@@ -2,8 +2,8 @@
 //  XDebugBoxManager.m
 //  XDebugBoxExample
 //
-//  Created by canoe on 2018/6/28.
-//  Copyright © 2018年 canoe. All rights reserved.
+//  Created by canoe on 2017/6/28.
+//  Copyright © 2019年 canoe. All rights reserved.
 //
 
 #import "XDebugBoxManager.h"
@@ -75,8 +75,8 @@ static XDebugBoxManager * _instance;
 + (void)openDebugBox
 {
     [[XDebugBoxManager shared] configDebugBox];
-    //开启网络监控
-    [XNetworkObserver setEnabled:YES];
+    //是否关闭网络监控
+//    [XNetworkObserver setEnabled:NO];
 }
 
 - (void)configDebugBox
@@ -105,7 +105,7 @@ static XDebugBoxManager * _instance;
         self.debugController = nil;
         _normalArray = nil;
         _extensionArray = nil;
-        [XNetworkObserver setEnabled:NO];
+//        [XNetworkObserver setEnabled:NO];
         [XDebugNormalDataManager sharedDelloc];
         [XDebugWindowManager sharedDelloc];
     }

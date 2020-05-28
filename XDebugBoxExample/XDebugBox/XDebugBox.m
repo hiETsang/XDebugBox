@@ -2,8 +2,8 @@
 //  XDebugBox.m
 //  XDebugBoxExample
 //
-//  Created by canoe on 2018/6/28.
-//  Copyright © 2018年 canoe. All rights reserved.
+//  Created by canoe on 2017/6/28.
+//  Copyright © 2019年 canoe. All rights reserved.
 //
 
 #import "XDebugBox.h"
@@ -14,23 +14,17 @@
 
 + (void)open
 {
-#if DEBUG
     [XDebugBoxManager openDebugBox];
-#endif
 }
 
 + (void)configActionArray:(NSArray<XDebugDataModel *> *)array
 {
-#if DEBUG
     [XDebugBoxManager shared].extensionArray = array;
-#endif
 }
 
 + (void)showTip:(NSString *)tip
 {
-#if DEBUG
     [XDebugBoxTipView showTip:tip];
-#endif
 }
 
 @end

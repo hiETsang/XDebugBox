@@ -2,8 +2,8 @@
 //  XHttpRecordDetailController.m
 //  LEVE
 //
-//  Created by canoe on 2018/7/7.
-//  Copyright © 2018年 dashuju. All rights reserved.
+//  Created by canoe on 2017/7/7.
+//  Copyright © 2019年 dashuju. All rights reserved.
 //
 
 #import "XHttpRecordDetailController.h"
@@ -43,11 +43,16 @@
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.tableView.frame = self.view.bounds;
+    self.tableView.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44);
 }
 
 

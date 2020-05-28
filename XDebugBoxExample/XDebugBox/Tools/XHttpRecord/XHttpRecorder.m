@@ -2,8 +2,8 @@
 //  XHttpRecorder.m
 //  XDebugBoxExample
 //
-//  Created by canoe on 2018/7/8.
-//  Copyright © 2018 canoe. All rights reserved.
+//  Created by canoe on 2017/7/8.
+//  Copyright © 2019 canoe. All rights reserved.
 //
 
 #import "XHttpRecorder.h"
@@ -119,6 +119,13 @@ NSString *const kXHttpRecorderTransactionsClearedNotification = @"kXHttpRecorder
         
         [self.httpArray insertObject:model atIndex:0];
         [self.networkTransactionsForRequestIdentifiers setObject:model forKey:requestID];
+        
+        //限制最大的记录数 100条
+        if (self.httpArray.count > 100) {
+            XHttpModel *lastModel = self.httpArray.lastObject;
+            [self.networkTransactionsForRequestIdentifiers removeObjectForKey:lastModel.requestId];
+            [self.httpArray removeLastObject];
+        }
         
         [self postNewTransactionNotificationWithTransaction:model];
     });

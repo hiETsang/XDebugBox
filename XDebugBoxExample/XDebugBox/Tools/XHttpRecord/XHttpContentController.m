@@ -2,8 +2,8 @@
 //  XHttpContentController.m
 //  LEVE
 //
-//  Created by canoe on 2018/7/7.
-//  Copyright © 2018年 dashuju. All rights reserved.
+//  Created by canoe on 2017/7/7.
+//  Copyright © 2019年 dashuju. All rights reserved.
 //
 
 #import "XHttpContentController.h"
@@ -36,13 +36,18 @@
     self.textView.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
     self.textView.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
     self.textView.text = self.content;
+
+    if (@available(iOS 11.0, *)) {
+        self.textView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     [self.view addSubview:self.textView];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.textView.frame  = self.view.bounds;
     NSStringDrawingOptions option = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
     
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -52,7 +57,7 @@
                                  NSParagraphStyleAttributeName : style};
     CGRect r = [self.content boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
     self.textView.contentSize = CGSizeMake(self.view.bounds.size.width, r.size.height);
-    [self.textView setContentOffset:CGPointMake(0, -44) animated:NO];
+    self.textView.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44);
 }
 
 - (void)copyContent {
